@@ -359,7 +359,7 @@ const InteractiveChart: React.FC = () => {
     // Draw volume bars at bottom
     const volumeHeight = 30
     const volumeY = height - padding + 5
-    const maxVolume = Math.max(...chartData.map((_, i) => Math.random() * 100 + 50))
+    const maxVolume = Math.max(...chartData.map((_, _i) => Math.random() * 100 + 50))
     
     chartData.forEach((candle, _i) => {
       const x = padding + (_i / (chartData.length - 1)) * (width - padding * 2)
@@ -537,7 +537,7 @@ const TrainerProfile: React.FC = () => {
               
               <div className="bg-white p-8 rounded-2xl shadow-lg">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mb-6">
-                  <span className="text-white text-xl">"</span>
+                  <span className="text-white text-xl">&ldquo;</span>
                 </div>
                 <blockquote className="text-xl italic text-slate-700 leading-relaxed mb-6">
                   &ldquo;Our goal is not just to teach stock market, but to make people financially independent. In 23+ years, we have provided practical investment skills to 25,000+ students.&rdquo;
@@ -738,7 +738,7 @@ const StudentSuccessStories: React.FC = () => {
 
               <div className="bg-slate-50 rounded-2xl p-8">
                 <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${getGradient(stories[activeStory].background)} flex items-center justify-center mb-6`}>
-                  <span className="text-white text-xl">"</span>
+                  <span className="text-white text-xl">&ldquo;</span>
                 </div>
                 <blockquote className="text-lg text-slate-700 leading-relaxed italic mb-4">
                   &ldquo;{stories[activeStory].quote}&rdquo;
