@@ -1,5 +1,12 @@
-import PageTemplate, { generateMetadata } from './[slug]/page'
+import HomePage from './home'
 
-export default PageTemplate
+export default function Page() {
+  return <HomePage />
+}
 
-export { generateMetadata }
+export async function generateMetadata() {
+  return {
+    title: 'Finanthropist - Learn Stock Market Investing',
+    description: 'Join 25,000+ students who have mastered practical stock market investing with Maharashtra\'s most trusted educator, Sameer Sarang.',
+  }
+}
