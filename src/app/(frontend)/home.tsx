@@ -84,7 +84,7 @@ const HeroSection: React.FC = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className={`max-w-4xl mx-auto text-center text-white transition-all duration-1000 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium mb-8 leading-tight">
             Learn Stock Market<br />
             <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent font-medium">
               Investing
@@ -100,7 +100,7 @@ const HeroSection: React.FC = () => {
               <span className="mr-2">Join Free 2-Hour Seminar</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Button>
-            <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-full text-lg font-medium backdrop-blur-sm transition-all duration-300">
+            <Button variant="outline" className="border-2 bg-blue-600 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-full text-lg font-medium backdrop-blur-sm transition-all duration-300">
               Meet Your Trainer
             </Button>
           </div>
@@ -786,7 +786,7 @@ const FinalCTA: React.FC = () => {
               <span className="mr-2">Register for Free Seminar</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Button>
-            <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 shadow-lg">
+            <Button variant="outline" className="border-2 bg-blue-600 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 shadow-lg">
               Learn More About Course
             </Button>
           </div>
