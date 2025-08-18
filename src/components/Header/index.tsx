@@ -47,10 +47,10 @@ export default function Header() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
-              href="/#course" 
+              href="/#services" 
               className="text-gray-700 hover:text-blue-600 transition-colors font-medium relative group"
             >
-              Course
+              Services
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
@@ -72,7 +72,7 @@ export default function Header() {
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center space-x-4">
             <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg">
-              Free Seminar
+              Get Started
             </Button>
 
             {/* Mobile Menu Button */}
@@ -112,11 +112,11 @@ export default function Header() {
               About
             </Link>
             <Link 
-              href="/#course" 
+              href="/#services" 
               className="block text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Course
+              Services
             </Link>
             <Link 
               href="/#success" 
@@ -137,7 +137,7 @@ export default function Header() {
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Join Free Seminar
+                Get Started
               </Button>
             </div>
           </nav>

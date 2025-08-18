@@ -1,0 +1,8 @@
+export { AnimatedCounter } from './AnimatedCounter'
+export { HeroSection } from './HeroSection'
+export { EducationStats } from './EducationStats'
+export { InteractiveChart } from './InteractiveChart'
+export { TrainerProfile } from './TrainerProfile'
+export { ServicesStructure } from './ServicesStructure'
+export { StudentSuccessStories } from './StudentSuccessStories'
+export { FinalCTA } from './FinalCTA'
