@@ -30,7 +30,7 @@ export default function Footer() {
               </div>
               
               <p className="text-slate-400 mb-6 leading-relaxed max-w-md">
-                Maharashtra's most trusted stock market education company since 2001. 
+                Maharashtra&apos;s most trusted stock market education company since 2001. 
                 Empowering 25,000+ students with practical investment skills and financial independence.
               </p>
 

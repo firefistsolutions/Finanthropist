@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import Header from '@/components/Header'
@@ -92,7 +92,7 @@ const HeroSection: React.FC = () => {
           </h1>
           
           <p className="text-xl lg:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Join <AnimatedCounter value={25000} suffix="+" delay={500} /> students who have mastered practical stock market investing with Maharashtra's most trusted educator, Sameer Sarang.
+            Join <AnimatedCounter value={25000} suffix="+" delay={500} /> students who have mastered practical stock market investing with Maharashtra&apos;s most trusted educator, Sameer Sarang.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
@@ -236,7 +236,7 @@ const InteractiveChart: React.FC = () => {
     setChartData(data)
   }, [])
 
-  const drawSimpleChart = () => {
+  const drawSimpleChart = useCallback(() => {
     const canvas = canvasRef.current
     if (!canvas || !isClient || chartData.length === 0) return
 
@@ -361,8 +361,8 @@ const InteractiveChart: React.FC = () => {
     const volumeY = height - padding + 5
     const maxVolume = Math.max(...chartData.map((_, i) => Math.random() * 100 + 50))
     
-    chartData.forEach((candle, i) => {
-      const x = padding + (i / (chartData.length - 1)) * (width - padding * 2)
+    chartData.forEach((candle, _i) => {
+      const x = padding + (_i / (chartData.length - 1)) * (width - padding * 2)
       const volume = Math.random() * 100 + 50
       const barHeight = (volume / maxVolume) * volumeHeight
       
@@ -376,14 +376,14 @@ const InteractiveChart: React.FC = () => {
     ctx.textAlign = 'left'
     ctx.textBaseline = 'top'
     ctx.fillText(`${activeSymbol} - Live Market Data`, padding, 12)
-  }
+  }, [isClient, chartData, activeSymbol])
 
   useEffect(() => {
     if (isClient && chartData.length > 0) {
       const timer = setTimeout(drawSimpleChart, 500)
       return () => clearTimeout(timer)
     }
-  }, [isClient, chartData, activeSymbol])
+  }, [isClient, chartData, activeSymbol, drawSimpleChart])
 
   // Always render the full component, just hide chart until client-side
   const showChart = isClient && chartData.length > 0
@@ -498,7 +498,7 @@ const TrainerProfile: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-light text-slate-900 mb-6">Meet Your Trainer</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Learn from Sameer Sarang, Maharashtra's most trusted stock market educator
+              Learn from Sameer Sarang, Maharashtra&apos;s most trusted stock market educator
             </p>
           </div>
           
@@ -540,7 +540,7 @@ const TrainerProfile: React.FC = () => {
                   <span className="text-white text-xl">"</span>
                 </div>
                 <blockquote className="text-xl italic text-slate-700 leading-relaxed mb-6">
-                  "Our goal is not just to teach stock market, but to make people financially independent. In 23+ years, we have provided practical investment skills to 25,000+ students."
+                  &ldquo;Our goal is not just to teach stock market, but to make people financially independent. In 23+ years, we have provided practical investment skills to 25,000+ students.&rdquo;
                 </blockquote>
                 <div className="text-sm text-slate-500">
                   — Sameer Sarang, Founder & Lead Trainer
@@ -741,7 +741,7 @@ const StudentSuccessStories: React.FC = () => {
                   <span className="text-white text-xl">"</span>
                 </div>
                 <blockquote className="text-lg text-slate-700 leading-relaxed italic mb-4">
-                  "{stories[activeStory].quote}"
+                  &ldquo;{stories[activeStory].quote}&rdquo;
                 </blockquote>
                 <div className="text-sm text-slate-500">
                   — {stories[activeStory].name}, {stories[activeStory].profession}
