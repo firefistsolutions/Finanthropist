@@ -182,6 +182,28 @@ export const InteractiveChart: React.FC = () => {
                 <div className="text-lg font-semibold text-gray-800">₹19,901</div>
               </div>
             </div>
+
+            {/* Subtle CTA after interactive engagement */}
+            <div className={`mt-8 text-center transition-all duration-1000 delay-300 ${getAnimationClasses(chartInView)}`}>
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-2xl p-6">
+                <div className="flex items-center justify-center mb-3">
+                  <div className="bg-blue-600 p-2 rounded-full mr-3">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-gray-800">
+                    Want Professional Chart Analysis Like This?
+                  </h4>
+                </div>
+                <p className="text-gray-600 mb-4 max-w-2xl mx-auto">
+                  Get daily technical analysis, market trends, and trading opportunities directly from our expert team.
+                </p>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition-all duration-300">
+                  Get Daily Analysis
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

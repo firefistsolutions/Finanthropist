@@ -8,7 +8,7 @@ export const TradingFeatures: React.FC = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveFeature(prev => (prev + 1) % 3)
+      setActiveFeature(prev => (prev + 1) % 4)
       setOrderValue(prev => prev + (Math.random() - 0.5) * 10000)
     }, 4000)
 
@@ -33,6 +33,12 @@ export const TradingFeatures: React.FC = () => {
       description: 'Professional advice on portfolio management and risk mitigation strategies.',
       icon: '🛡️',
       color: 'from-green-400 to-emerald-500'
+    },
+    {
+      title: 'Lifetime Support',
+      description: 'Ongoing support and guidance throughout your trading journey with 24/7 expert assistance.',
+      icon: '⏰',
+      color: 'from-purple-400 to-pink-500'
     }
   ]
 
@@ -163,6 +169,36 @@ export const TradingFeatures: React.FC = () => {
                         New bullish signal detected for RELIANCE at ₹2,847. Potential target: ₹2,920 with stop loss at ₹2,785.
                       </p>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA after showing professional features */}
+            <div className={`mt-12 transition-all duration-1000 delay-400 ${getAnimationClasses(sectionInView)}`}>
+              <div className="bg-white rounded-3xl p-8 shadow-xl border-l-4 border-blue-600">
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="bg-blue-100 p-2 rounded-lg mr-3">
+                      <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Professional Package</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3">
+                    Experience All Professional Services + Lifetime Support
+                  </h3>
+                  <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                    Get comprehensive access to expert market analysis, personalized trading strategies, risk management guidance, and 24/7 support for your complete trading journey.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      Get Started Today
+                    </button>
+                    <button className="border-2 border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 font-bold py-3 px-8 rounded-full transition-all duration-300">
+                      Learn More
+                    </button>
                   </div>
                 </div>
               </div>

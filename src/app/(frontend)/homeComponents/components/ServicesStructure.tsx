@@ -60,6 +60,49 @@ export const ServicesStructure: React.FC = () => {
               </div>
             ))}
           </div>
+
+          {/* CTA after showing services */}
+          <div className={`mt-16 text-center transition-all duration-1000 delay-300 ${getAnimationClasses(servicesInView)}`}>
+            <div className="bg-gradient-to-br from-slate-900 to-blue-900 rounded-3xl p-10 text-white relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
+              <div className="relative z-10">
+                <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                  Choose Your Financial Growth Path
+                </h3>
+                <p className="text-blue-100 mb-8 max-w-3xl mx-auto text-lg">
+                  Whether you're a beginner or experienced investor, our comprehensive services are designed to accelerate your wealth building journey with expert guidance every step of the way.
+                </p>
+                <div className="flex flex-col md:flex-row gap-6 justify-center">
+                  <button className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl">
+                    Book Free Strategy Session
+                  </button>
+                  <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold py-4 px-10 rounded-full transition-all duration-300">
+                    Compare Service Plans
+                  </button>
+                </div>
+                <div className="mt-6 flex items-center justify-center space-x-6 text-blue-200 text-sm">
+                  <div className="flex items-center space-x-2">
+                    <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>No Hidden Fees</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Personalized Service</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Lifetime Support</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
