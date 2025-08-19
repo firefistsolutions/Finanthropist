@@ -10,7 +10,10 @@ import {
   TrainerProfile,
   ServicesStructure,
   StudentSuccessStories,
-  FinalCTA
+  FinalCTA,
+  TradingPlatformShowcase,
+  MarketAnalytics,
+  TradingFeatures
 } from './homeComponents/components'
 
 // Main HomePage Component
@@ -19,10 +22,13 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main>
+      <main className="pt-24">
         <HeroSection />
         <EducationStats />
         <InteractiveChart />
+        <TradingPlatformShowcase />
+        <MarketAnalytics />
+        <TradingFeatures />
         <TrainerProfile />
         <ServicesStructure />
         <StudentSuccessStories />

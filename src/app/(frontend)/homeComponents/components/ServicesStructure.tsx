@@ -51,11 +51,7 @@ export const ServicesStructure: React.FC = () => {
                 </div>
                 
                 <div className="mt-8 pt-6 border-t border-gray-100">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-sm text-gray-500">Starting from</div>
-                      <div className="text-2xl font-bold text-gray-800">{service.price}</div>
-                    </div>
+                  <div className="flex items-center justify-center">
                     <button className={`bg-gradient-to-r ${getServiceGradient(service.id)} hover:shadow-lg text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105`}>
                       Learn More
                     </button>

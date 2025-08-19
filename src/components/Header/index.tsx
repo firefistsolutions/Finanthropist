@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import LiveMarketTicker from '@/components/LiveMarketTicker'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -143,6 +144,9 @@ export default function Header() {
           </nav>
         </div>
       </div>
+      
+      {/* Live Market Ticker */}
+      <LiveMarketTicker />
     </header>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useInView, getAnimationClasses } from '../utilities/animations'
-import { chartData } from '../mockData/chartData'
+import { generateChartData } from '../mockData/chartData'
 import { 
   defaultChartConfig, 
   calculatePriceRange, 
@@ -13,6 +13,7 @@ export const InteractiveChart: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [chartRef, chartInView] = useInView(0.3)
   const [isDrawn, setIsDrawn] = useState(false)
+  const chartData = generateChartData(40)
 
   useEffect(() => {
     if (!chartInView || !canvasRef.current || isDrawn) return

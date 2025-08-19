@@ -30,8 +30,8 @@ export const TrainerProfile: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">SEBI Registered Investment Advisor</h3>
-                    <p className="text-blue-100">Certified and regulated professional with proven track record in portfolio management and financial advisory.</p>
+                    <h3 className="text-xl font-semibold text-white mb-2">Certified Investment Advisor</h3>
+                    <p className="text-blue-100">Certified professional with proven track record in portfolio management and financial advisory.</p>
                   </div>
                 </div>
                 
@@ -80,7 +80,7 @@ export const TrainerProfile: React.FC = () => {
                       </svg>
                     </div>
                     <div className="text-2xl font-semibold text-white mb-2">Sameer Sarang</div>
-                    <div className="text-blue-200">SEBI Registered Investment Advisor</div>
+                    <div className="text-blue-200">Certified Investment Advisor</div>
                     <div className="text-blue-200">23+ Years Experience</div>
                   </div>
                 </div>

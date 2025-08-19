@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* Company Info */}
             <div className="lg:col-span-2">
@@ -68,11 +68,6 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#course" className="text-slate-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block">
-                    Course Structure
-                  </Link>
-                </li>
-                <li>
                   <Link href="/#success" className="text-slate-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200 inline-block">
                     Success Stories
                   </Link>
@@ -85,27 +80,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Course Info */}
-            <div>
-              <h4 className="text-lg font-semibold mb-6 text-white">Course Info</h4>
-              <ul className="space-y-3">
-                <li className="text-slate-400">
-                  <span className="text-blue-400 font-medium">Duration:</span> 10+ weeks
-                </li>
-                <li className="text-slate-400">
-                  <span className="text-blue-400 font-medium">Format:</span> Live + Practical
-                </li>
-                <li className="text-slate-400">
-                  <span className="text-blue-400 font-medium">Language:</span> English
-                </li>
-                <li className="text-slate-400">
-                  <span className="text-blue-400 font-medium">Support:</span> Lifetime
-                </li>
-                <li className="text-slate-400">
-                  <span className="text-blue-400 font-medium">Free Seminar:</span> 2 Hours
-                </li>
-              </ul>
-            </div>
           </div>
 
           {/* Stats Section */}
