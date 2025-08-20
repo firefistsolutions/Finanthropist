@@ -1,10 +1,11 @@
 import React from 'react'
 import { useInView, getAnimationClasses, getStaggerDelay } from '../utilities/animations'
-import { services } from '../mockData/services'
+import { useHomeData } from '@/hooks/useHomeData'
 import { getServiceGradient } from '../helpers/gradients'
 
 export const ServicesStructure: React.FC = () => {
   const [servicesRef, servicesInView] = useInView(0.3)
+  const { homeData } = useHomeData()
 
   return (
     <section id="services" ref={servicesRef} className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
@@ -23,36 +24,36 @@ export const ServicesStructure: React.FC = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
+            {homeData.services?.map((service, index) => (
               <div 
-                key={service.id}
+                key={index}
                 className={`bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group`}
                 style={getStaggerDelay(index, 200)}
               >
                 <div className="mb-8">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${getServiceGradient(service.id)} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <div dangerouslySetInnerHTML={{ __html: service.icon }} className="text-white" />
+                  <div className={`w-16 h-16 bg-gradient-to-r ${service.color || 'from-blue-500 to-blue-600'} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="text-2xl">{service.icon}</span>
                   </div>
                   <h3 className="text-2xl font-semibold text-gray-800 mb-4">{service.title}</h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
                 </div>
                 
                 <div className="space-y-3">
-                  {service.features.map((feature, featureIndex) => (
+                  {service.features?.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start gap-3">
-                      <div className={`w-6 h-6 bg-gradient-to-r ${getServiceGradient(service.id)} rounded-full flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                      <div className={`w-6 h-6 bg-gradient-to-r ${service.color || 'from-blue-500 to-blue-600'} rounded-full flex items-center justify-center flex-shrink-0 mt-0.5`}>
                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-gray-700">{feature.feature}</span>
                     </div>
                   ))}
                 </div>
                 
                 <div className="mt-8 pt-6 border-t border-gray-100">
                   <div className="flex items-center justify-center">
-                    <button className={`bg-gradient-to-r ${getServiceGradient(service.id)} hover:shadow-lg text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105`}>
+                    <button className={`bg-gradient-to-r ${service.color || 'from-blue-500 to-blue-600'} hover:shadow-lg text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105`}>
                       Learn More
                     </button>
                   </div>

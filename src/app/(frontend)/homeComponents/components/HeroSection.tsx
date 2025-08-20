@@ -2,10 +2,11 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import { useInView, getAnimationClasses, getStaggerDelay } from '../utilities/animations'
 import { AnimatedCounter } from './AnimatedCounter'
-import { heroStats } from '../mockData/stats'
+import { useHomeData } from '@/hooks/useHomeData'
 
 export const HeroSection: React.FC = () => {
   const [heroRef, heroInView] = useInView(0.2)
+  const { homeData } = useHomeData()
 
   return (
     <section ref={heroRef} className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 flex items-center overflow-hidden">
@@ -21,19 +22,16 @@ export const HeroSection: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className={`max-w-4xl mx-auto text-center text-white transition-all duration-1000 ${getAnimationClasses(heroInView)}`}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium mb-8 leading-tight">
-            Complete Financial<br />
-            <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent font-medium">
-              Services
-            </span>
+            {homeData.heroSection?.title || 'Professional Financial Services & Trading Excellence'}
           </h1>
           
           <p className="text-xl lg:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive financial solutions from trading & portfolio management to education. Trusted by <AnimatedCounter value={25000} suffix="+" delay={500} /> clients across Maharashtra with expert guidance from Sameer Sarang.
+            {homeData.heroSection?.subtitle || 'Transform your financial future with expert portfolio management, advanced trading strategies, and comprehensive financial advisory services. Join 25,000+ satisfied clients who trust our proven track record.'}
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
             <Button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <span className="mr-2">Get Free Consultation</span>
+              <span className="mr-2">{homeData.heroSection?.ctaText || 'Start Your Financial Journey'}</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Button>
             <Button variant="outline" className="border-2 bg-blue-600 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-full text-lg font-medium backdrop-blur-sm transition-all duration-300">
@@ -42,7 +40,7 @@ export const HeroSection: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {heroStats.map((stat, index) => (
+            {homeData.heroSection?.stats?.map((stat, index) => (
               <div 
                 key={index} 
                 className={`text-center transition-all duration-1000`} 

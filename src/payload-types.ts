@@ -103,10 +103,12 @@ export interface Config {
   globals: {
     header: Header;
     footer: Footer;
+    home: Home;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
+    home: HomeSelect<false> | HomeSelect<true>;
   };
   locale: null;
   user: User & {
@@ -1606,6 +1608,98 @@ export interface Footer {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home".
+ */
+export interface Home {
+  id: number;
+  heroSection: {
+    title: string;
+    subtitle: string;
+    ctaText: string;
+    ctaLink: string;
+    stats?:
+      | {
+          value: number;
+          suffix: string;
+          label: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  mainStats?:
+    | {
+        metric: string;
+        value: number;
+        description: string;
+        icon: string;
+        color: string;
+        id?: string | null;
+      }[]
+    | null;
+  services?:
+    | {
+        title: string;
+        description: string;
+        features?:
+          | {
+              feature: string;
+              id?: string | null;
+            }[]
+          | null;
+        clients: string;
+        icon: string;
+        color: string;
+        id?: string | null;
+      }[]
+    | null;
+  successStories?:
+    | {
+        name: string;
+        profession: string;
+        location: string;
+        testimonial: string;
+        results: {
+          portfolioGrowth: string;
+          timePeriod: string;
+          strategy: string;
+        };
+        avatar: string;
+        background: 'business' | 'professional' | 'homemaker';
+        id?: string | null;
+      }[]
+    | null;
+  successStats?:
+    | {
+        value: string;
+        label: string;
+        color: string;
+        id?: string | null;
+      }[]
+    | null;
+  trainerProfile: {
+    name: string;
+    title: string;
+    experience: string;
+    description: string;
+    achievements?:
+      | {
+          achievement: string;
+          id?: string | null;
+        }[]
+      | null;
+    stats?:
+      | {
+          value: string;
+          label: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
@@ -1645,6 +1739,104 @@ export interface FooterSelect<T extends boolean = true> {
               label?: T;
             };
         id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home_select".
+ */
+export interface HomeSelect<T extends boolean = true> {
+  heroSection?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        ctaText?: T;
+        ctaLink?: T;
+        stats?:
+          | T
+          | {
+              value?: T;
+              suffix?: T;
+              label?: T;
+              id?: T;
+            };
+      };
+  mainStats?:
+    | T
+    | {
+        metric?: T;
+        value?: T;
+        description?: T;
+        icon?: T;
+        color?: T;
+        id?: T;
+      };
+  services?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        features?:
+          | T
+          | {
+              feature?: T;
+              id?: T;
+            };
+        clients?: T;
+        icon?: T;
+        color?: T;
+        id?: T;
+      };
+  successStories?:
+    | T
+    | {
+        name?: T;
+        profession?: T;
+        location?: T;
+        testimonial?: T;
+        results?:
+          | T
+          | {
+              portfolioGrowth?: T;
+              timePeriod?: T;
+              strategy?: T;
+            };
+        avatar?: T;
+        background?: T;
+        id?: T;
+      };
+  successStats?:
+    | T
+    | {
+        value?: T;
+        label?: T;
+        color?: T;
+        id?: T;
+      };
+  trainerProfile?:
+    | T
+    | {
+        name?: T;
+        title?: T;
+        experience?: T;
+        description?: T;
+        achievements?:
+          | T
+          | {
+              achievement?: T;
+              id?: T;
+            };
+        stats?:
+          | T
+          | {
+              value?: T;
+              label?: T;
+              id?: T;
+            };
       };
   updatedAt?: T;
   createdAt?: T;

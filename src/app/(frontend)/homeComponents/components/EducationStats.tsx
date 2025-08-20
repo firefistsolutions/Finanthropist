@@ -1,10 +1,11 @@
 import React from 'react'
 import { useInView, getAnimationClasses, getStaggerDelay } from '../utilities/animations'
 import { AnimatedCounter } from './AnimatedCounter'
-import { mainStats } from '../mockData/stats'
+import { useHomeData } from '@/hooks/useHomeData'
 
 export const EducationStats: React.FC = () => {
   const [statsRef, statsInView] = useInView(0.3)
+  const { homeData } = useHomeData()
 
   return (
     <section ref={statsRef} className="py-20 bg-gradient-to-r from-slate-50 to-blue-50">
@@ -23,16 +24,16 @@ export const EducationStats: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-            {mainStats.map((stat, index) => (
+            {homeData.mainStats?.map((stat, index) => (
               <div 
                 key={index} 
                 className={`text-center p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-500 group`}
                 style={getStaggerDelay(index, 100)}
               >
                 <div className="text-4xl md:text-5xl font-light text-gray-800 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <AnimatedCounter value={stat.value} suffix={stat.suffix} delay={500 + index * 100} />
+                  <AnimatedCounter value={stat.value} suffix="" delay={500 + index * 100} />
                 </div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-gray-600 font-medium">{stat.metric}</div>
                 <div className="text-sm text-gray-500 mt-2">{stat.description}</div>
               </div>
             ))}
