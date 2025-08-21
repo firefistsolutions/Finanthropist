@@ -72,6 +72,7 @@ export interface Config {
     media: Media;
     categories: Category;
     users: User;
+    'twitter-reviews': TwitterReview;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -88,6 +89,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    'twitter-reviews': TwitterReviewsSelect<false> | TwitterReviewsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -737,6 +739,59 @@ export interface Form {
   createdAt: string;
 }
 /**
+ * Manage Twitter testimonials and reviews for the homepage
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "twitter-reviews".
+ */
+export interface TwitterReview {
+  id: number;
+  /**
+   * Full name of the reviewer (e.g., "Rajesh Kumar")
+   */
+  name: string;
+  /**
+   * Twitter username starting with @ (e.g., "@rajesh_trader")
+   */
+  username: string;
+  /**
+   * URL to profile image
+   */
+  avatar: string;
+  /**
+   * Tweet content (max 280 characters, can include @Finanthropist mentions)
+   */
+  content: string;
+  /**
+   * Time ago format (e.g., "2h", "1d", "3h")
+   */
+  timestamp: string;
+  engagement: {
+    /**
+     * Number of likes on the tweet
+     */
+    likes: number;
+    /**
+     * Number of replies to the tweet
+     */
+    replies: number;
+    /**
+     * Number of retweets
+     */
+    retweets: number;
+  };
+  /**
+   * Show this review in the homepage carousel
+   */
+  isActive?: boolean | null;
+  /**
+   * Order in carousel (lower numbers appear first)
+   */
+  displayOrder?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
@@ -928,6 +983,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: number | User;
+      } | null)
+    | ({
+        relationTo: 'twitter-reviews';
+        value: number | TwitterReview;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -1292,6 +1351,28 @@ export interface UsersSelect<T extends boolean = true> {
         createdAt?: T;
         expiresAt?: T;
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "twitter-reviews_select".
+ */
+export interface TwitterReviewsSelect<T extends boolean = true> {
+  name?: T;
+  username?: T;
+  avatar?: T;
+  content?: T;
+  timestamp?: T;
+  engagement?:
+    | T
+    | {
+        likes?: T;
+        replies?: T;
+        retweets?: T;
+      };
+  isActive?: T;
+  displayOrder?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1695,6 +1776,33 @@ export interface Home {
         }[]
       | null;
   };
+  tradingFeatures: {
+    title: string;
+    subtitle: string;
+    features?:
+      | {
+          title: string;
+          description: string;
+          icon: string;
+          color: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  finalCTA: {
+    title: string;
+    subtitle: string;
+    primaryCTAText: string;
+    secondaryCTAText: string;
+    features?:
+      | {
+          title: string;
+          description: string;
+          icon: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1835,6 +1943,37 @@ export interface HomeSelect<T extends boolean = true> {
           | {
               value?: T;
               label?: T;
+              id?: T;
+            };
+      };
+  tradingFeatures?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        features?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              icon?: T;
+              color?: T;
+              id?: T;
+            };
+      };
+  finalCTA?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        primaryCTAText?: T;
+        secondaryCTAText?: T;
+        features?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              icon?: T;
               id?: T;
             };
       };

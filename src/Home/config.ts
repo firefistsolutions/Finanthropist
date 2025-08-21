@@ -287,6 +287,105 @@ export const Home: GlobalConfig = {
         },
       ],
     },
+    {
+      name: 'tradingFeatures',
+      type: 'group',
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          required: true,
+          defaultValue: 'Advanced Trading Features',
+        },
+        {
+          name: 'subtitle',
+          type: 'textarea',
+          required: true,
+          defaultValue: 'Professional trading tools and expert guidance to maximize your investment success',
+        },
+        {
+          name: 'features',
+          type: 'array',
+          minRows: 4,
+          maxRows: 6,
+          fields: [
+            {
+              name: 'title',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'description',
+              type: 'textarea',
+              required: true,
+            },
+            {
+              name: 'icon',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'color',
+              type: 'text',
+              required: true,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'finalCTA',
+      type: 'group',
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          required: true,
+          defaultValue: 'Ready to Transform Your Financial Future?',
+        },
+        {
+          name: 'subtitle',
+          type: 'textarea',
+          required: true,
+          defaultValue: 'Join thousands of successful investors who trust Sameer Sarang for comprehensive financial guidance. Start your wealth creation journey today with a personalized consultation.',
+        },
+        {
+          name: 'primaryCTAText',
+          type: 'text',
+          required: true,
+          defaultValue: 'Book Free Consultation',
+        },
+        {
+          name: 'secondaryCTAText',
+          type: 'text',
+          required: true,
+          defaultValue: 'Call +91 98765 43210',
+        },
+        {
+          name: 'features',
+          type: 'array',
+          minRows: 3,
+          maxRows: 3,
+          fields: [
+            {
+              name: 'title',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'description',
+              type: 'textarea',
+              required: true,
+            },
+            {
+              name: 'icon',
+              type: 'text',
+              required: true,
+            },
+          ],
+        },
+      ],
+    },
   ],
   hooks: {
     afterChange: [revalidateHome],

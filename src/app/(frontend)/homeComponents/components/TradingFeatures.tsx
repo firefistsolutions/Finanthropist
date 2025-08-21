@@ -1,46 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { useInView, getAnimationClasses } from '../utilities/animations'
+import { useHomeData } from '@/hooks/useHomeData'
 
 export const TradingFeatures: React.FC = () => {
   const [sectionRef, sectionInView] = useInView(0.3)
   const [activeFeature, setActiveFeature] = useState(0)
   const [orderValue, setOrderValue] = useState(125000)
+  const { homeData } = useHomeData()
+  const tradingFeatures = homeData.tradingFeatures
+  const features = tradingFeatures?.features || []
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveFeature(prev => (prev + 1) % 4)
+      setActiveFeature(prev => (prev + 1) % features.length)
       setOrderValue(prev => prev + (Math.random() - 0.5) * 10000)
     }, 4000)
 
     return () => clearInterval(interval)
-  }, [])
-
-  const features = [
-    {
-      title: 'Expert Market Analysis',
-      description: 'Get detailed market insights and technical analysis from our experienced trading professionals.',
-      icon: '📈',
-      color: 'from-blue-400 to-cyan-500'
-    },
-    {
-      title: 'Personalized Trading Strategies',
-      description: 'Customized trading approaches tailored to your risk profile and financial goals.',
-      icon: '🎯',
-      color: 'from-yellow-400 to-orange-500'
-    },
-    {
-      title: 'Risk Management Guidance',
-      description: 'Professional advice on portfolio management and risk mitigation strategies.',
-      icon: '🛡️',
-      color: 'from-green-400 to-emerald-500'
-    },
-    {
-      title: 'Lifetime Support',
-      description: 'Ongoing support and guidance throughout your trading journey with 24/7 expert assistance.',
-      icon: '⏰',
-      color: 'from-purple-400 to-pink-500'
-    }
-  ]
+  }, [features.length])
 
   return (
     <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -48,13 +25,13 @@ export const TradingFeatures: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className={`text-center mb-16 transition-all duration-1000 ${getAnimationClasses(sectionInView)}`}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-8 text-gray-800">
-              Professional Trading{' '}
+              {tradingFeatures?.title?.split(' ').slice(0, -1).join(' ')}{' '}
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
-                Services
+                {tradingFeatures?.title?.split(' ').slice(-1).join(' ') || 'Features'}
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Expert financial guidance, strategic trading insights, and comprehensive market education to help you succeed.
+              {tradingFeatures?.subtitle || 'Professional trading tools and expert guidance to maximize your investment success'}
             </p>
           </div>
 

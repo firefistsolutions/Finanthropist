@@ -1,115 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { useInView, getAnimationClasses } from '../utilities/animations'
-
-interface Tweet {
-  id: number
-  name: string
-  username: string
-  avatar: string
-  content: string
-  timestamp: string
-  likes: number
-  replies: number
-  retweets: number
-}
-
-const mockTweets: Tweet[] = [
-  {
-    id: 1,
-    name: "Rajesh Kumar",
-    username: "@rajesh_trader",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    content: "@Finanthropist - Outstanding financial guidance and market insights. Their personalized strategies helped me achieve 23% returns this quarter. Highly recommend their services! 🚀",
-    timestamp: "2h",
-    likes: 47,
-    replies: 8,
-    retweets: 12
-  },
-  {
-    id: 2,
-    name: "Priya Sharma",
-    username: "@priya_invests",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=100&h=100&fit=crop&crop=face",
-    content: "@Finanthropist team's risk management approach is exceptional. They helped me navigate the volatile market with confidence. Best financial advisory I've worked with! 💯",
-    timestamp: "4h",
-    likes: 32,
-    replies: 5,
-    retweets: 7
-  },
-  {
-    id: 3,
-    name: "Amit Patel",
-    username: "@amit_finance",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-    content: "Just completed their advanced trading course. @Finanthropist provides world-class education with practical insights. My trading skills improved tremendously! 📈",
-    timestamp: "6h",
-    likes: 28,
-    replies: 6,
-    retweets: 9
-  },
-  {
-    id: 4,
-    name: "Sneha Reddy",
-    username: "@sneha_stocks",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-    content: "@Finanthropist's lifetime support is amazing! 24/7 expert assistance whenever I need guidance. Their technical analysis reports are spot on. Thank you team! 🙏",
-    timestamp: "8h",
-    likes: 41,
-    replies: 11,
-    retweets: 6
-  },
-  {
-    id: 5,
-    name: "Vikram Singh",
-    username: "@vikram_trades",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-    content: "Switched to @Finanthropist after trying multiple advisors. Their personalized approach and market expertise is unmatched. Portfolio grew 18% in 6 months! 🎯",
-    timestamp: "12h",
-    likes: 35,
-    replies: 9,
-    retweets: 8
-  },
-  {
-    id: 6,
-    name: "Kavya Iyer",
-    username: "@kavya_investor",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-    content: "New to trading and @Finanthropist made it so easy to understand. Their beginner-friendly approach and step-by-step guidance is perfect for learners like me! 📚",
-    timestamp: "1d",
-    likes: 23,
-    replies: 4,
-    retweets: 3
-  },
-  {
-    id: 7,
-    name: "Arjun Mehta",
-    username: "@arjun_capital",
-    avatar: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=100&h=100&fit=crop&crop=face",
-    content: "@Finanthropist's market analysis is incredibly accurate. Their daily insights help me make informed decisions. Customer service is prompt and professional! ⭐",
-    timestamp: "1d",
-    likes: 39,
-    replies: 7,
-    retweets: 5
-  },
-  {
-    id: 8,
-    name: "Meera Joshi",
-    username: "@meera_wealth",
-    avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop&crop=face",
-    content: "Been following @Finanthropist for 2 years now. Their consistency in delivering quality advice and education is remarkable. Truly the best in the business! 💎",
-    timestamp: "2d",
-    likes: 52,
-    replies: 13,
-    retweets: 11
-  }
-]
+import { useTwitterReviews } from '../../../../hooks/useTwitterReviews'
 
 const TwitterTestimonials: React.FC = () => {
   const [sectionRef, sectionInView] = useInView(0.2)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const { twitterReviews, isLoading, isStatic } = useTwitterReviews()
 
-  const totalSlides = mockTweets.length
+  const totalSlides = twitterReviews.length
   const slidesToShow = 3
 
   useEffect(() => {
@@ -135,7 +34,7 @@ const TwitterTestimonials: React.FC = () => {
   }
 
   // Create a continuous loop by duplicating tweets
-  const extendedTweets = [...mockTweets, ...mockTweets, ...mockTweets]
+  const extendedTweets = [...twitterReviews, ...twitterReviews, ...twitterReviews]
   const startIndex = currentSlide + totalSlides // Start from middle set
   const translateX = -(startIndex * 320) // 320px per tweet (width + gap)
 
@@ -230,19 +129,19 @@ const TwitterTestimonials: React.FC = () => {
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                             </svg>
-                            <span>{tweet.likes}</span>
+                            <span>{tweet.engagement.likes}</span>
                           </div>
                           <div className="flex items-center space-x-2 text-gray-400 text-sm">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
-                            <span>{tweet.replies}</span>
+                            <span>{tweet.engagement.replies}</span>
                           </div>
                           <div className="flex items-center space-x-2 text-gray-400 text-sm">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                             </svg>
-                            <span>{tweet.retweets}</span>
+                            <span>{tweet.engagement.retweets}</span>
                           </div>
                         </div>
                       </div>

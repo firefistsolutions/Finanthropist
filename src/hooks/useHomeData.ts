@@ -70,6 +70,59 @@ export const staticHomeData = {
       { value: '₹50Cr+', label: 'Assets Managed' },
     ],
   },
+  tradingFeatures: {
+    title: 'Advanced Trading Features',
+    subtitle: 'Professional trading tools and expert guidance to maximize your investment success',
+    features: [
+      {
+        title: 'Expert Market Analysis',
+        description: 'Get detailed market insights and technical analysis from our experienced trading professionals.',
+        icon: '📈',
+        color: 'from-blue-400 to-cyan-500'
+      },
+      {
+        title: 'Personalized Trading Strategies',
+        description: 'Customized trading approaches tailored to your risk profile and financial goals.',
+        icon: '🎯',
+        color: 'from-yellow-400 to-orange-500'
+      },
+      {
+        title: 'Risk Management Guidance',
+        description: 'Professional advice on portfolio management and risk mitigation strategies.',
+        icon: '🛡️',
+        color: 'from-green-400 to-emerald-500'
+      },
+      {
+        title: 'Lifetime Support',
+        description: 'Ongoing support and guidance throughout your trading journey with 24/7 expert assistance.',
+        icon: '⏰',
+        color: 'from-purple-400 to-pink-500'
+      }
+    ]
+  },
+  finalCTA: {
+    title: 'Ready to Transform Your Financial Future?',
+    subtitle: 'Join thousands of successful investors who trust Sameer Sarang for comprehensive financial guidance. Start your wealth creation journey today with a personalized consultation.',
+    primaryCTAText: 'Book Free Consultation',
+    secondaryCTAText: 'Call +91 98765 43210',
+    features: [
+      {
+        title: 'Free Consultation',
+        description: 'No commitment, just expert guidance on your financial goals',
+        icon: '💰'
+      },
+      {
+        title: 'Certified Advisor',
+        description: 'Professional and certified investment advisory services',
+        icon: '🛡️'
+      },
+      {
+        title: '1000+ Clients',
+        description: 'Trusted by thousands of successful investors',
+        icon: '👥'
+      }
+    ]
+  },
 }
 
 export const useHomeData = () => {
