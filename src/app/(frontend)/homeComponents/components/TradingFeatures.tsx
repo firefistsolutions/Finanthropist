@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useInView, getAnimationClasses } from '../utilities/animations'
 import { useHomeData } from '@/hooks/useHomeData'
+import { REFRESH_INTERVALS } from '@/constants/refreshIntervals'
 
 export const TradingFeatures: React.FC = () => {
   const [sectionRef, sectionInView] = useInView(0.3)
@@ -14,7 +15,7 @@ export const TradingFeatures: React.FC = () => {
     const interval = setInterval(() => {
       setActiveFeature(prev => (prev + 1) % features.length)
       setOrderValue(prev => prev + (Math.random() - 0.5) * 10000)
-    }, 4000)
+    }, REFRESH_INTERVALS.UI_ANIMATIONS)
 
     return () => clearInterval(interval)
   }, [features.length])

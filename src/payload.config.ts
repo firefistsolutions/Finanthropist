@@ -1,5 +1,6 @@
 // storage-adapter-import-placeholder
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
+import { sqliteAdapter } from '@payloadcms/db-sqlite'
 
 import sharp from 'sharp' // sharp-import
 import path from 'path'
@@ -61,11 +62,17 @@ export default buildConfig({
   },
   // This config helps us configure global or default features that the other editors can inherit
   editor: defaultLexical,
-  db: vercelPostgresAdapter({
-    pool: {
-      connectionString: process.env.POSTGRES_URL || '',
-    },
-  }),
+  db: process.env.POSTGRES_URL 
+    ? vercelPostgresAdapter({
+        pool: {
+          connectionString: process.env.POSTGRES_URL,
+        },
+      })
+    : sqliteAdapter({
+        client: {
+          url: process.env.DATABASE_URL || './dev.db'
+        }
+      }),
   collections: [Pages, Posts, Media, Categories, Users, TwitterReviews],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, Home],

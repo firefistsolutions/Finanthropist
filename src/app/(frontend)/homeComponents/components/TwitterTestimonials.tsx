@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { useInView, getAnimationClasses } from '../utilities/animations'
 import { useTwitterReviews } from '../../../../hooks/useTwitterReviews'
+import { REFRESH_INTERVALS } from '@/constants/refreshIntervals'
 
 const TwitterTestimonials: React.FC = () => {
   const [sectionRef, sectionInView] = useInView(0.2)
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const { twitterReviews, isLoading, isStatic } = useTwitterReviews()
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const totalSlides = twitterReviews.length
   const slidesToShow = 3
@@ -18,7 +27,7 @@ const TwitterTestimonials: React.FC = () => {
         setCurrentSlide(prev => (prev + 1) % totalSlides)
         setIsTransitioning(false)
       }, 300) // Half of transition duration
-    }, 4000)
+    }, REFRESH_INTERVALS.TESTIMONIAL_SLIDES)
 
     return () => clearInterval(interval)
   }, [totalSlides])
@@ -36,7 +45,8 @@ const TwitterTestimonials: React.FC = () => {
   // Create a continuous loop by duplicating tweets
   const extendedTweets = [...twitterReviews, ...twitterReviews, ...twitterReviews]
   const startIndex = currentSlide + totalSlides // Start from middle set
-  const translateX = -(startIndex * 320) // 320px per tweet (width + gap)
+  const tweetWidth = isMobile ? 312 : 344 // 288px + 24px margin for mobile, 320px + 24px for desktop
+  const translateX = -(startIndex * tweetWidth)
 
   const TwitterIcon = () => (
     <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
@@ -71,7 +81,7 @@ const TwitterTestimonials: React.FC = () => {
                 }`}
                 style={{ 
                   transform: `translateX(${translateX}px)`,
-                  width: `${extendedTweets.length * 320}px`
+                  width: `${extendedTweets.length * tweetWidth}px`
                 }}
               >
                 {extendedTweets.map((tweet, index) => {
@@ -82,12 +92,15 @@ const TwitterTestimonials: React.FC = () => {
                   return (
                     <div 
                       key={`${tweet.id}-${Math.floor(index / totalSlides)}`}
-                      className={`flex-shrink-0 w-80 transform transition-all duration-600 ${
+                      className={`flex-shrink-0 transform transition-all duration-600 ${
                         isCenterMost ? 'scale-105 opacity-100' : 
                         isCenter ? 'scale-95 opacity-75' : 
                         'scale-90 opacity-50'
                       }`}
-                      style={{ marginRight: '24px' }}
+                      style={{ 
+                        width: `${tweetWidth - 24}px`, // Account for margin
+                        marginRight: '24px' 
+                      }}
                     >
                       <div className="bg-gray-800/60 backdrop-blur-lg border border-gray-700/50 rounded-3xl p-6 h-72 flex flex-col">
                         {/* Header */}

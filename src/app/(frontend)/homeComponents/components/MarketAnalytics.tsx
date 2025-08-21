@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useInView, getAnimationClasses } from '../utilities/animations'
+import { REFRESH_INTERVALS } from '@/constants/refreshIntervals'
 
 export const MarketAnalytics: React.FC = () => {
   const [sectionRef, sectionInView] = useInView(0.3)
@@ -25,7 +26,7 @@ export const MarketAnalytics: React.FC = () => {
           change: prev.advancedCourse.change + (Math.random() - 0.5) * 0.4 
         }
       }))
-    }, 3000)
+    }, REFRESH_INTERVALS.ANALYTICS_ANIMATIONS)
 
     return () => clearInterval(interval)
   }, [])
@@ -46,9 +47,9 @@ export const MarketAnalytics: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
             <div className={`lg:col-span-2 transition-all duration-1000 ${getAnimationClasses(sectionInView)}`}>
-              <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-8">
+              <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-6 md:p-8">
                 <div className="flex items-center justify-between mb-8">
                   <h3 className="text-2xl font-bold text-gray-800">Course Progress</h3>
                   <div className="flex items-center space-x-2">
@@ -57,17 +58,17 @@ export const MarketAnalytics: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8">
                   {Object.entries(courseData).map(([key, data]) => (
-                    <div key={key} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                      <div className="text-sm text-gray-500 uppercase tracking-wide mb-2">
+                    <div key={key} className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow">
+                      <div className="text-xs md:text-sm text-gray-500 uppercase tracking-wide mb-2">
                         {key === 'beginnerCourse' ? 'Beginner Course' : 
                          key === 'intermediateCourse' ? 'Intermediate Course' : 'Advanced Course'}
                       </div>
-                      <div className="text-2xl font-bold text-gray-800 mb-1">
+                      <div className="text-xl md:text-2xl font-bold text-gray-800 mb-1">
                         {Math.round(data.value)}% Complete
                       </div>
-                      <div className={`text-sm font-medium ${
+                      <div className={`text-xs md:text-sm font-medium ${
                         data.change >= 0 ? 'text-green-600' : 'text-red-600'
                       }`}>
                         {data.change >= 0 ? '+' : ''}{data.change.toFixed(1)}% this week
@@ -97,7 +98,7 @@ export const MarketAnalytics: React.FC = () => {
             </div>
 
             <div className={`transition-all duration-1000 delay-200 ${getAnimationClasses(sectionInView)}`}>
-              <div className="bg-gradient-to-br from-gray-900 to-blue-900 rounded-3xl p-8 text-white h-full">
+              <div className="bg-gradient-to-br from-gray-900 to-blue-900 rounded-3xl p-6 md:p-8 text-white h-full">
                 <h3 className="text-2xl font-bold mb-6">Learning Resources</h3>
                 
                 <div className="space-y-6">

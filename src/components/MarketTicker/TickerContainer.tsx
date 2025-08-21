@@ -101,15 +101,30 @@ const TickerContainer: React.FC<TickerContainerProps> = ({
         }
         
         .animate-marquee {
-          animation: marquee 60s linear infinite;
+          animation: marquee 45s linear infinite;
         }
         
         .animate-marquee-slow {
-          animation: marquee-slow 90s linear infinite;
+          animation: marquee-slow 70s linear infinite;
         }
         
         .animate-marquee-fast {
-          animation: marquee-fast 40s linear infinite;
+          animation: marquee-fast 25s linear infinite;
+        }
+        
+        /* Mobile optimized speeds */
+        @media (max-width: 768px) {
+          .animate-marquee {
+            animation: marquee 30s linear infinite;
+          }
+          
+          .animate-marquee-slow {
+            animation: marquee-slow 50s linear infinite;
+          }
+          
+          .animate-marquee-fast {
+            animation: marquee-fast 18s linear infinite;
+          }
         }
         
         .ticker-container:hover .animate-marquee,

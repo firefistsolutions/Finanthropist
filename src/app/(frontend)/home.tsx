@@ -3,6 +3,7 @@
 import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { AnimatedHero } from '@/components/GSAPHero'
 import {
   HeroSection,
   EducationStats,
@@ -21,12 +22,12 @@ import {
 // Main HomePage Component
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
       
-      <main className="pt-32">
-        {/* 1. Hero - First impression with strong value proposition */}
-        <HeroSection />
+      <main className="overflow-x-hidden">
+        {/* 1. GSAP Animated Hero - First impression with strong value proposition */}
+        <AnimatedHero />
         
         {/* 2. Real-time Ticker - Shows we have live market access */}
         <MarketAnalytics />

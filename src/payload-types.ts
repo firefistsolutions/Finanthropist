@@ -1697,7 +1697,6 @@ export interface Home {
     title: string;
     subtitle: string;
     ctaText: string;
-    ctaLink: string;
     stats?:
       | {
           value: number;
@@ -1713,7 +1712,17 @@ export interface Home {
         value: number;
         description: string;
         icon: string;
-        color: string;
+        color:
+          | 'from-blue-500 to-blue-600'
+          | 'from-emerald-500 to-emerald-600'
+          | 'from-purple-500 to-purple-600'
+          | 'from-amber-500 to-amber-600'
+          | 'from-rose-500 to-rose-600'
+          | 'from-red-500 to-red-600'
+          | 'from-indigo-500 to-indigo-600'
+          | 'from-teal-500 to-teal-600'
+          | 'from-orange-500 to-orange-600'
+          | 'from-cyan-500 to-cyan-600';
         id?: string | null;
       }[]
     | null;
@@ -1729,7 +1738,17 @@ export interface Home {
           | null;
         clients: string;
         icon: string;
-        color: string;
+        color:
+          | 'from-blue-500 to-blue-600'
+          | 'from-emerald-500 to-emerald-600'
+          | 'from-purple-500 to-purple-600'
+          | 'from-amber-500 to-amber-600'
+          | 'from-rose-500 to-rose-600'
+          | 'from-red-500 to-red-600'
+          | 'from-indigo-500 to-indigo-600'
+          | 'from-teal-500 to-teal-600'
+          | 'from-orange-500 to-orange-600'
+          | 'from-cyan-500 to-cyan-600';
         id?: string | null;
       }[]
     | null;
@@ -1746,14 +1765,6 @@ export interface Home {
         };
         avatar: string;
         background: 'business' | 'professional' | 'homemaker';
-        id?: string | null;
-      }[]
-    | null;
-  successStats?:
-    | {
-        value: string;
-        label: string;
-        color: string;
         id?: string | null;
       }[]
     | null;
@@ -1784,7 +1795,17 @@ export interface Home {
           title: string;
           description: string;
           icon: string;
-          color: string;
+          color:
+            | 'from-blue-500 to-blue-600'
+            | 'from-emerald-500 to-emerald-600'
+            | 'from-purple-500 to-purple-600'
+            | 'from-amber-500 to-amber-600'
+            | 'from-rose-500 to-rose-600'
+            | 'from-red-500 to-red-600'
+            | 'from-indigo-500 to-indigo-600'
+            | 'from-teal-500 to-teal-600'
+            | 'from-orange-500 to-orange-600'
+            | 'from-cyan-500 to-cyan-600';
           id?: string | null;
         }[]
       | null;
@@ -1863,7 +1884,6 @@ export interface HomeSelect<T extends boolean = true> {
         title?: T;
         subtitle?: T;
         ctaText?: T;
-        ctaLink?: T;
         stats?:
           | T
           | {
@@ -1915,14 +1935,6 @@ export interface HomeSelect<T extends boolean = true> {
             };
         avatar?: T;
         background?: T;
-        id?: T;
-      };
-  successStats?:
-    | T
-    | {
-        value?: T;
-        label?: T;
-        color?: T;
         id?: T;
       };
   trainerProfile?:

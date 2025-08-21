@@ -21,10 +21,9 @@ export const HeroSection: React.FC = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className={`max-w-4xl mx-auto text-center text-white transition-all duration-1000 ${getAnimationClasses(heroInView)}`}>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium mb-8 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-tight">
             {homeData.heroSection?.title || 'Professional Financial Services & Trading Excellence'}
-          </h1>
-          
+          </h1>             
           <p className="text-xl lg:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed">
             {homeData.heroSection?.subtitle || 'Transform your financial future with expert portfolio management, advanced trading strategies, and comprehensive financial advisory services. Join 25,000+ satisfied clients who trust our proven track record.'}
           </p>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { MarketData, MarketDataService } from '@/utils/marketData'
+import { REFRESH_INTERVALS } from '@/constants/refreshIntervals'
 
 interface UseMarketDataOptions {
   symbols?: string[]
@@ -19,7 +20,7 @@ interface UseMarketDataReturn {
 export const useMarketData = (options: UseMarketDataOptions = {}): UseMarketDataReturn => {
   const {
     symbols,
-    refreshInterval = 30000, // 30 seconds
+    refreshInterval = REFRESH_INTERVALS.MARKET_DATA, // 15 seconds - standardized
     autoRefresh = true
   } = options
 

@@ -1,6 +1,20 @@
 import type { GlobalConfig } from 'payload'
 import { revalidateHome } from './hooks/revalidateHome'
 
+// Color options for consistent theming across the site
+const colorOptions = [
+  { label: 'Blue Gradient', value: 'from-blue-500 to-blue-600' },
+  { label: 'Emerald Gradient', value: 'from-emerald-500 to-emerald-600' },
+  { label: 'Purple Gradient', value: 'from-purple-500 to-purple-600' },
+  { label: 'Amber Gradient', value: 'from-amber-500 to-amber-600' },
+  { label: 'Rose Gradient', value: 'from-rose-500 to-rose-600' },
+  { label: 'Red Gradient', value: 'from-red-500 to-red-600' },
+  { label: 'Indigo Gradient', value: 'from-indigo-500 to-indigo-600' },
+  { label: 'Teal Gradient', value: 'from-teal-500 to-teal-600' },
+  { label: 'Orange Gradient', value: 'from-orange-500 to-orange-600' },
+  { label: 'Cyan Gradient', value: 'from-cyan-500 to-cyan-600' },
+]
+
 export const Home: GlobalConfig = {
   slug: 'home',
   access: {
@@ -28,12 +42,6 @@ export const Home: GlobalConfig = {
           type: 'text',
           required: true,
           defaultValue: 'Start Your Financial Journey',
-        },
-        {
-          name: 'ctaLink',
-          type: 'text',
-          required: true,
-          defaultValue: '#contact',
         },
         {
           name: 'stats',
@@ -88,8 +96,10 @@ export const Home: GlobalConfig = {
         },
         {
           name: 'color',
-          type: 'text',
+          type: 'select',
           required: true,
+          options: colorOptions,
+          defaultValue: 'from-blue-500 to-blue-600',
         },
       ],
     },
@@ -134,8 +144,10 @@ export const Home: GlobalConfig = {
         },
         {
           name: 'color',
-          type: 'text',
+          type: 'select',
           required: true,
+          options: colorOptions,
+          defaultValue: 'from-emerald-500 to-emerald-600',
         },
       ],
     },
@@ -199,29 +211,6 @@ export const Home: GlobalConfig = {
             { label: 'Professional', value: 'professional' },
             { label: 'Homemaker', value: 'homemaker' },
           ],
-          required: true,
-        },
-      ],
-    },
-    {
-      name: 'successStats',
-      type: 'array',
-      minRows: 3,
-      maxRows: 3,
-      fields: [
-        {
-          name: 'value',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'label',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'color',
-          type: 'text',
           required: true,
         },
       ],
@@ -326,8 +315,10 @@ export const Home: GlobalConfig = {
             },
             {
               name: 'color',
-              type: 'text',
+              type: 'select',
               required: true,
+              options: colorOptions,
+              defaultValue: 'from-purple-500 to-purple-600',
             },
           ],
         },

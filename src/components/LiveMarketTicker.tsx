@@ -2,6 +2,7 @@
 
 import React from 'react'
 import MarketTicker from './MarketTicker'
+import { REFRESH_INTERVALS } from '@/constants/refreshIntervals'
 
 interface LiveMarketTickerProps {
   className?: string
@@ -15,7 +16,7 @@ const LiveMarketTicker: React.FC<LiveMarketTickerProps> = ({ className }) => {
       compact={false}
       showStatus={false}
       autoRefresh={true}
-      refreshInterval={30000}
+      refreshInterval={REFRESH_INTERVALS.MARKET_DATA}
       className={className}
     />
   )
