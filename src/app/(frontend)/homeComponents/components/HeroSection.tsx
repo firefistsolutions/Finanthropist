@@ -21,7 +21,7 @@ export const HeroSection: React.FC = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className={`max-w-4xl mx-auto text-center text-white transition-all duration-1000 ${getAnimationClasses(heroInView)}`}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium mb-8 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium mb-8 leading-tight">
             {homeData.heroSection?.title || 'Professional Financial Services & Trading Excellence'}
           </h1>
           

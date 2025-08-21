@@ -21,7 +21,9 @@ const STOCK_SYMBOLS = [
   { symbol: 'HDFCBANK.NS', name: 'HDFC Bank', displaySymbol: 'HDFC' },
   { symbol: 'ICICIBANK.NS', name: 'ICICI Bank', displaySymbol: 'ICICIBANK' },
   { symbol: 'ITC.NS', name: 'ITC Limited', displaySymbol: 'ITC' },
-  { symbol: 'HDFCLIFE.NS', name: 'HDFC Life Insurance', displaySymbol: 'HDFCLIFE' }
+  { symbol: 'HDFCLIFE.NS', name: 'HDFC Life Insurance', displaySymbol: 'HDFCLIFE' },
+  { symbol: 'ADANIPORTS.NS', name: 'Adani Ports & SEZ', displaySymbol: 'ADANIPORTS' },
+  { symbol: 'HINDUNILVR.NS', name: 'Hindustan Unilever', displaySymbol: 'HUL' }
 ]
 
 async function fetchStockData(stock: typeof STOCK_SYMBOLS[0]): Promise<MarketDataResponse> {
@@ -115,7 +117,9 @@ async function fetchStockData(stock: typeof STOCK_SYMBOLS[0]): Promise<MarketDat
       'HDFC': 1634.90,
       'ICICIBANK': 1432.20,
       'ITC': 405.00,
-      'HDFCLIFE': 789.25
+      'HDFCLIFE': 789.25,
+      'ADANIPORTS': 1542.35,
+      'HUL': 2657.80
     }[stock.displaySymbol] || 1000
 
     // Create realistic daily variation (±2%)

@@ -24,7 +24,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="pt-24">
+      <main className="pt-32">
         {/* 1. Hero - First impression with strong value proposition */}
         <HeroSection />
         
