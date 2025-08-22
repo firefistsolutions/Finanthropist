@@ -57,6 +57,71 @@ export const successStories: SuccessStory[] = [
     },
     avatar: "SK",
     background: 'homemaker'
+  },
+  {
+    name: "Amit P",
+    profession: "Software Engineer",
+    location: "Pune",
+    testimonial: "The systematic investment planning and equity advisory services transformed my approach to wealth creation. Highly recommended for young professionals.",
+    results: {
+      portfolioGrowth: "28%+",
+      timePeriod: "14 months",
+      strategy: "Growth Equity"
+    },
+    avatar: "AP",
+    background: 'professional'
+  },
+  {
+    name: "Meera D",
+    profession: "Homemaker",
+    location: "Nashik",
+    testimonial: "Their mutual fund advisory and SIP guidance helped me start my investment journey. Now I have a growing portfolio for my children's future.",
+    results: {
+      portfolioGrowth: "18%+",
+      timePeriod: "2.5 years",
+      strategy: "SIP Strategy"
+    },
+    avatar: "MD",
+    background: 'homemaker'
+  },
+  {
+    name: "Vikram R",
+    profession: "Chartered Accountant",
+    location: "Mumbai",
+    testimonial: "Exceptional service in derivative trading and risk management. Their market analysis helped me achieve consistent profits in options trading.",
+    results: {
+      portfolioGrowth: "35%+",
+      timePeriod: "10 months",
+      strategy: "Options Trading"
+    },
+    avatar: "VR",
+    background: 'business'
+  },
+  {
+    name: "Kavita J",
+    profession: "Doctor",
+    location: "Maharashtra",
+    testimonial: "The comprehensive financial planning service aligned perfectly with my long-term goals. Their expertise in healthcare professional investments is outstanding.",
+    results: {
+      portfolioGrowth: "22%+",
+      timePeriod: "2 years",
+      strategy: "Balanced Portfolio"
+    },
+    avatar: "KJ",
+    background: 'professional'
+  },
+  {
+    name: "Suresh B",
+    profession: "Businessman",
+    location: "Aurangabad",
+    testimonial: "Their commodity trading insights and business investment advisory helped expand my business portfolio significantly. Excellent market timing advice.",
+    results: {
+      portfolioGrowth: "20%+",
+      timePeriod: "3.5 years",
+      strategy: "Business Growth"
+    },
+    avatar: "SB",
+    background: 'business'
   }
 ]
 

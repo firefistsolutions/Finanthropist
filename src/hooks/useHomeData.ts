@@ -126,39 +126,87 @@ export const staticHomeData = {
 }
 
 export const useHomeData = () => {
+  // Start with mock data immediately available (no loading state)
   const [homeData, setHomeData] = useState<typeof staticHomeData>(staticHomeData)
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false) // Mock data is instantly available
   const [isStatic, setIsStatic] = useState(true)
+  const [isFetching, setIsFetching] = useState(false) // Track background fetching
 
   useEffect(() => {
     const fetchHomeData = async () => {
+      setIsFetching(true)
       try {
+        console.log('🔄 Attempting to fetch real home data from /api/globals/home...')
         const response = await fetch('/api/globals/home')
+        
         if (response.ok) {
           const data = await response.json()
+          console.log('✅ Real data fetched successfully:', data)
+          
           if (data && Object.keys(data).length > 0) {
-            setHomeData(data)
+            console.log('📋 Real data structure:', {
+              successStoriesCount: data.successStories?.length || 0,
+              firstStory: data.successStories?.[0] || null,
+              services: data.services?.length || 0,
+              hasHeroSection: !!data.heroSection
+            })
+
+            // The real data structure already matches our expected format
+            // No complex mapping needed - just use it directly
+            const mappedData = {
+              ...data, // Real data has correct structure
+              // Only fallback to static data for missing sections
+              heroSection: data.heroSection || staticHomeData.heroSection,
+              mainStats: data.mainStats || staticHomeData.mainStats,
+              services: data.services || staticHomeData.services,
+              successStories: data.successStories || staticHomeData.successStories,
+              trainerProfile: data.trainerProfile || staticHomeData.trainerProfile,
+              tradingFeatures: data.tradingFeatures || staticHomeData.tradingFeatures,
+              finalCTA: data.finalCTA || staticHomeData.finalCTA,
+            }
+            
+            setHomeData(mappedData)
             setIsStatic(false)
+            console.log('🎉 Successfully updated with real data', {
+              successStoriesCount: mappedData.successStories?.length,
+              servicesCount: mappedData.services?.length,
+              isRealData: true,
+              timestamp: new Date().toLocaleTimeString()
+            })
+            
+            // Log success stories for verification
+            console.log('📚 Success Stories loaded:', mappedData.successStories?.map(story => ({
+              name: story.name,
+              profession: story.profession,
+              location: story.location,
+              growth: story.results?.portfolioGrowth
+            })))
+          } else {
+            console.log('⚠️ Real data is empty, keeping mock data')
           }
+        } else {
+          console.log(`❌ API responded with status: ${response.status}, keeping mock data`)
         }
       } catch (error) {
-        console.error('Error fetching home data:', error)
+        console.error('❌ Error fetching real home data, keeping mock data:', error)
       } finally {
-        setIsLoading(false)
+        setIsFetching(false)
       }
     }
 
-    // Add a small delay to show the static content first
+    // Fetch real data in background after component mounts
+    // Mock data is already showing, so no rush
     const timer = setTimeout(() => {
       fetchHomeData()
-    }, 100)
+    }, 500) // Slight delay to let UI render with mock data first
 
     return () => clearTimeout(timer)
   }, [])
 
   return {
     homeData,
-    isLoading,
-    isStatic,
+    isLoading, // Always false since mock data is immediately available
+    isStatic, // True initially (mock data), false after real data loads
+    isFetching, // True while background fetching real data
   }
 }

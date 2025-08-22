@@ -26,6 +26,28 @@ export default function HomePage() {
       <Header />
       
       <main className="overflow-x-hidden">
+        {/* DEVELOPMENT MODE - Only showing Success Stories section for testing */}
+        
+        {/* Add white space above for scroll testing */}
+        {/* <div className="h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Scroll Down</h2>
+            <p className="text-xl text-gray-600">to test Success Stories horizontal scroll animation</p>
+          </div>
+        </div> */}
+        
+        {/* 10. Success Stories - ACTIVE FOR TESTING */}
+        {/* <StudentSuccessStories /> */}
+        
+        {/* Add white space below for scroll testing */}
+        {/* <div className="h-screen bg-gradient-to-br from-slate-50 to-gray-100 flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">End of Test</h2>
+            <p className="text-xl text-gray-600">Success Stories section completed</p>
+          </div>
+        </div> */}
+        
+        {/* COMMENTED OUT SECTIONS FOR DEVELOPMENT PERFORMANCE */}
         {/* 1. GSAP Animated Hero - First impression with strong value proposition */}
         <AnimatedHero />
         
@@ -52,8 +74,8 @@ export default function HomePage() {
         
         {/* 9. Interactive Chart - Engagement & education */}
         <InteractiveChart />
-        
-        {/* 10. Success Stories - More social proof before CTA */}
+
+        {/* 10. Success Stories - ACTIVE FOR TESTING */}
         <StudentSuccessStories />
         
         {/* 11. Live Market Data - Technical credibility before final push */}

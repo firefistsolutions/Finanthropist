@@ -7,53 +7,59 @@ import { useHomeData } from '@/hooks/useHomeData'
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
 
-// Height distribution configuration object
-const HEIGHT_DISTRIBUTION = {
-  sectionHeader: 0.25,    // 25% - Section title and description
+// Percentage distribution configuration - modify these values to adjust layout proportions
+const PERCENTAGE_DISTRIBUTION = {
+  // Section layout distribution
+  sectionHeader: 0.25,    // 25% - Section title and description area
   cardsArea: 0.75,        // 75% - Cards container area
-  individualCard: 0.7,    // 70% - Height of each card
+  individualCard: 0.7,    // 70% - Height of each card within cards area
   
-  // Font size percentages (of total height)
-  titleFont: 0.08,        // 8% - Main section title
-  subtitleFont: 0.04,     // 4% - Section description
-  cardTitleFont: 0.036,   // 3.6% - Card title
-  cardTextFont: 0.03,     // 3% - Card description and features
+  // Typography percentages (relative to section height)
+  titleFont: 0.08,        // 8% - Main section title font size
+  subtitleFont: 0.04,     // 4% - Section description font size
+  cardTitleFont: 0.036,   // 3.6% - Card title font size
+  cardTextFont: 0.03,     // 3% - Card description and features font size
   
-  // Element size percentages
-  cardWidth: 0.7,         // 70% - Card width relative to height
-  cardPadding: 0.025,     // 2.5% - Card padding
-  iconSize: 0.1,          // 10% - Icon container size
+  // Element sizing percentages
+  cardWidth: 0.7,         // 70% - Card width relative to section height
+  cardPadding: 0.025,     // 2.5% - Internal card padding
+  iconSize: 0.1,          // 10% - Service icon container size
   checkmarkSize: 0.025,   // 2.5% - Feature checkmark size
   
   // Spacing percentages
   gap: 0.1,               // 10% - Gap between cards
-  margins: 0.02,          // 2% - General margins
-  smallMargins: 0.015,    // 1.5% - Small margins
-  microMargins: 0.01,     // 1% - Micro margins
+  margins: 0.02,          // 2% - General margins between elements
+  smallMargins: 0.015,    // 1.5% - Small margins for tight spacing
+  microMargins: 0.01,     // 1% - Micro margins for minimal spacing
+}
+
+// Configuration object combining percentages with responsive settings and fallbacks
+const HEIGHT_DISTRIBUTION = {
+  ...PERCENTAGE_DISTRIBUTION,
   
-  // Responsive card visibility
+  // Responsive card visibility settings
   desktop: {
-    cardsVisible: 2,      // Show 2 cards on desktop
-    minCardWidth: 280     // Minimum card width
+    cardsVisible: 2,      // Show 2 cards simultaneously on desktop
+    minCardWidth: 280     // Minimum card width (px)
   },
   tablet: {
-    cardsVisible: 1.5,    // Show 1.5 cards on tablet
-    minCardWidth: 240     // Minimum card width
+    cardsVisible: 1.5,    // Show 1.5 cards simultaneously on tablet
+    minCardWidth: 240     // Minimum card width (px)
   },
   mobile: {
-    cardsVisible: 1,      // Show 1 card on mobile
-    minCardWidth: 200     // Minimum card width
+    cardsVisible: 1,      // Show 1 card on mobile (vertical layout)
+    minCardWidth: 200     // Minimum card width (px)
   },
   
-  // Minimum sizes (px) - fallbacks
-  minTitleFont: 16,
-  minSubtitleFont: 12,
-  minCardFont: 11,
-  minCardWidth: 280,
-  minPadding: 16,
-  minIconSize: 32,
-  minCheckmark: 12,
-  minGap: 12
+  // Minimum size fallbacks (px) - used when percentage calculations are too small
+  minTitleFont: 16,       // Minimum title font size
+  minSubtitleFont: 12,    // Minimum subtitle font size
+  minCardFont: 11,        // Minimum card text font size
+  minCardWidth: 280,      // Minimum card width fallback
+  minPadding: 16,         // Minimum padding fallback
+  minIconSize: 32,        // Minimum icon size fallback
+  minCheckmark: 12,       // Minimum checkmark size fallback
+  minGap: 12              // Minimum gap fallback
 }
 
 export const ServicesStructure: React.FC = () => {

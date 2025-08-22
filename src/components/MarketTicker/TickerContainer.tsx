@@ -54,21 +54,21 @@ const TickerContainer: React.FC<TickerContainerProps> = ({
       <div className="relative">
         <div className={`flex ${animationClass}`}>
           {/* First set of items */}
-          {data.map((item, index) => (
+          {/* {data.map((item, index) => (
             <MarketItem 
               key={`first-${item.symbol}-${index}`} 
               data={item} 
               compact={compact}
             />
-          ))}
+          ))} */}
           {/* Duplicate set for seamless loop */}
-          {data.map((item, index) => (
+          {/* {data.map((item, index) => (
             <MarketItem 
               key={`second-${item.symbol}-${index}`} 
               data={item} 
               compact={compact}
             />
-          ))}
+          ))} */}
         </div>
       </div>
       
