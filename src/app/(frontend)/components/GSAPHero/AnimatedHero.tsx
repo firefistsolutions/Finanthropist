@@ -27,6 +27,11 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({ className = '' }) => {
       // Wait for fonts to load
       await document.fonts.ready
 
+      // Detect screen size for responsive animations
+      const isMobile = window.matchMedia('(max-width: 768px)').matches
+      const isTablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)').matches
+      const isDesktop = window.matchMedia('(min-width: 1025px)').matches
+
       // Set initial visibility
       gsap.set([titleRef.current, subtitleRef.current, ctaRef.current], { opacity: 1 })
       
@@ -53,43 +58,87 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({ className = '' }) => {
       gsap.set(ctaRef.current, { scale: 0.8, opacity: 0 })
       gsap.set(statsRef.current.children, { y: 50, opacity: 0 })
 
-      // Create master timeline
+      // Responsive animation settings
+      let animationSettings = {
+        titleDuration: 0.8,
+        titleStagger: 0.1,
+        subtitleDuration: 0.6,
+        subtitleStagger: 0.05,
+        ctaDuration: 0.6,
+        statsDuration: 0.8,
+        statsStagger: 0.15,
+        subtitleDelay: "-=0.4",
+        ctaDelay: "-=0.3",
+        statsDelay: "-=0.2"
+      }
+
+      if (isMobile) {
+        // Faster, simpler animations for mobile
+        animationSettings = {
+          titleDuration: 0.6,
+          titleStagger: 0.08,
+          subtitleDuration: 0.3,
+          subtitleStagger: 0.04,
+          ctaDuration: 0.5,
+          statsDuration: 0.6,
+          statsStagger: 0.1,
+          subtitleDelay: "-=0.3",
+          ctaDelay: "-=0.25",
+          statsDelay: "-=0.15"
+        }
+      } else if (isTablet) {
+        // Medium-paced animations for tablet
+        animationSettings = {
+          titleDuration: 0.7,
+          titleStagger: 0.09,
+          subtitleDuration: 0.55,
+          subtitleStagger: 0.045,
+          ctaDuration: 0.55,
+          statsDuration: 0.7,
+          statsStagger: 0.12,
+          subtitleDelay: "-=0.35",
+          ctaDelay: "-=0.28",
+          statsDelay: "-=0.18"
+        }
+      }
+
+      // Create master timeline with responsive settings
       const tl = gsap.timeline()
 
       // Animate title words
       tl.to(titleSplit.words, {
-        duration: 0.8,
+        duration: animationSettings.titleDuration,
         yPercent: 0,
         opacity: 1,
-        stagger: 0.1,
+        stagger: animationSettings.titleStagger,
         ease: "expo.out"
       })
       
       // Animate subtitle words
       .to(subtitleSplit.words, {
-        duration: 0.6,
+        duration: animationSettings.subtitleDuration,
         yPercent: 0,
         opacity: 1,
-        stagger: 0.05,
+        stagger: animationSettings.subtitleStagger,
         ease: "expo.out"
-      }, "-=0.4")
+      }, animationSettings.subtitleDelay)
       
       // Animate CTA button
       .to(ctaRef.current, {
-        duration: 0.6,
+        duration: animationSettings.ctaDuration,
         scale: 1,
         opacity: 1,
-        ease: "back.out(1.7)"
-      }, "-=0.3")
+        ease: isMobile ? "power2.out" : "back.out(1.7)"
+      }, animationSettings.ctaDelay)
       
       // Animate stats
       .to(statsRef.current.children, {
-        duration: 0.8,
+        duration: animationSettings.statsDuration,
         y: 0,
         opacity: 1,
-        stagger: 0.15,
+        stagger: animationSettings.statsStagger,
         ease: "expo.out"
-      }, "-=0.2")
+      }, animationSettings.statsDelay)
 
       setIsLoaded(true)
 
@@ -106,6 +155,10 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({ className = '' }) => {
 
   const replayAnimation = () => {
     if (!titleRef.current || !subtitleRef.current || !ctaRef.current || !statsRef.current) return
+
+    // Detect screen size for responsive replay animations
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+    const isTablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)').matches
 
     // Re-split and animate
     const titleSplit = createSplitText(titleRef.current, {
@@ -128,40 +181,84 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({ className = '' }) => {
     gsap.set(ctaRef.current, { scale: 0.8, opacity: 0 })
     gsap.set(statsRef.current.children, { y: 50, opacity: 0 })
 
-    // Replay with slower timing
+    // Responsive replay settings (slower than initial for better observation)
+    let replaySettings = {
+      titleDuration: 1.2,
+      titleStagger: 0.15,
+      subtitleDuration: 0.9,
+      subtitleStagger: 0.08,
+      ctaDuration: 0.9,
+      statsDuration: 1.0,
+      statsStagger: 0.2,
+      subtitleDelay: "-=0.6",
+      ctaDelay: "-=0.4",
+      statsDelay: "-=0.3"
+    }
+
+    if (isMobile) {
+      // Faster replay for mobile
+      replaySettings = {
+        titleDuration: 0.8,
+        titleStagger: 0.12,
+        subtitleDuration: 0.7,
+        subtitleStagger: 0.06,
+        ctaDuration: 0.7,
+        statsDuration: 0.8,
+        statsStagger: 0.15,
+        subtitleDelay: "-=0.4",
+        ctaDelay: "-=0.3",
+        statsDelay: "-=0.2"
+      }
+    } else if (isTablet) {
+      // Medium replay for tablet
+      replaySettings = {
+        titleDuration: 1.0,
+        titleStagger: 0.13,
+        subtitleDuration: 0.8,
+        subtitleStagger: 0.07,
+        ctaDuration: 0.8,
+        statsDuration: 0.9,
+        statsStagger: 0.18,
+        subtitleDelay: "-=0.5",
+        ctaDelay: "-=0.35",
+        statsDelay: "-=0.25"
+      }
+    }
+
+    // Replay timeline with responsive settings
     const replayTl = gsap.timeline()
 
     replayTl.to(titleSplit.words, {
-      duration: 1.2,
+      duration: replaySettings.titleDuration,
       yPercent: 0,
       opacity: 1,
-      stagger: 0.15,
+      stagger: replaySettings.titleStagger,
       ease: "expo.out"
     })
     .to(subtitleSplit.words, {
-      duration: 0.9,
+      duration: replaySettings.subtitleDuration,
       yPercent: 0,
       opacity: 1,
-      stagger: 0.08,
+      stagger: replaySettings.subtitleStagger,
       ease: "expo.out"
-    }, "-=0.6")
+    }, replaySettings.subtitleDelay)
     .to(ctaRef.current, {
-      duration: 0.9,
+      duration: replaySettings.ctaDuration,
       scale: 1,
       opacity: 1,
-      ease: "back.out(1.7)"
-    }, "-=0.4")
+      ease: isMobile ? "power2.out" : "back.out(1.7)"
+    }, replaySettings.ctaDelay)
     .to(statsRef.current.children, {
-      duration: 1.0,
+      duration: replaySettings.statsDuration,
       y: 0,
       opacity: 1,
-      stagger: 0.2,
+      stagger: replaySettings.statsStagger,
       ease: "expo.out"
-    }, "-=0.3")
+    }, replaySettings.statsDelay)
   }
 
   return (
-    <div ref={heroRef} className={`relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden ${className}`}>
+    <div ref={heroRef} className={`relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden pt-32 md:pt-28 ${className}`}>
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>

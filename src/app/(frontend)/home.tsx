@@ -3,7 +3,7 @@
 import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { AnimatedHero } from '@/components/GSAPHero'
+import AnimatedHero from './components/GSAPHero/AnimatedHero'
 import {
   HeroSection,
   EducationStats,

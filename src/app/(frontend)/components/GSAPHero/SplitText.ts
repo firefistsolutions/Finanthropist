@@ -4,6 +4,8 @@ export interface SplitTextOptions {
   linesClass?: string
   wordsClass?: string
   charsClass?: string
+  autoSplit?: boolean
+  mask?: 'lines' | 'words' | 'chars' | boolean
 }
 
 export interface SplitTextResult {
@@ -17,23 +19,27 @@ export interface SplitTextResult {
 export class CustomSplitText {
   private original: HTMLElement
   private originalHTML: string
+  private originalStyle: string
   private lines: HTMLElement[] = []
   private words: HTMLElement[] = []
   private chars: HTMLElement[] = []
+  private options: SplitTextOptions
 
   constructor(target: string | HTMLElement, options: SplitTextOptions = {}) {
     this.original = typeof target === 'string' ? document.querySelector(target)! : target
     this.originalHTML = this.original.innerHTML
+    this.originalStyle = this.original.getAttribute('style') || ''
+    this.options = options
 
     if (!this.original) {
       throw new Error('Target element not found')
     }
 
-    this.split(options)
+    this.split()
   }
 
-  private split(options: SplitTextOptions) {
-    const { type = 'words', linesClass = 'split-line', wordsClass = 'split-word', charsClass = 'split-char' } = options
+  private split() {
+    const { type = 'words', linesClass = 'split-line', wordsClass = 'split-word', charsClass = 'split-char', mask = false } = this.options
 
     // Get the original text content
     const text = this.original.textContent || ''
@@ -42,17 +48,17 @@ export class CustomSplitText {
     this.original.innerHTML = ''
     
     if (type.includes('lines') && type.includes('words')) {
-      this.splitByLinesAndWords(text, linesClass, wordsClass)
+      this.splitByLinesAndWords(text, linesClass, wordsClass, mask === 'lines' || mask === true)
     } else if (type.includes('words')) {
       this.splitByWords(text, wordsClass)
     } else if (type.includes('chars')) {
       this.splitByChars(text, charsClass)
     } else if (type.includes('lines')) {
-      this.splitByLines(text, linesClass)
+      this.splitByLines(text, linesClass, mask === 'lines' || mask === true)
     }
   }
 
-  private splitByLinesAndWords(text: string, linesClass: string, wordsClass: string) {
+  private splitByLinesAndWords(text: string, linesClass: string, wordsClass: string, maskLines: boolean = false) {
     // Create a temporary element to measure text
     const tempElement = document.createElement('div')
     tempElement.style.cssText = `
@@ -62,55 +68,81 @@ export class CustomSplitText {
       font: inherit;
       width: auto;
       height: auto;
+      top: -9999px;
+      left: -9999px;
     `
+    
+    // Copy all computed styles from original element
+    const computedStyle = window.getComputedStyle(this.original)
+    tempElement.style.font = computedStyle.font
+    tempElement.style.fontSize = computedStyle.fontSize
+    tempElement.style.fontFamily = computedStyle.fontFamily
+    tempElement.style.fontWeight = computedStyle.fontWeight
+    tempElement.style.letterSpacing = computedStyle.letterSpacing
+    tempElement.style.lineHeight = computedStyle.lineHeight
+    
     document.body.appendChild(tempElement)
 
     const words = text.split(/\s+/).filter(word => word.length > 0)
     const containerWidth = this.original.offsetWidth
     
     let currentLine: HTMLElement | null = null
+    let currentLineWords: string[] = []
     let currentLineWidth = 0
     
-    // Get computed styles for accurate measurement
-    const computedStyle = window.getComputedStyle(this.original)
-    tempElement.style.font = computedStyle.font
-    tempElement.style.fontSize = computedStyle.fontSize
-    tempElement.style.fontFamily = computedStyle.fontFamily
-    tempElement.style.fontWeight = computedStyle.fontWeight
-
     words.forEach((word, index) => {
-      // Measure word width
-      tempElement.textContent = word + ' '
-      const wordWidth = tempElement.offsetWidth
+      // Measure word width including space
+      const testText = currentLineWords.length > 0 ? currentLineWords.join(' ') + ' ' + word : word
+      tempElement.textContent = testText
+      const totalWidth = tempElement.offsetWidth
       
       // Check if we need a new line
-      if (!currentLine || currentLineWidth + wordWidth > containerWidth) {
+      if (!currentLine || totalWidth > containerWidth) {
+        // Finalize current line if it exists
+        if (currentLine && currentLineWords.length > 0) {
+          this.createWordsInLine(currentLine, currentLineWords, wordsClass)
+        }
+        
+        // Create new line
         currentLine = document.createElement('div')
         currentLine.className = linesClass
-        currentLine.style.cssText = 'overflow: hidden; position: relative;'
+        
+        if (maskLines) {
+          currentLine.style.cssText = 'overflow: hidden; position: relative;'
+        }
+        
         this.original.appendChild(currentLine)
         this.lines.push(currentLine)
+        currentLineWords = [word]
         currentLineWidth = 0
+      } else {
+        currentLineWords.push(word)
       }
-      
-      // Create word span
+    })
+    
+    // Handle the last line
+    if (currentLine && currentLineWords.length > 0) {
+      this.createWordsInLine(currentLine, currentLineWords, wordsClass)
+    }
+
+    document.body.removeChild(tempElement)
+  }
+
+  private createWordsInLine(lineElement: HTMLElement, words: string[], wordsClass: string) {
+    words.forEach((word, index) => {
       const wordSpan = document.createElement('span')
       wordSpan.className = wordsClass
       wordSpan.textContent = word
       wordSpan.style.cssText = 'display: inline-block; position: relative;'
       
-      currentLine.appendChild(wordSpan)
+      lineElement.appendChild(wordSpan)
       this.words.push(wordSpan)
       
-      // Add space after word (except last word)
+      // Add space after word (except last word in line)
       if (index < words.length - 1) {
-        currentLine.appendChild(document.createTextNode(' '))
+        lineElement.appendChild(document.createTextNode(' '))
       }
-      
-      currentLineWidth += wordWidth
     })
-
-    document.body.removeChild(tempElement)
   }
 
   private splitByWords(text: string, wordsClass: string) {
@@ -146,15 +178,18 @@ export class CustomSplitText {
     })
   }
 
-  private splitByLines(text: string, linesClass: string) {
-    // Simple line split - in real implementation, you'd measure text wrapping
-    const lines = text.split('\n')
+  private splitByLines(text: string, linesClass: string, maskLines: boolean = false) {
+    // Simple line split based on line breaks
+    const lines = text.split('\n').filter(line => line.trim().length > 0)
     
     lines.forEach(line => {
       const lineDiv = document.createElement('div')
       lineDiv.className = linesClass
       lineDiv.textContent = line
-      lineDiv.style.cssText = 'overflow: hidden; position: relative;'
+      
+      if (maskLines) {
+        lineDiv.style.cssText = 'overflow: hidden; position: relative;'
+      }
       
       this.original.appendChild(lineDiv)
       this.lines.push(lineDiv)
@@ -163,6 +198,9 @@ export class CustomSplitText {
 
   revert() {
     this.original.innerHTML = this.originalHTML
+    if (this.originalStyle) {
+      this.original.setAttribute('style', this.originalStyle)
+    }
     this.lines = []
     this.words = []
     this.chars = []
@@ -184,5 +222,21 @@ export function createSplitText(target: string | HTMLElement, options: SplitText
     chars: splitText.splitChars,
     original: splitText['original'],
     revert: () => splitText.revert()
+  }
+}
+
+// Static create method to match GSAP SplitText.create() API
+export const SplitText = {
+  create: (target: string | HTMLElement, options: SplitTextOptions & { 
+    onSplit?: (result: SplitTextResult) => any 
+  } = {}): any => {
+    const { onSplit, ...splitOptions } = options
+    const result = createSplitText(target, splitOptions)
+    
+    if (onSplit) {
+      return onSplit(result)
+    }
+    
+    return result
   }
 }

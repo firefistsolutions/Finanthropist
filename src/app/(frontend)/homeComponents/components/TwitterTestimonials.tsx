@@ -102,7 +102,7 @@ const TwitterTestimonials: React.FC = () => {
                         marginRight: '24px' 
                       }}
                     >
-                      <div className="bg-gray-800/60 backdrop-blur-lg border border-gray-700/50 rounded-3xl p-6 h-72 flex flex-col">
+                      <div className="bg-gray-800/60 backdrop-blur-lg border border-gray-700/50 rounded-3xl p-6 h-80 flex flex-col">
                         {/* Header */}
                         <div className="flex justify-between items-center mb-4">
                           <div className="flex items-center space-x-3">
