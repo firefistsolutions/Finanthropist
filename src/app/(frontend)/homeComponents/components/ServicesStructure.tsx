@@ -206,9 +206,10 @@ export const ServicesStructure: React.FC = () => {
       })
 
       // Force browser repaint
-      cardsContainerRef.current.style.transform = 'translateZ(0)'
-      cardsContainerRef.current.offsetHeight // Trigger layout
-
+      if(cardsContainerRef.current) {
+        cardsContainerRef.current.style.transform = 'translateZ(0)'
+        cardsContainerRef.current.offsetHeight // Trigger layout
+      }
       // Force a repaint to ensure transforms are applied
       gsap.set(cardsContainerRef.current, { force3D: true })
       
