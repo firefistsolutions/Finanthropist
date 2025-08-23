@@ -326,14 +326,14 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({ className = '' }) => {
           </div>
 
           {/* Replay Button */}
-          {isLoaded && (
+          {/* {isLoaded && (
             <button
               onClick={replayAnimation}
               className="mt-8 px-6 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 rounded-full text-gray-700 hover:text-gray-900 transition-all duration-300"
             >
               🔄 Replay Animation
             </button>
-          )}
+          )} */}
         </div>
       </div>
 

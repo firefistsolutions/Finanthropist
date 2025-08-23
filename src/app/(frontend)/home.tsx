@@ -23,26 +23,26 @@ import {
 // Toggle sections on/off for easier development and testing
 const DEV_CONFIG = {
   // Set to true to enable development mode with section toggles
-  enabled: false,
+  enabled: true,
   
   // Toggle individual sections (true = show, false = hide)
   sections: {
-    animatedHero: false,        // GSAP animated hero section
-    marketAnalytics: false,     // Live market ticker
-    twitterTestimonials: false, // Twitter social proof
-    educationStats: false,      // Stats & credibility
-    trainerProfile: false,      // Expert profile
+    animatedHero: true,        // GSAP animated hero section
+    marketAnalytics: true,     // Live market ticker
+    twitterTestimonials: true, // Twitter social proof
+    educationStats: true,      // Stats & credibility
+    trainerProfile: true,      // Expert profile
     servicesStructure: true,    // Services overview - CURRENTLY ACTIVE
-    tradingPlatform: false,     // Platform showcase
+    tradingPlatform: true,     // Platform showcase
     tradingFeatures: false,     // Professional features
-    interactiveChart: false,    // Interactive chart
-    successStories: false,      // Success stories
-    marketData: false,          // Market data visualization
-    finalCTA: false,            // Final call-to-action
+    interactiveChart: true,    // Interactive chart
+    successStories: true,      // Success stories
+    marketData: true,          // Market data visualization
+    finalCTA: true,            // Final call-to-action
   },
   
   // Add spacing around active sections for scroll testing
-  addTestingSpaces: true,
+  addTestingSpaces: false,
 }
 
 // Main HomePage Component

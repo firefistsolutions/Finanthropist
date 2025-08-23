@@ -1,27 +1,120 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useInView, getAnimationClasses } from '../utilities/animations'
 import { useHomeData } from '@/hooks/useHomeData'
 import { REFRESH_INTERVALS } from '@/constants/refreshIntervals'
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger)
 
 export const TradingFeatures: React.FC = () => {
   const [sectionRef, sectionInView] = useInView(0.3)
   const [activeFeature, setActiveFeature] = useState(0)
   const [orderValue, setOrderValue] = useState(125000)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const leftColumnRef = useRef<HTMLDivElement>(null)
+  const rightColumnRef = useRef<HTMLDivElement>(null)
+  const pinnableBoxRef = useRef<HTMLDivElement>(null) // The actual box to pin
+  const [animationKey, setAnimationKey] = useState(0) // Key to trigger animation reset
   const { homeData } = useHomeData()
   const tradingFeatures = homeData.tradingFeatures
   const features = tradingFeatures?.features || []
 
+  // Fixed ScrollTrigger animation setup
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveFeature(prev => (prev + 1) % features.length)
-      setOrderValue(prev => prev + (Math.random() - 0.5) * 10000)
-    }, REFRESH_INTERVALS.UI_ANIMATIONS)
+    if (!containerRef.current || !leftColumnRef.current || !rightColumnRef.current || !pinnableBoxRef.current || features.length === 0) return
 
-    return () => clearInterval(interval)
-  }, [features.length])
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia()
+      
+      // Desktop animation (1025px and above)
+      mm.add("(min-width: 1025px)", () => {
+        // Wait for layout to settle and measure heights
+        gsap.delayedCall(0.1, () => {
+          const leftHeight = leftColumnRef.current!.offsetHeight
+          const rightHeight = pinnableBoxRef.current!.offsetHeight
+          
+          console.log('📏 Heights - Left:', leftHeight, 'Right:', rightHeight)
+          
+          // Only pin if left column is significantly taller
+          if (leftHeight > rightHeight + 200) {
+            console.log('📌 Creating ScrollTrigger pin')
+            
+            ScrollTrigger.create({
+              trigger: leftColumnRef.current,
+              start: "top top",
+              end: "bottom bottom",
+              pin: pinnableBoxRef.current, // Pin the actual content box
+              pinSpacing: true, // Enable proper spacing
+              pinType: "transform", // Use transform for better performance
+              markers: true, // Remove in production
+              onEnter: () => console.log('📌 Pin started'),
+              onLeave: () => console.log('📌 Pin ended'),
+              onRefresh: () => console.log('🔄 ScrollTrigger refreshed')
+            })
+          } else {
+            console.log('⏭️ Skipping pin - content heights similar')
+          }
+        })
+      })
+
+      // Mobile/tablet - no pinning animation
+      mm.add("(max-width: 1024px)", () => {
+        console.log('📱 Mobile/tablet - no pinning')
+      })
+
+      return mm
+    }, containerRef)
+
+    return () => {
+      console.log('🧹 Cleaning up ScrollTriggers with context')
+      ctx.revert()
+    }
+  }, [features.length, animationKey])
+
+  // Improved reset animation function
+  const resetAnimation = () => {
+    console.log('🔄 TradingFeatures: Reset button clicked')
+    
+    // Kill all ScrollTriggers more safely
+    ScrollTrigger.getAll().forEach(trigger => {
+      const triggerElement = trigger.trigger
+      if (triggerElement && containerRef.current?.contains(triggerElement)) {
+        console.log('🗑️ Killing ScrollTrigger:', trigger)
+        trigger.kill()
+      }
+    })
+    
+    // Clear transforms on all animated elements
+    if (leftColumnRef.current && rightColumnRef.current && pinnableBoxRef.current) {
+      gsap.set([leftColumnRef.current, rightColumnRef.current, pinnableBoxRef.current], {
+        clearProps: "all"
+      })
+      console.log('🎯 All transforms cleared')
+    }
+    
+    // Reset state
+    setActiveFeature(0)
+    
+    // Refresh ScrollTrigger and trigger useEffect
+    ScrollTrigger.refresh()
+    setAnimationKey(prev => prev + 1)
+    console.log('✅ Animation reset completed')
+  }
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative">
+      {/* Debug Reset Button */}
+      <div className="absolute top-4 right-4 z-50">
+        <button
+          onClick={resetAnimation}
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200 text-sm shadow-lg"
+        >
+          🔄 Reset Animation
+        </button>
+      </div>
+      
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className={`text-center mb-16 transition-all duration-1000 ${getAnimationClasses(sectionInView)}`}>
@@ -36,8 +129,8 @@ export const TradingFeatures: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className={`transition-all duration-1000 ${getAnimationClasses(sectionInView)}`}>
+          <div ref={containerRef} className="grid lg:grid-cols-2 gap-12">
+            <div ref={leftColumnRef} className={`transition-all duration-1000 ${getAnimationClasses(sectionInView)}`}>
               <div className="space-y-8">
                 {features.map((feature, index) => (
                   <div 
@@ -77,10 +170,11 @@ export const TradingFeatures: React.FC = () => {
               </div>
             </div>
 
-            <div className={`transition-all duration-1000 delay-200 ${getAnimationClasses(sectionInView)}`}>
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-20"></div>
-                <div className="relative bg-gradient-to-br from-slate-900 to-blue-900 rounded-3xl p-8 text-white">
+            <div className={`relative transition-all duration-1000 delay-200 ${getAnimationClasses(sectionInView)}`}>
+              <div ref={rightColumnRef} className="relative">
+                <div ref={pinnableBoxRef} className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-20"></div>
+                  <div className="relative bg-gradient-to-br from-slate-900 to-blue-900 rounded-3xl p-8 text-white">
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-2xl font-bold">Market Insights</h3>
                     <div className="flex items-center space-x-2">
@@ -149,11 +243,13 @@ export const TradingFeatures: React.FC = () => {
                     </div>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            {/* CTA after showing professional features */}
-            <div className={`mt-12 transition-all duration-1000 delay-400 ${getAnimationClasses(sectionInView)}`}>
+          {/* CTA after showing professional features */}
+          <div className={`mt-12 transition-all duration-1000 delay-400 ${getAnimationClasses(sectionInView)}`}>
               <div className="bg-white rounded-3xl p-8 shadow-xl border-l-4 border-blue-600">
                 <div className="text-center">
                   <div className="flex items-center justify-center mb-4">
@@ -181,7 +277,6 @@ export const TradingFeatures: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>

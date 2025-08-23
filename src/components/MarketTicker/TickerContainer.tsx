@@ -54,21 +54,21 @@ const TickerContainer: React.FC<TickerContainerProps> = ({
       <div className="relative">
         <div className={`flex ${animationClass}`}>
           {/* First set of items */}
-          {/* {data.map((item, index) => (
+          {data.map((item, index) => (
             <MarketItem 
               key={`first-${item.symbol}-${index}`} 
               data={item} 
               compact={compact}
             />
-          ))} */}
+          ))}
           {/* Duplicate set for seamless loop */}
-          {/* {data.map((item, index) => (
+          {data.map((item, index) => (
             <MarketItem 
               key={`second-${item.symbol}-${index}`} 
               data={item} 
               compact={compact}
             />
-          ))} */}
+          ))}
         </div>
       </div>
       
@@ -109,7 +109,7 @@ const TickerContainer: React.FC<TickerContainerProps> = ({
         }
         
         .animate-marquee-fast {
-          animation: marquee-fast 25s linear infinite;
+          animation: marquee-fast 15s linear infinite;
         }
         
         /* Mobile optimized speeds */
@@ -123,7 +123,7 @@ const TickerContainer: React.FC<TickerContainerProps> = ({
           }
           
           .animate-marquee-fast {
-            animation: marquee-fast 18s linear infinite;
+            animation: marquee-fast 12s linear infinite;
           }
         }
         

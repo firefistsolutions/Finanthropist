@@ -296,14 +296,14 @@ export const ServicesStructure: React.FC = () => {
   return (
     <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Debug Reset Button */}
-      <div className="text-center mt-8 absolute">
+      {/* <div className="text-center mt-8 absolute">
         <button
           onClick={resetAnimation}
           className=" bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
         >
           🔄 Reset Animation
         </button>
-      </div>
+      </div> */}
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
