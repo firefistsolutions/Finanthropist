@@ -30,7 +30,6 @@ export async function GET(request: NextRequest): Promise<Response> {
       mainStats: homeGlobal.mainStats,
       services: homeGlobal.services,
       successStories: homeGlobal.successStories,
-      successStats: homeGlobal.successStats,
       trainerProfile: homeGlobal.trainerProfile,
       tradingFeatures: homeGlobal.tradingFeatures,
       finalCTA: homeGlobal.finalCTA,
