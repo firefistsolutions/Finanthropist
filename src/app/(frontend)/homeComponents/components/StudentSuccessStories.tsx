@@ -149,7 +149,7 @@ export const StudentSuccessStories: React.FC = () => {
           animation: scrollTween,
           anticipatePin: 1,
           refreshPriority: -1,
-          markers: true
+          // markers: true
         })
       }
     })
@@ -194,7 +194,7 @@ export const StudentSuccessStories: React.FC = () => {
           animation: scrollTween,
           anticipatePin: 1,
           refreshPriority: -1,
-          markers: true
+          // markers: true
         })
       }
     })

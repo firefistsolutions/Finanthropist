@@ -76,8 +76,8 @@ export const useMarketData = (options: UseMarketDataOptions = {}): UseMarketData
   useEffect(() => {
     if (!autoRefresh) return
 
-    const interval = setInterval(fetchData, refreshInterval)
-    return () => clearInterval(interval)
+    // const interval = setInterval(fetchData, refreshInterval)
+    // return () => clearInterval(interval)
   }, [fetchData, refreshInterval, autoRefresh])
 
   // Cleanup on unmount
