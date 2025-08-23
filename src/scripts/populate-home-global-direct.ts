@@ -14,7 +14,7 @@ async function populateHomeGlobalDirect() {
     
     const result = await payload.updateGlobal({
       slug: 'home',
-      data: homeGlobalData,
+      data: homeGlobalData as any,
     })
 
     console.log('✅ Home global populated successfully!')
@@ -23,7 +23,7 @@ async function populateHomeGlobalDirect() {
     console.log(`   - ${homeGlobalData.mainStats.length} main statistics`)
     console.log(`   - ${homeGlobalData.services.length} service offerings`)
     console.log(`   - ${homeGlobalData.successStories.length} client success stories`)
-    console.log(`   - ${homeGlobalData.successStats.length} success metrics`)
+    console.log(`   - ${homeGlobalData.successStories.length} success stories`)
     console.log(`   - Complete trainer profile with ${homeGlobalData.trainerProfile.achievements.length} achievements`)
     console.log(`   - ${homeGlobalData.tradingFeatures.features.length} trading features`)
     console.log(`   - Final CTA with ${homeGlobalData.finalCTA.features.length} features`)

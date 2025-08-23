@@ -23,7 +23,7 @@ export const TwitterReviews: CollectionConfig = {
       name: 'username',
       type: 'text',
       required: true,
-      validate: (val) => {
+      validate: (val: string | null | undefined) => {
         if (val && !val.startsWith('@')) {
           return 'Username must start with @'
         }

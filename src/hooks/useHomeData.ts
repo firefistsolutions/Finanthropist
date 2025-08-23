@@ -175,7 +175,7 @@ export const useHomeData = () => {
             })
             
             // Log success stories for verification
-            console.log('📚 Success Stories loaded:', mappedData.successStories?.map(story => ({
+            console.log('📚 Success Stories loaded:', mappedData.successStories?.map((story: any) => ({
               name: story.name,
               profession: story.profession,
               location: story.location,

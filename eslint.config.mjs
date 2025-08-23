@@ -31,7 +31,7 @@ const eslintConfig = [
     },
   },
   {
-    ignores: ['.next/'],
+    ignores: ['.next/', '*.cjs', '*.js', 'test-db.js', 'seed-direct.cjs', 'populate-twitter-reviews.js', 'temp-seed.ts'],
   },
 ]
 

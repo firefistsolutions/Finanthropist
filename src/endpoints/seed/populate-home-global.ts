@@ -8,7 +8,7 @@ export const populateHomeGlobal = async (payload: Payload): Promise<void> => {
     // Update the Home global with our mock data
     const result = await payload.updateGlobal({
       slug: 'home',
-      data: homeGlobalData,
+      data: homeGlobalData as any,
     })
 
     console.log('✅ Home global populated successfully!')
@@ -17,12 +17,12 @@ export const populateHomeGlobal = async (payload: Payload): Promise<void> => {
     console.log(`   - ${homeGlobalData.mainStats.length} main statistics`)
     console.log(`   - ${homeGlobalData.services.length} service offerings`)
     console.log(`   - ${homeGlobalData.successStories.length} client success stories`)
-    console.log(`   - ${homeGlobalData.successStats.length} success metrics`)
+    console.log(`   - ${homeGlobalData.successStories.length} success stories metrics`)
     console.log(`   - Complete trainer profile with ${homeGlobalData.trainerProfile.achievements.length} achievements`)
     console.log(`   - ${homeGlobalData.tradingFeatures.features.length} trading features`)
     console.log(`   - Final CTA with ${homeGlobalData.finalCTA.features.length} features`)
     
-    return result
+    // Result returned successfully
   } catch (error) {
     console.error('❌ Error populating Home global:', error)
     throw error
