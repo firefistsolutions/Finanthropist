@@ -55,7 +55,7 @@ export const MarketDataVisualization: React.FC = () => {
       // Take first 12 stocks and add candlestick data
       const stocksWithCandlesticks = marketData.slice(0, 12).map(stock => ({
         ...stock,
-        candlesticks: generateCandlesticks(stock.changePercent > 0)
+        candlesticks: generateCandlesticks((stock.changePercent ?? 0) > 0)
       }))
       
       setStocks(stocksWithCandlesticks)
@@ -65,7 +65,7 @@ export const MarketDataVisualization: React.FC = () => {
         if (marketData && marketData.length > 0) {
           const updatedStocks = marketData.slice(0, 12).map(stock => ({
             ...stock,
-            candlesticks: generateCandlesticks(stock.changePercent > 0)
+            candlesticks: generateCandlesticks((stock.changePercent ?? 0) > 0)
           }))
           setStocks(updatedStocks)
         }
@@ -139,9 +139,9 @@ export const MarketDataVisualization: React.FC = () => {
             <h3 className="text-sm md:text-lg font-bold text-gray-900 truncate">{stock.symbol}</h3>
             <p className="text-xs text-gray-500 truncate">{stock.name}</p>
           </div>
-          <div className={`flex items-center space-x-1 ml-2 ${stock.changePercent > 0 ? 'text-green-600' : 'text-red-600'}`}>
+          <div className={`flex items-center space-x-1 ml-2 ${(stock.changePercent ?? 0) > 0 ? 'text-green-600' : 'text-red-600'}`}>
             <svg 
-              className={`w-3 h-3 ${stock.changePercent > 0 ? '' : 'rotate-180'}`} 
+              className={`w-3 h-3 ${(stock.changePercent ?? 0) > 0 ? '' : 'rotate-180'}`} 
               fill="currentColor" 
               viewBox="0 0 20 20"
             >
@@ -153,8 +153,8 @@ export const MarketDataVisualization: React.FC = () => {
         
         <div className="mt-4">
           <div className="text-lg md:text-2xl font-bold text-gray-900">₹{stock.price.toFixed(2)}</div>
-          <div className={`text-xs md:text-sm ${stock.changePercent > 0 ? 'text-green-600' : 'text-red-600'}`}>
-            {stock.changePercent > 0 ? '+' : ''}₹{stock.change.toFixed(2)} ({stock.changePercent > 0 ? '+' : ''}{stock.changePercent.toFixed(2)}%)
+          <div className={`text-xs md:text-sm ${(stock.changePercent ?? 0) > 0 ? 'text-green-600' : 'text-red-600'}`}>
+            {(stock.changePercent ?? 0) > 0 ? '+' : ''}₹{stock.change.toFixed(2)} ({(stock.changePercent ?? 0) > 0 ? '+' : ''}{(stock.changePercent ?? 0).toFixed(2)}%)
           </div>
         </div>
         
