@@ -75,7 +75,7 @@ export default function HomePage() {
         {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.educationStats) && <EducationStats />}
         
         {/* 5. Trainer Profile */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.trainerProfile) && <TrainerProfile />}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.trainerProfile) && <TrainerProfile key="trainer-profile" />}
         
         {/* 6. Services Overview - CURRENTLY ACTIVE */}
         {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.servicesStructure) && <ServicesStructure />}

@@ -277,7 +277,7 @@ export const MarketDataVisualization: React.FC = () => {
                 </div>
                 <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">This is What Professional Trading Looks Like</h3>
                 <p className="text-blue-100 mb-6 max-w-3xl mx-auto text-sm md:text-base lg:text-lg">
-                  You've seen our live market data, real-time analysis, and professional-grade tools. Now experience the complete package with personalized guidance from our expert team.
+                  You&apos;ve seen our live market data, real-time analysis, and professional-grade tools. Now experience the complete package with personalized guidance from our expert team.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3 md:py-4 px-6 md:px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-sm md:text-base">

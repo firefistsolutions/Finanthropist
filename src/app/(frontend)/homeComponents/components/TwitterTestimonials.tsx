@@ -66,7 +66,7 @@ const TwitterTestimonials: React.FC = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Real testimonials from satisfied clients who've transformed their trading journey with us.
+              Real testimonials from satisfied clients who&apos;ve transformed their trading journey with us.
             </p>
           </div>
 
