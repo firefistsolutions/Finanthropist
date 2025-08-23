@@ -10,7 +10,7 @@ export async function POST(): Promise<Response> {
     
     const result = await payload.updateGlobal({
       slug: 'home',
-      data: homeGlobalCleanData,
+      data: homeGlobalCleanData as any,
     })
 
     const response = {
