@@ -188,7 +188,7 @@ export const TradingFeatures: React.FC = () => {
                       <div className="flex items-center justify-between mb-4">
                         <div>
                           <div className="text-lg font-semibold">NIFTY 50</div>
-                          <div className="text-sm text-gray-300">Today's Outlook</div>
+                          <div className="text-sm text-gray-300">Today&apos;s Outlook</div>
                         </div>
                         <div className="text-right">
                           <div className="text-xl font-bold text-green-400">Bullish</div>

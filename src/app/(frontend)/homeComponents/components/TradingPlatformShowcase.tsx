@@ -107,7 +107,7 @@ export const TradingPlatformShowcase: React.FC = () => {
                   
                   <div className="space-y-6">
                     <div className="bg-white/5 rounded-2xl p-6">
-                      <div className="text-gray-300 text-sm mb-2">Today's Student P&L</div>
+                      <div className="text-gray-300 text-sm mb-2">Today&apos;s Student P&L</div>
                       <div className={`text-3xl font-bold transition-colors duration-500 ${
                         currentPnL >= 0 ? 'text-green-400' : 'text-red-400'
                       }`}>
