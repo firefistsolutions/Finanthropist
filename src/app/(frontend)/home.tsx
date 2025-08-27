@@ -3,21 +3,15 @@
 import React from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import AnimatedHero from './components/GSAPHero/AnimatedHero'
-import {
-  HeroSection,
-  EducationStats,
-  InteractiveChart,
-  TrainerProfile,
-  ServicesStructure,
-  StudentSuccessStories,
-  FinalCTA,
-  TradingPlatformShowcase,
-  MarketAnalytics,
-  TradingFeatures,
-  MarketDataVisualization,
-  TwitterTestimonials
-} from './homeComponents/components'
+import VersionSwitcher from '@/components/VersionSwitcher'
+import CourseHeroSection from './courseComponents/CourseHeroSection'
+import CourseOfferings from './courseComponents/CourseOfferings'
+import LearningOutcomes from './courseComponents/LearningOutcomes'
+import InstructorProfile from './courseComponents/InstructorProfile'
+import StudentTestimonials from './courseComponents/StudentTestimonials'
+import CourseFeatures from './courseComponents/CourseFeatures'
+import FAQ from './courseComponents/FAQ'
+import EnrollmentCTA from './courseComponents/EnrollmentCTA'
 
 // 🚀 DEVELOPMENT MODE CONFIGURATION
 // Toggle sections on/off for easier development and testing
@@ -27,18 +21,14 @@ const DEV_CONFIG = {
   
   // Toggle individual sections (true = show, false = hide)
   sections: {
-    animatedHero: true,        // GSAP animated hero section
-    marketAnalytics: true,     // Live market ticker
-    twitterTestimonials: true, // Twitter social proof
-    educationStats: true,      // Stats & credibility
-    trainerProfile: true,      // Expert profile
-    servicesStructure: true,    // Services overview - CURRENTLY ACTIVE
-    tradingPlatform: true,     // Platform showcase
-    tradingFeatures: false,     // Professional features
-    interactiveChart: true,    // Interactive chart
-    successStories: true,      // Success stories
-    marketData: true,          // Market data visualization
-    finalCTA: true,            // Final call-to-action
+    courseHero: true,          // Trading course hero section
+    courseOfferings: true,     // Available trading courses
+    learningOutcomes: true,    // What students will learn in trading
+    instructorProfile: true,   // Sameer Sarang profile
+    testimonials: true,        // Student trading success stories
+    courseFeatures: true,      // Course features and benefits
+    faq: true,                // Frequently asked questions
+    enrollmentCTA: true,       // Course enrollment call-to-action
   },
   
   // Add spacing around active sections for scroll testing
@@ -50,6 +40,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
+      <VersionSwitcher />
       
       <main className="overflow-x-hidden">
         {/* 🔧 DEVELOPMENT MODE ACTIVE */}
@@ -62,41 +53,29 @@ export default function HomePage() {
           </div>
         )}
         
-        {/* 1. GSAP Animated Hero */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.animatedHero) && <AnimatedHero />}
+        {/* 1. Trading Course Hero Section */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.courseHero) && <CourseHeroSection />}
         
-        {/* 2. Real-time Market Analytics */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.marketAnalytics) && <MarketAnalytics />}
+        {/* 2. Course Offerings */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.courseOfferings) && <CourseOfferings />}
         
-        {/* 3. Twitter Social Proof */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.twitterTestimonials) && <TwitterTestimonials />}
+        {/* 3. Learning Outcomes */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.learningOutcomes) && <LearningOutcomes />}
         
-        {/* 4. Education Stats & Credibility */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.educationStats) && <EducationStats />}
+        {/* 4. Instructor Profile */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.instructorProfile) && <InstructorProfile />}
         
-        {/* 5. Trainer Profile */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.trainerProfile) && <TrainerProfile key="trainer-profile" />}
+        {/* 5. Student Testimonials */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.testimonials) && <StudentTestimonials />}
         
-        {/* 6. Services Overview - CURRENTLY ACTIVE */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.servicesStructure) && <ServicesStructure />}
+        {/* 6. Course Features */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.courseFeatures) && <CourseFeatures />}
         
-        {/* 7. Trading Platform Showcase */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.tradingPlatform) && <TradingPlatformShowcase />}
+        {/* 7. FAQ Section */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.faq) && <FAQ />}
         
-        {/* 8. Trading Features */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.tradingFeatures) && <TradingFeatures />}
-        
-        {/* 9. Interactive Chart */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.interactiveChart) && <InteractiveChart />}
-        
-        {/* 10. Success Stories */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.successStories) && <StudentSuccessStories />}
-        
-        {/* 11. Market Data Visualization */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.marketData) && <MarketDataVisualization />}
-        
-        {/* 12. Final CTA */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.finalCTA) && <FinalCTA />}
+        {/* 8. Enrollment CTA */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.enrollmentCTA) && <EnrollmentCTA />}
 
         {/* 🔧 DEVELOPMENT MODE FOOTER */}
         {DEV_CONFIG.enabled && DEV_CONFIG.addTestingSpaces && (
