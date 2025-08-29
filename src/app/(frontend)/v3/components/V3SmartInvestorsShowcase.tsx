@@ -47,15 +47,9 @@ export default function V3SmartInvestorsShowcase() {
 
   useEffect(() => {
     // Predefined sequence of clean numbers from 4500 to 5000
-    const pnlSequence = [
-      4500, 4525, 4550, 4575, 4600, 4625, 4650, 4675, 4700, 4725,
-      4750, 4775, 4800, 4825, 4850, 4875, 4900, 4925, 4950, 4975, 5000
-    ]
+    const pnlSequence = Array(100).fill(0).map((_, i) => 4500 + i * 25) 
     
-    const percentSequence = [
-      2.5, 3.1, 3.7, 4.2, 4.8, 5.4, 6.0, 6.5, 7.1, 7.7,
-      8.2, 8.8, 9.4, 10.0, 10.5, 11.1, 11.7, 12.2, 12.8, 13.4, 14.0
-    ]
+    const percentSequence = pnlSequence.map(pnl => ((pnl - 4500) / 4500 * 100))
     
     let currentIndex = 0
     
