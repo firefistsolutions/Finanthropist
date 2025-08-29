@@ -52,7 +52,8 @@ export default function CourseOfferings() {
         "Live Market Decision Making",
         "Price Movement Strategies"
       ],
-      color: "bg-green-500"
+      color: "bg-green-500",
+      popular: true
     },
     {
       title: "Technical Analysis",
@@ -63,7 +64,8 @@ export default function CourseOfferings() {
         "Gann Theory Application",
         "Chart Pattern Recognition"
       ],
-      color: "bg-blue-500"
+      color: "bg-blue-500",
+      popular: false
     },
     {
       title: "Options Trading",
@@ -74,7 +76,8 @@ export default function CourseOfferings() {
         "Profit Maximization",
         "Options Strategies"
       ],
-      color: "bg-purple-500"
+      color: "bg-purple-500",
+      popular: true
     },
     {
       title: "Trading Systems",
@@ -85,7 +88,8 @@ export default function CourseOfferings() {
         "Full-fledged Trading",
         "Investment Strategies"
       ],
-      color: "bg-yellow-500"
+      color: "bg-yellow-500",
+      popular: false
     }
   ]
 
