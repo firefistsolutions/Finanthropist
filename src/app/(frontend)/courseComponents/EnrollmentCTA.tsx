@@ -114,7 +114,7 @@ export default function EnrollmentCTA() {
           </h2>
           
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-            Join 10,000+ successful students who have learned practical stock market skills from Maharashtra's most trusted educator.
+            Join 10,000+ successful students who have learned practical stock market skills from Maharashtra&apos;s most trusted educator.
           </p>
 
           {/* Key Benefits */}
@@ -270,7 +270,7 @@ export default function EnrollmentCTA() {
             Ready to Start Your Stock Market Journey?
           </h3>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join the ranks of successful students who've transformed their financial lives with practical education!
+            Join the ranks of successful students who&apos;ve transformed their financial lives with practical education!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -285,7 +285,7 @@ export default function EnrollmentCTA() {
 
           <div className="mt-8 text-blue-200 text-center">
             <div className="text-lg font-semibold mb-2">
-              "This course will really transform your entire life. I will recommend you to do this course"
+              &ldquo;This course will really transform your entire life. I will recommend you to do this course&rdquo;
             </div>
             <div className="text-sm">- Verified Student Testimonial</div>
           </div>

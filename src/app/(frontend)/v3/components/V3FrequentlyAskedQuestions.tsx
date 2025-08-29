@@ -160,7 +160,7 @@ export default function V3FrequentlyAskedQuestions() {
               <span className="text-yellow-300 font-medium">Questions?</span>
             </h3>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
-              Can't find what you're looking for? Our team is here to help. 
+              Can&apos;t find what you&apos;re looking for? Our team is here to help. 
               Get personalized answers to all your questions about our institute and trading.
             </p>
             
@@ -205,7 +205,7 @@ export default function V3FrequentlyAskedQuestions() {
             <div className="mt-6 text-blue-200 text-sm">
               <div className="flex items-center justify-center space-x-2">
                 <Lightbulb className="w-5 h-5 text-yellow-400" />
-                <span>Pro tip: Visit our institute first - you'll get answers to most questions and meet our faculty!</span>
+                <span>Pro tip: Visit our institute first - you&apos;ll get answers to most questions and meet our faculty!</span>
               </div>
             </div>
           </div>

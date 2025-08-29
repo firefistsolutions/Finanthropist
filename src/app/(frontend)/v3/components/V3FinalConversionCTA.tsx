@@ -37,7 +37,7 @@ export default function V3FinalConversionCTA() {
             </span>
           </h2>
           <p className="text-2xl text-blue-100 max-w-4xl mx-auto mb-8">
-            Don't let another day pass wondering "what if." Join Maharashtra's most trusted 
+            Don&apos;t let another day pass wondering &ldquo;what if.&rdquo; Join Maharashtra&apos;s most trusted 
             stock market educator and start building the wealth you deserve.
           </p>
         </div>
@@ -111,8 +111,8 @@ export default function V3FinalConversionCTA() {
             <div className="bg-yellow-400/20 border-l-4 border-yellow-400 rounded-r-2xl p-6">
               <h4 className="text-yellow-300 font-semibold mb-2">The Cost of Waiting:</h4>
               <p className="text-blue-100 text-sm">
-                Every day you delay is potential income lost. While you're thinking, your peers are already 
-                learning and earning. The stock market doesn't wait - your financial future shouldn't either.
+                Every day you delay is potential income lost. While you&apos;re thinking, your peers are already 
+                learning and earning. The stock market doesn&apos;t wait - your financial future shouldn&apos;t either.
               </p>
             </div>
           </div>
@@ -217,8 +217,8 @@ export default function V3FinalConversionCTA() {
             ))}
           </div>
           <blockquote className="text-xl text-blue-100 mb-6 italic">
-            "This course will really transform your entire life. After doing the course now I am doing trading my own. 
-            Great speaker and teacher. Team Finanthropist support is exceptional."
+            &ldquo;This course will really transform your entire life. After doing the course now I am doing trading my own. 
+            Great speaker and teacher. Team Finanthropist support is exceptional.&rdquo;
           </blockquote>
           <div className="text-yellow-300 font-semibold">- Rahul P., Mumbai (Google Review)</div>
         </div>
@@ -232,7 +232,7 @@ export default function V3FinalConversionCTA() {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
             <div className="bg-red-600/20 border border-red-500/30 rounded-2xl p-6">
-              <h4 className="text-xl font-semibold text-red-300 mb-4">If You Don't Act:</h4>
+              <h4 className="text-xl font-semibold text-red-300 mb-4">If You Don&apos;t Act:</h4>
               <ul className="space-y-2 text-red-200 text-sm">
                 <li>• Continue struggling with money problems</li>
                 <li>• Miss out on stock market opportunities</li>
@@ -244,7 +244,7 @@ export default function V3FinalConversionCTA() {
             <div className="bg-green-600/20 border border-green-500/30 rounded-2xl p-6">
               <h4 className="text-xl font-semibold text-green-300 mb-4">If You Act Today:</h4>
               <ul className="space-y-2 text-green-200 text-sm">
-                <li>• Learn at Maharashtra's #1 rated institute</li>
+                <li>• Learn at Maharashtra&apos;s #1 rated institute</li>
                 <li>• Start building multiple income streams</li>
                 <li>• Join 25,000+ successful students</li>
                 <li>• Get lifetime support and mentorship</li>

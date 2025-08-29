@@ -108,7 +108,7 @@ export default function V3SmartInvestorsShowcase() {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            We're on a mission to elevate your financial journey through expert education, 
+            We&apos;re on a mission to elevate your financial journey through expert education, 
             strategic guidance, and comprehensive trading services at our premier institute.
           </p>
         </div>
@@ -128,7 +128,7 @@ export default function V3SmartInvestorsShowcase() {
               
               <div className="space-y-6">
                 <div className="bg-white/5 rounded-2xl p-6">
-                  <div className="text-gray-300 text-sm mb-2">Today's Student P&L</div>
+                  <div className="text-gray-300 text-sm mb-2">Today&apos;s Student P&L</div>
                   <div className="flex items-center justify-start">
                     <RollingOdometer value={currentPnL} />
                   </div>

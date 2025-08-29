@@ -128,7 +128,7 @@ export default function V3CourseValueProposition() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Comprehensive trading education at Maharashtra's premier institute covering all aspects from basics to advanced strategies. 
+            Comprehensive trading education at Maharashtra&apos;s premier institute covering all aspects from basics to advanced strategies. 
             Everything you need to become a successful trader in our complete program.
           </p>
           
@@ -147,7 +147,7 @@ export default function V3CourseValueProposition() {
         {/* Course Modules */}
         <div className="mb-16">
           <h3 className="text-3xl font-light text-gray-800 text-center mb-12">
-            What You'll <span className="text-blue-600 font-medium">Master</span>
+            What You&apos;ll <span className="text-blue-600 font-medium">Master</span>
           </h3>
           
           <div className="grid lg:grid-cols-2 gap-8">
@@ -256,7 +256,7 @@ export default function V3CourseValueProposition() {
               <span className="text-yellow-300 font-medium">Today</span>
             </h3>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
-              Don't let another day pass wondering "what if." Join the institute that has already 
+              Don&apos;t let another day pass wondering &ldquo;what if.&rdquo; Join the institute that has already 
               helped 25,000+ students achieve financial freedom through smart trading.
             </p>
             

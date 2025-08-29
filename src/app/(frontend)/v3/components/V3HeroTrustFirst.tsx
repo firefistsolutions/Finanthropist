@@ -31,7 +31,7 @@ export default function V3HeroTrustFirst() {
 
             {/* Primary Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-              India's{' '}
+              India&apos;s{' '}
               <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-medium">
                 #1 Rated
               </span>{' '}

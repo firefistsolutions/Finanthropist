@@ -103,7 +103,7 @@ export default function V3InstructorCredibility() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Maharashtra's most trusted stock market educator with 23+ years of finance experience 
+            Maharashtra&apos;s most trusted stock market educator with 23+ years of finance experience 
             and a proven track record of transforming lives through practical trading education.
           </p>
         </div>

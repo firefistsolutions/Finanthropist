@@ -56,7 +56,7 @@ export default function LearningOutcomes() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-            What You'll <span className="text-blue-600">Achieve</span>
+            What You&apos;ll <span className="text-blue-600">Achieve</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Our comprehensive curriculum is designed to transform you from a beginner to a confident, profitable trader with practical skills and real-world experience.
@@ -101,7 +101,7 @@ export default function LearningOutcomes() {
               Proven Track Record of Success
             </h3>
             <p className="text-blue-200 text-lg">
-              Don't just take our word for it - see what our students have achieved
+              Don&apos;t just take our word for it - see what our students have achieved
             </p>
           </div>
 

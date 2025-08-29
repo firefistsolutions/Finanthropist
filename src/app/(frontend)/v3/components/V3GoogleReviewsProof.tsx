@@ -166,7 +166,7 @@ export default function V3GoogleReviewsProof() {
 
               {/* Review Content */}
               <div className="mb-4">
-                <p className="text-gray-700 leading-relaxed text-sm">"{review.review}"</p>
+                <p className="text-gray-700 leading-relaxed text-sm">&ldquo;{review.review}&rdquo;</p>
               </div>
 
               {/* Review Footer */}
@@ -220,7 +220,7 @@ export default function V3GoogleReviewsProof() {
               Join 25,000+ Happy Students Who Trust Us
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Experience the same quality teaching that earned us Maharashtra's highest Google rating
+              Experience the same quality teaching that earned us Maharashtra&apos;s highest Google rating
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors">

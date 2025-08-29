@@ -163,7 +163,7 @@ export default function CourseFeatures() {
               Multiple Ways to Learn
             </h3>
             <p className="text-lg text-gray-600">
-              We understand that everyone learns differently. That's why we offer various learning methods.
+              We understand that everyone learns differently. That&apos;s why we offer various learning methods.
             </p>
           </div>
 
@@ -256,7 +256,7 @@ export default function CourseFeatures() {
               100% Money-Back Guarantee
             </h3>
             <p className="text-xl text-green-100 mb-8">
-              We're so confident in our course quality that we offer a complete refund if you're not satisfied.
+              We&apos;re so confident in our course quality that we offer a complete refund if you&apos;re not satisfied.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 text-left">

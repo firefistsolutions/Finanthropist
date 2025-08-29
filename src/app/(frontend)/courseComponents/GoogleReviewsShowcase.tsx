@@ -227,7 +227,7 @@ export default function GoogleReviewsShowcase() {
               Join 2,452+ Happy Students Who Rate Us 4.9/5
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Experience the same quality teaching that earned us Maharashtra's highest Google rating
+              Experience the same quality teaching that earned us Maharashtra&apos;s highest Google rating
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-colors">

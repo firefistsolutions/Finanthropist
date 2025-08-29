@@ -150,7 +150,7 @@ export default function FreeWebinarFocus() {
             </span>
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-8">
-            Join Maharashtra's most trusted stock market educator for a comprehensive FREE training session
+            Join Maharashtra&apos;s most trusted stock market educator for a comprehensive FREE training session
           </p>
           
           {/* Webinar Details */}
@@ -183,7 +183,7 @@ export default function FreeWebinarFocus() {
         {/* What You'll Learn */}
         <div className="mb-16">
           <h3 className={`text-2xl md:text-3xl font-light text-center text-white mb-12 transition-all duration-1000 ${getAnimationClasses(sectionInView)}`}>
-            What You'll Learn in This <span className="text-yellow-400">FREE Session</span>
+            What You&apos;ll Learn in This <span className="text-yellow-400">FREE Session</span>
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {webinarTopics.map((topic, index) => (
@@ -259,7 +259,7 @@ export default function FreeWebinarFocus() {
                 Register for <span className="text-blue-600">FREE</span> Now!
               </h3>
               <p className="text-gray-600 mb-6">
-                Join 2,000+ students who are already registered. Don't miss this opportunity!
+                Join 2,000+ students who are already registered. Don&apos;t miss this opportunity!
               </p>
               
               {/* Social Proof */}
@@ -301,7 +301,7 @@ export default function FreeWebinarFocus() {
 
             <div className="mt-8 text-sm text-gray-500 space-y-2">
               <p>✅ No credit card required  ✅ 100% FREE webinar  ✅ Recordings provided</p>
-              <p>⏰ Limited seats available - Register before they're full!</p>
+              <p>⏰ Limited seats available - Register before they&apos;re full!</p>
             </div>
           </div>
         </div>

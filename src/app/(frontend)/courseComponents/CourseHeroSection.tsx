@@ -152,7 +152,7 @@ export default function CourseHeroSection() {
                   </div>
                 </div>
                 <div className="text-green-300 text-sm font-medium">
-                  Maharashtra's #1 Rated Educator
+                  Maharashtra&apos;s #1 Rated Educator
                 </div>
               </div>
             </div>

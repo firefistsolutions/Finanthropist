@@ -100,7 +100,7 @@ export default function V3WebinarFocusedCTA() {
           </h2>
           
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-            Learn stock market trading at Maharashtra's most trusted trading institute. 
+            Learn stock market trading at Maharashtra&apos;s most trusted trading institute. 
             Professional education with lifetime support included.
           </p>
         </div>
@@ -234,7 +234,7 @@ export default function V3WebinarFocusedCTA() {
         {/* What You'll Learn */}
         <div className="mb-12">
           <h3 className="text-3xl font-light text-white text-center mb-10">
-            What You'll Learn at Our <span className="text-yellow-400">Trading Institute</span>
+            What You&apos;ll Learn at Our <span className="text-yellow-400">Trading Institute</span>
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -289,7 +289,7 @@ export default function V3WebinarFocusedCTA() {
         <div className="text-center">
           <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
             <h3 className="text-3xl font-light text-white mb-6">
-              Don't Miss This <span className="text-yellow-400">Life-Changing Opportunity</span>
+              Don&apos;t Miss This <span className="text-yellow-400">Life-Changing Opportunity</span>
             </h3>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
               Join 25,000+ successful traders who learned at our institute. Batch seats filling up fast!
