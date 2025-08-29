@@ -49,7 +49,7 @@ export default function V3SmartInvestorsShowcase() {
     // Predefined sequence of clean numbers from 4500 to 5000
     const pnlSequence = Array(100).fill(0).map((_, i) => 4500 + i * 25) 
     
-    const percentSequence = pnlSequence.map(pnl => ((pnl - 4500) / 4500 * 100))
+    const percentSequence = pnlSequence.map(pnl => parseFloat(((pnl - 4500) / 4500 * 100).toFixed(2)))
     
     let currentIndex = 0
     

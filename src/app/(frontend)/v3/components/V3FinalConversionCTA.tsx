@@ -7,7 +7,6 @@ export default function V3FinalConversionCTA() {
   const urgencyFactors = [
     "Only 180 institute seats remaining",
     "Admission closes for current batch", 
-    "FREE bonuses worth ₹9,999 only for attendees",
     "Next institute batch in 3 months"
   ]
 
@@ -270,7 +269,7 @@ export default function V3FinalConversionCTA() {
             </div>
             <div className="flex items-center justify-center space-x-2">
               <Gift className="w-4 h-4" />
-              <span>FREE bonuses worth ₹9,999 for all students</span>
+              <span>FREE bonuses for all students</span>
             </div>
           </div>
         </div>

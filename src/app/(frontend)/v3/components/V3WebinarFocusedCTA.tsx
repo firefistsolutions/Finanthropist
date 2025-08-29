@@ -259,31 +259,6 @@ export default function V3WebinarFocusedCTA() {
           </div>
         </div>
 
-        {/* Free Bonuses */}
-        <div className="mb-12">
-          <h3 className="text-3xl font-light text-white text-center mb-10">
-            <span className="text-yellow-400">FREE Bonuses</span> Worth ₹9,999 for All Students
-          </h3>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {freeBonuses.map((bonus, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-2xl p-6 border border-yellow-400/30 text-white text-center"
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-xl flex items-center justify-center mb-4">
-                  <Gift className="w-6 h-6 text-blue-900" />
-                </div>
-                <h4 className="text-lg font-semibold mb-2">{bonus.title}</h4>
-                <div className="text-yellow-300 font-bold text-xl mb-3">{bonus.value}</div>
-                <p className="text-blue-100 text-sm mb-4">{bonus.description}</p>
-                <div className="bg-yellow-400 text-blue-900 px-4 py-2 rounded-full text-sm font-semibold">
-                  FREE for Institute Students
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Final CTA */}
         <div className="text-center">
