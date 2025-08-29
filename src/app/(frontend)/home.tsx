@@ -5,6 +5,9 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import VersionSwitcher from '@/components/VersionSwitcher'
 import CourseHeroSection from './courseComponents/CourseHeroSection'
+import GoogleReviewsShowcase from './courseComponents/GoogleReviewsShowcase'
+import FinanthropistPhilosophy from './courseComponents/FinanthropistPhilosophy'
+import FreeWebinarFocus from './courseComponents/FreeWebinarFocus'
 import CourseOfferings from './courseComponents/CourseOfferings'
 import LearningOutcomes from './courseComponents/LearningOutcomes'
 import InstructorProfile from './courseComponents/InstructorProfile'
@@ -21,14 +24,17 @@ const DEV_CONFIG = {
   
   // Toggle individual sections (true = show, false = hide)
   sections: {
-    courseHero: true,          // Trading course hero section
-    courseOfferings: true,     // Available trading courses
-    learningOutcomes: true,    // What students will learn in trading
-    instructorProfile: true,   // Sameer Sarang profile
-    testimonials: true,        // Student trading success stories
-    courseFeatures: true,      // Course features and benefits
-    faq: true,                // Frequently asked questions
-    enrollmentCTA: true,       // Course enrollment call-to-action
+    courseHero: true,           // Trading course hero section (trust-first approach)
+    googleReviews: true,        // 4.9/5 Google reviews showcase (social proof powerhouse)
+    philosophy: true,           // Finanthropist philosophy & authentic teaching approach
+    freeWebinar: true,          // FREE webinar focus (primary conversion driver)
+    courseOfferings: true,      // Available trading courses
+    learningOutcomes: true,     // What students will learn in trading
+    instructorProfile: true,    // Sameer Sarang profile & credibility
+    testimonials: true,         // Student trading success stories
+    courseFeatures: true,       // Course features and benefits
+    faq: true,                 // Frequently asked questions
+    enrollmentCTA: true,        // Course enrollment call-to-action
   },
   
   // Add spacing around active sections for scroll testing
@@ -53,28 +59,37 @@ export default function HomePage() {
           </div>
         )}
         
-        {/* 1. Trading Course Hero Section */}
+        {/* 1. Hero Section - Trust-First Approach */}
         {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.courseHero) && <CourseHeroSection />}
         
-        {/* 2. Course Offerings */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.courseOfferings) && <CourseOfferings />}
+        {/* 2. Google Reviews Showcase - Social Proof Powerhouse */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.googleReviews) && <GoogleReviewsShowcase />}
         
-        {/* 3. Learning Outcomes */}
-        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.learningOutcomes) && <LearningOutcomes />}
+        {/* 3. Finanthropist Philosophy - Authentic Teaching Approach */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.philosophy) && <FinanthropistPhilosophy />}
         
-        {/* 4. Instructor Profile */}
+        {/* 4. FREE Webinar Focus - Primary Conversion Driver */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.freeWebinar) && <FreeWebinarFocus />}
+        
+        {/* 5. Instructor Profile - Credibility Building */}
         {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.instructorProfile) && <InstructorProfile />}
         
-        {/* 5. Student Testimonials */}
+        {/* 6. Course Offerings - Comprehensive Information */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.courseOfferings) && <CourseOfferings />}
+        
+        {/* 7. Learning Outcomes - What Students Learn */}
+        {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.learningOutcomes) && <LearningOutcomes />}
+        
+        {/* 8. Student Success Stories - Results-Driven Social Proof */}
         {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.testimonials) && <StudentTestimonials />}
         
-        {/* 6. Course Features */}
+        {/* 9. Course Features - Value Proposition */}
         {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.courseFeatures) && <CourseFeatures />}
         
-        {/* 7. FAQ Section */}
+        {/* 10. FAQ Section - Trust Building */}
         {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.faq) && <FAQ />}
         
-        {/* 8. Enrollment CTA */}
+        {/* 11. Final Enrollment CTA - Conversion Close */}
         {(!DEV_CONFIG.enabled || DEV_CONFIG.sections.enrollmentCTA) && <EnrollmentCTA />}
 
         {/* 🔧 DEVELOPMENT MODE FOOTER */}
