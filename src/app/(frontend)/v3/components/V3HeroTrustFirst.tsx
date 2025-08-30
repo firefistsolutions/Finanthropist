@@ -3,7 +3,6 @@
 import React from 'react'
 import { Target } from 'lucide-react'
 import { Star, Phone, Calendar, Clock } from 'lucide-react'
-
 export default function V3HeroTrustFirst() {
   return (
     <section className="pt-28 pb-16 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
@@ -116,16 +115,16 @@ export default function V3HeroTrustFirst() {
           {/* Right Column - Visual Trust Signals */}
           <div className="text-center">
             {/* Instructor Image Placeholder */}
-            <div className="relative">
-              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-white/20 to-white/10 rounded-3xl border border-white/30 flex items-center justify-center mb-8">
+            <div className="relative mb-8">
+              <div className="relative max-w-80 h-80 mx-auto bg-gradient-to-br from-white/20 to-white/10 rounded-3xl border border-white/30 flex items-end justify-center overflow-visible">
+                    <img src="/media/hero.png" alt="" className="h-[25rem] w-full absolute bottom-0"/>
                 <div className="text-center">
-                  <div className="w-32 h-32 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-blue-900">SS</span>
-                  </div>
-                  <div className="text-white font-semibold text-lg">Sameer Sarang</div>
-                  <div className="text-blue-200 text-sm">Stock Market Expert</div>
+                  {/* <div className="w-32 h-32 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  </div> */}
                 </div>
               </div>
+              <div className="text-white font-semibold text-lg">Sameer Sarang</div>
+              <div className="text-blue-200 text-sm">Stock Market Expert</div>
               
               {/* Floating Trust Elements */}
               <div className="absolute top-4 right-4 bg-yellow-400 text-blue-900 px-4 py-2 rounded-lg font-semibold text-sm">
