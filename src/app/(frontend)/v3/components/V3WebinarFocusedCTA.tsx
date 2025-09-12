@@ -1,14 +1,29 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Calendar, Clock, Users, Gift, CheckCircle, Phone, Video, Play, TrendingUp, Target, Shield, BookOpen, Zap, AlertTriangle } from 'lucide-react'
+import {
+  Calendar,
+  Clock,
+  Users,
+  Gift,
+  CheckCircle,
+  Phone,
+  Video,
+  Play,
+  TrendingUp,
+  Target,
+  Shield,
+  BookOpen,
+  Zap,
+  AlertTriangle,
+} from 'lucide-react'
 
 export default function V3WebinarFocusedCTA() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   })
 
   useEffect(() => {
@@ -23,7 +38,7 @@ export default function V3WebinarFocusedCTA() {
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
           hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
           minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((distance % (1000 * 60)) / 1000)
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
         })
       }
     }, 1000)
@@ -33,53 +48,53 @@ export default function V3WebinarFocusedCTA() {
 
   const webinarTopics = [
     {
-      title: "What is the Share Market",
-      description: "Complete basics explained in simple Marathi & English",
-      duration: "15 minutes",
-      icon: TrendingUp
+      title: 'What is the Share Market',
+      description: 'Complete basics explained in simple Marathi & English',
+      duration: '15 minutes',
+      icon: TrendingUp,
     },
     {
-      title: "How to Get Started", 
-      description: "Step-by-step process for safe market entry",
-      duration: "20 minutes",
-      icon: Zap
+      title: 'How to Get Started',
+      description: 'Step-by-step process for safe market entry',
+      duration: '20 minutes',
+      icon: Zap,
     },
     {
-      title: "What Stocks to Buy",
-      description: "Stock selection criteria and analysis methods",
-      duration: "20 minutes", 
-      icon: Target
+      title: 'What Stocks to Buy',
+      description: 'Stock selection criteria and analysis methods',
+      duration: '20 minutes',
+      icon: Target,
     },
     {
-      title: "When to Buy, Hold, or Sell",
-      description: "Timing strategies for maximum profit",
-      duration: "15 minutes",
-      icon: Clock
+      title: 'When to Buy, Hold, or Sell',
+      description: 'Timing strategies for maximum profit',
+      duration: '15 minutes',
+      icon: Clock,
     },
     {
-      title: "How to Avoid Losses",
-      description: "Risk management that protects your money",
-      duration: "20 minutes",
-      icon: Shield
-    }
+      title: 'How to Avoid Losses',
+      description: 'Risk management that protects your money',
+      duration: '20 minutes',
+      icon: Shield,
+    },
   ]
 
   const freeBonuses = [
     {
-      title: "Technical Analysis Strategy Guide",
-      value: "₹3,999",
-      description: "Complete chart reading and pattern analysis"
+      title: 'Technical Analysis Strategy Guide',
+      value: '₹3,999',
+      description: 'Complete chart reading and pattern analysis',
     },
     {
-      title: "Self-Investing Planning Workbook", 
-      value: "₹2,999",
-      description: "Step-by-step investment planning framework"
+      title: 'Self-Investing Planning Workbook',
+      value: '₹2,999',
+      description: 'Step-by-step investment planning framework',
     },
     {
-      title: "Advanced Home Loan Calculator",
-      value: "₹3,001",
-      description: "EMI optimization and loan planning tool"
-    }
+      title: 'Advanced Home Loan Calculator',
+      value: '₹3,001',
+      description: 'EMI optimization and loan planning tool',
+    },
   ]
 
   return (
@@ -89,18 +104,18 @@ export default function V3WebinarFocusedCTA() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-bold text-sm mb-6">
             <Gift className="w-5 h-5 mr-2" />
-100% FREE ADMISSION - JOIN OUR INSTITUTE TODAY
+            Join Our Institute – Learn, Trade, Grow
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
             Master Share Market at{' '}
             <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-medium">
               Our Trading Institute
             </span>
           </h2>
-          
+
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-            Learn stock market trading at Maharashtra&apos;s most trusted trading institute. 
+            Learn stock market trading at Maharashtra&apos;s most trusted trading institute.
             Professional education with lifetime support included.
           </p>
         </div>
@@ -120,7 +135,7 @@ export default function V3WebinarFocusedCTA() {
                     <div className="text-gray-600 text-sm">Tuesday</div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
                     <Clock className="w-6 h-6 text-blue-600" />
@@ -130,7 +145,7 @@ export default function V3WebinarFocusedCTA() {
                     <div className="text-gray-600 text-sm">1.5 Hours Duration</div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
                     <Video className="w-6 h-6 text-blue-600" />
@@ -140,7 +155,7 @@ export default function V3WebinarFocusedCTA() {
                     <div className="text-gray-600 text-sm">Interactive Q&A Included</div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
                     <Users className="w-6 h-6 text-blue-600" />
@@ -178,31 +193,31 @@ export default function V3WebinarFocusedCTA() {
                 <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
                   Join Our Institute Today!
                 </h3>
-                
+
                 <form className="space-y-4 mb-6">
                   <div>
-                    <input 
-                      type="text" 
-                      placeholder="Your Full Name" 
+                    <input
+                      type="text"
+                      placeholder="Your Full Name"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
                   </div>
                   <div>
-                    <input 
-                      type="email" 
-                      placeholder="Your Email Address" 
+                    <input
+                      type="email"
+                      placeholder="Your Email Address"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
                   </div>
                   <div>
-                    <input 
-                      type="tel" 
-                      placeholder="Your Phone Number" 
+                    <input
+                      type="tel"
+                      placeholder="Your Phone Number"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
                   </div>
-                  
-                  <button 
+
+                  <button
                     type="submit"
                     className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold text-lg py-4 px-6 rounded-xl transition-colors flex items-center justify-center"
                   >
@@ -234,9 +249,9 @@ export default function V3WebinarFocusedCTA() {
         {/* What You'll Learn */}
         <div className="mb-12">
           <h3 className="text-3xl font-light text-white text-center mb-10">
-            What You&apos;ll Learn at Our <span className="text-yellow-400">Trading Institute</span>
+            What You&apos;ll Learn in Our <span className="text-yellow-400">Free Webinar</span>
           </h3>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {webinarTopics.map((topic, index) => (
               <div
@@ -259,17 +274,18 @@ export default function V3WebinarFocusedCTA() {
           </div>
         </div>
 
-
         {/* Final CTA */}
         <div className="text-center">
           <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
             <h3 className="text-3xl font-light text-white mb-6">
-              Don&apos;t Miss This <span className="text-yellow-400">Life-Changing Opportunity</span>
+              Don&apos;t Miss This{' '}
+              <span className="text-yellow-400">Life-Changing Opportunity</span>
             </h3>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join 25,000+ successful traders who learned at our institute. Batch seats filling up fast!
+              Join 25,000+ successful traders who learned at our institute. Batch seats filling up
+              fast!
             </p>
-            
+
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
               <button className="bg-gradient-to-r from-yellow-400 to-orange-400 hover:from-yellow-300 hover:to-orange-300 text-blue-900 font-bold text-lg py-4 px-6 rounded-xl transition-colors flex items-center justify-center">
                 <Target className="w-5 h-5 mr-2" />

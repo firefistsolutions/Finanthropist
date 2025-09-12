@@ -39,8 +39,9 @@ export default function V3HeroTrustFirst() {
 
             {/* Sub-headline with Credibility */}
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Learn at <strong>Finanthropist Educare</strong> - Founded by Sameer Sarang, 23+ Years Finance Experience, 
-              Former HDFC & HSBC Banker, Training 25,000+ Students Across India Since 2017
+              Learn at <strong>Finanthropist Educare</strong> - Founded by Sammeer Sarang, 23+ Years
+              Finance Experience, Former HDFC & HSBC Team Member, Training 10,000+ Families Across
+              India Since 2017
             </p>
 
             {/* Key Differentiators */}
@@ -54,8 +55,8 @@ export default function V3HeroTrustFirst() {
                 <div className="text-sm text-blue-200">Google Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-400">25,000+</div>
-                <div className="text-sm text-blue-200">Students Trained</div>
+                <div className="text-3xl font-bold text-yellow-400">10,000+</div>
+                <div className="text-sm text-blue-200">Families Trained</div>
               </div>
             </div>
 
@@ -67,7 +68,7 @@ export default function V3HeroTrustFirst() {
                 </div>
                 <div className="text-yellow-300 font-semibold">Professional Trading Education</div>
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-4 text-sm text-blue-200 mb-6">
                 <div className="flex items-center space-x-2">
                   <Calendar className="w-4 h-4 text-yellow-400" />
@@ -89,8 +90,9 @@ export default function V3HeroTrustFirst() {
                   <Phone className="w-4 h-4" />
                   <span>Call: +91-7066334499</span>
                 </button>
-                <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-semibold py-3 px-4 rounded-lg transition-colors">
-                  WhatsApp Admission
+                <button className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors">
+                  <Phone className="w-4 h-4" />
+                  <span>Call: +91-7066337676</span>
                 </button>
               </div>
             </div>
@@ -99,7 +101,7 @@ export default function V3HeroTrustFirst() {
             <div className="flex flex-wrap justify-center lg:justify-start items-center space-x-6 text-sm text-blue-200">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span>No Credit Card Required</span>
+                <span>Practical Trading Strategies</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -117,18 +119,18 @@ export default function V3HeroTrustFirst() {
             {/* Instructor Image Placeholder */}
             <div className="relative mb-8">
               <div className="relative max-w-80 h-80 mx-auto bg-gradient-to-br from-white/20 to-white/10 rounded-3xl border border-white/30 flex items-end justify-center overflow-visible">
-                    <img src="/media/hero.png" alt="" className="h-[25rem] w-full absolute bottom-0"/>
+                <img src="/media/hero.png" alt="" className="h-[25rem] w-full absolute bottom-0" />
                 <div className="text-center">
                   {/* <div className="w-32 h-32 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full mx-auto mb-4 flex items-center justify-center">
                   </div> */}
                 </div>
               </div>
-              <div className="text-white font-semibold text-lg">Sameer Sarang</div>
+              <div className="text-white font-semibold text-lg">Sammeer Sarang</div>
               <div className="text-blue-200 text-sm">Stock Market Expert</div>
-              
+
               {/* Floating Trust Elements */}
               <div className="absolute top-4 right-4 bg-yellow-400 text-blue-900 px-4 py-2 rounded-lg font-semibold text-sm">
-                HDFC 16 Years
+                HDFC Experience
               </div>
               <div className="absolute bottom-8 left-4 bg-green-500 text-white px-4 py-2 rounded-lg font-semibold text-sm">
                 HSBC Experience
@@ -137,23 +139,26 @@ export default function V3HeroTrustFirst() {
 
             {/* Student Count Indicator */}
             <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
-              <div className="text-yellow-400 text-sm font-semibold mb-2">STUDENTS TRAINED</div>
-              <div className="text-3xl font-bold text-white mb-2">25,000+</div>
-              <div className="text-blue-200 text-sm">Across India since 2017</div>
-              
+              <div className="text-yellow-400 text-sm font-semibold mb-2">FAMILIES TRAINED</div>
+              <div className="text-3xl font-bold text-white mb-2">10,000+</div>
+              <div className="text-blue-200 text-sm">Across Maharashtra since 2017</div>
+
               <div className="flex justify-center space-x-1 mt-4">
                 {[
-                  "https://images.unsplash.com/photo-1494790108755-2616c179e12e?w=32&h=32&fit=crop&crop=face",
-                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face", 
-                  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face",
-                  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face",
-                  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=32&h=32&fit=crop&crop=face",
-                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face",
-                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=32&h=32&fit=crop&crop=face"
+                  'https://images.unsplash.com/photo-1494790108755-2616c179e12e?w=32&h=32&fit=crop&crop=face',
+                  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face',
+                  'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face',
+                  'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face',
+                  'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=32&h=32&fit=crop&crop=face',
+                  'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face',
+                  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=32&h=32&fit=crop&crop=face',
                 ].map((avatar, i) => (
-                  <div key={i} className="w-8 h-8 rounded-full border-2 border-white overflow-hidden -ml-2 first:ml-0">
-                    <img 
-                      src={avatar} 
+                  <div
+                    key={i}
+                    className="w-8 h-8 rounded-full border-2 border-white overflow-hidden -ml-2 first:ml-0"
+                  >
+                    <img
+                      src={avatar}
                       alt={`Student ${i + 1}`}
                       className="w-full h-full object-cover"
                     />

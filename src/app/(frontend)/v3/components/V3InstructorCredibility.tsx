@@ -8,87 +8,91 @@ export default function V3InstructorCredibility() {
   const credentials = [
     {
       icon: Briefcase,
-      title: "16 Years at HDFC Bank",
-      description: "Senior finance professional with deep banking experience",
-      color: "from-blue-500 to-blue-600"
+      title: 'HDFC Experience',
+      description: 'Senior finance professional with deep banking experience',
+      color: 'from-blue-500 to-blue-600',
     },
     {
       icon: Briefcase,
-      title: "HSBC Experience", 
-      description: "International banking and finance expertise",
-      color: "from-red-500 to-red-600"
+      title: 'HSBC Experience',
+      description: 'International banking and finance expertise',
+      color: 'from-red-500 to-red-600',
     },
     {
       icon: BookOpen,
-      title: "Published Author",
+      title: 'Published Author',
       description: "Co-author of 'Billionaire Mindset' book",
-      color: "from-purple-500 to-purple-600"
+      color: 'from-purple-500 to-purple-600',
     },
     {
       icon: Users,
-      title: "25,000+ Students Trained",
-      description: "Successful track record since 2017",
-      color: "from-green-500 to-green-600"
+      title: '25,000+ Students Trained',
+      description: 'Successful track record since 2017',
+      color: 'from-green-500 to-green-600',
     },
     {
       icon: Award,
-      title: "23+ Years Finance Experience",
-      description: "Proven expertise in financial markets",
-      color: "from-orange-500 to-orange-600"
+      title: '23+ Years Finance Experience',
+      description: 'Proven expertise in financial markets',
+      color: 'from-orange-500 to-orange-600',
     },
     {
       icon: MapPin,
-      title: "Maharashtra Focus",
-      description: "Understanding local investor mindset",
-      color: "from-teal-500 to-teal-600"
-    }
+      title: 'Maharashtra Focus',
+      description: 'Understanding local investor mindset',
+      color: 'from-teal-500 to-teal-600',
+    },
   ]
 
   const teachingPhilosophy = [
     {
-      principle: "Finance + Philanthropist Approach",
-      description: "We work for your financial benefit first, then ours. Like a philanthropist, we put your success ahead of our own profit.",
-      icon: HandHeart
+      principle: 'Finance + Philanthropist Approach',
+      description:
+        'We work for your financial benefit first, then ours. Like a philanthropist, we put your success ahead of our own profit.',
+      icon: HandHeart,
     },
     {
-      principle: "Unlimited Income Mindset",
-      description: "Break the middle-class thinking that expenses are high and income is low. Learn that expenses are limited but income potential is unlimited.",
-      icon: DollarSign
+      principle: 'Unlimited Income Mindset',
+      description:
+        'Break the middle-class thinking that expenses are high and income is low. Learn that expenses are limited but income potential is unlimited.',
+      icon: DollarSign,
     },
     {
-      principle: "Practical Over Theory",
-      description: "Everything we teach comes from real experience, not copied from books. We use these methods ourselves and have made good money with them.",
-      icon: TrendingUp
+      principle: 'Practical Over Theory',
+      description:
+        'Everything we teach comes from real experience, not copied from books. We use these methods ourselves and have made good money with them.',
+      icon: TrendingUp,
     },
     {
-      principle: "Simple Language Teaching",
-      description: "Complex stock market concepts explained in simple Marathi and English. Even complete beginners can understand and apply immediately.",
-      icon: GraduationCap
-    }
+      principle: 'Simple Language Teaching',
+      description:
+        'Complex stock market concepts explained in simple Marathi and English. Even complete beginners can understand and apply immediately.',
+      icon: GraduationCap,
+    },
   ]
 
   const studentResults = [
     {
-      name: "Priya S.",
-      location: "Pune",
-      result: "₹50,000/month from trading",
-      before: "Complete beginner",
-      timeframe: "6 months"
+      name: 'Priya S.',
+      location: 'Pune',
+      result: '₹50,000/month from trading',
+      before: 'Complete beginner',
+      timeframe: '6 months',
     },
     {
-      name: "Rahul P.", 
-      location: "Mumbai",
-      result: "₹2L losses recovered + profitable",
-      before: "Emotional trader",
-      timeframe: "8 months"
+      name: 'Rahul P.',
+      location: 'Mumbai',
+      result: '₹2L losses recovered + profitable',
+      before: 'Emotional trader',
+      timeframe: '8 months',
     },
     {
-      name: "Sunita D.",
-      location: "Nashik", 
-      result: "₹25,000/month passive income",
-      before: "Only FD investments",
-      timeframe: "4 months"
-    }
+      name: 'Sunita D.',
+      location: 'Nashik',
+      result: '₹25,000/month passive income',
+      before: 'Only FD investments',
+      timeframe: '4 months',
+    },
   ]
 
   return (
@@ -99,12 +103,13 @@ export default function V3InstructorCredibility() {
           <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
             Meet{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
-              Sameer Sarang
+              Sammeer Sarang
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Maharashtra&apos;s most trusted stock market educator with 23+ years of finance experience 
-            and a proven track record of transforming lives through practical trading education.
+            Maharashtra&apos;s most trusted stock market educator with 23+ years of finance
+            experience and a proven track record of transforming lives through practical trading
+            education.
           </p>
         </div>
 
@@ -114,23 +119,22 @@ export default function V3InstructorCredibility() {
             {/* Profile Image Placeholder */}
             <div className="relative mb-8 flex justify-center flex-col items-center">
               <div className="w-80 h-80 mx-auto lg:mx-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl border-4 border-white shadow-2xl flex items-end justify-center">
-                  <img src="/media/meet2.png" alt="" className=""/>
-                  {/* <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <img src="/media/meet2.png" alt="" className="" />
+                {/* <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-4xl font-bold text-white">SS</span>
                     </div> */}
               </div>
-              
+
               {/* Floating Credentials */}
               <div className="absolute -top-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-xl font-semibold text-sm shadow-lg">
                 23+ Years Experience
               </div>
               <div className="absolute -bottom-4 -left-3 bg-green-600 text-white px-4 py-2 rounded-xl font-semibold text-sm shadow-lg">
-                25,000+ Students
+                25,000+ Families
               </div>
-
             </div>
             <div className="text-center">
-              <div className="font-bold text-xl text-gray-800">Sameer Sarang</div>
+              <div className="font-bold text-xl text-gray-800">Sammeer Sarang</div>
               <div className="text-gray-500">Stock Market Expert & Educator</div>
             </div>
 
@@ -185,7 +189,9 @@ export default function V3InstructorCredibility() {
                     key={index}
                     className="flex items-center space-x-4 bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow"
                   >
-                    <div className={`w-12 h-12 bg-gradient-to-r ${credential.color} rounded-xl flex items-center justify-center`}>
+                    <div
+                      className={`w-12 h-12 bg-gradient-to-r ${credential.color} rounded-xl flex items-center justify-center`}
+                    >
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -196,7 +202,6 @@ export default function V3InstructorCredibility() {
                 )
               })}
             </div>
-
           </div>
         </div>
 
@@ -205,10 +210,13 @@ export default function V3InstructorCredibility() {
           <h3 className="text-3xl font-light text-gray-800 text-center mb-12">
             The <span className="text-blue-600 font-medium">Finanthropist</span> Teaching Philosophy
           </h3>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {teachingPhilosophy.map((item, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
+              <div
+                key={index}
+                className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100"
+              >
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mb-4">
                   <item.icon className="w-8 h-8 text-white" />
                 </div>
@@ -219,12 +227,13 @@ export default function V3InstructorCredibility() {
           </div>
         </div>
 
-        {/* Why Students Choose Sameer */}
+        {/* Why Students Choose Sammeer */}
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <h3 className="text-3xl font-light mb-6">
-            Why 25,000+ Students Choose <span className="text-yellow-300 font-medium">Sameer Sarang</span>
+            Why 10,000+ Families Choose{' '}
+            <span className="text-yellow-300 font-medium">Sammeer Sarang</span>
           </h3>
-          
+
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="text-4xl font-light text-yellow-300 mb-2">Real Experience</div>
@@ -236,13 +245,13 @@ export default function V3InstructorCredibility() {
             </div>
             <div>
               <div className="text-4xl font-light text-yellow-300 mb-2">Proven Results</div>
-              <div className="text-blue-100">87% student success rate with verified outcomes</div>
+              <div className="text-blue-100">Hands-on Learning with Real Market Examples</div>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
-              Learn from Sameer - Join Our Institute
+              Learn from Sammeer - Join Our Institute
             </button>
             <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors">
               Call for Personal Consultation
