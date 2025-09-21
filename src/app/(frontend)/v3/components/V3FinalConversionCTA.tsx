@@ -1,27 +1,40 @@
 'use client'
 
 import React from 'react'
-import { Phone, Calendar, Users, Award, CheckCircle, Clock, Star, AlertTriangle, MessageCircle, Gift, Zap, Target } from 'lucide-react'
+import {
+  Phone,
+  Calendar,
+  Users,
+  Award,
+  CheckCircle,
+  Clock,
+  Star,
+  AlertTriangle,
+  MessageCircle,
+  Gift,
+  Zap,
+  Target,
+} from 'lucide-react'
 
 export default function V3FinalConversionCTA() {
   const urgencyFactors = [
-    "Only 180 institute seats remaining",
-    "Admission closes for current batch", 
-    "Next institute batch in 3 months"
+    'Only 180 institute seats remaining',
+    'Admission closes for current batch',
+    'Next institute batch in 3 months',
   ]
 
   const guarantees = [
-    { icon: CheckCircle, text: "100% FREE consultation - no hidden costs" },
-    { icon: Award, text: "Learn from 4.9★ rated educator" },
-    { icon: Users, text: "Join 25,000+ successful students" },
-    { icon: Clock, text: "Lifetime support included" }
+    { icon: CheckCircle, text: '100% FREE consultation - no hidden costs' },
+    { icon: Award, text: 'Learn from 5.0★ rated educator' },
+    { icon: Users, text: 'Join 25,000+ successful students' },
+    { icon: Clock, text: 'Lifetime support included' },
   ]
 
   const socialProof = [
-    { name: "Priya S.", result: "₹50K/month", location: "Pune" },
-    { name: "Rahul P.", result: "Recovered ₹2L", location: "Mumbai" },
-    { name: "Sunita D.", result: "₹25K/month", location: "Nashik" },
-    { name: "Amit J.", result: "₹1.2L/month", location: "Nagpur" }
+    { name: 'Priya S.', result: '₹50K/month', location: 'Pune' },
+    { name: 'Rahul P.', result: 'Recovered ₹2L', location: 'Mumbai' },
+    { name: 'Sunita D.', result: '₹25K/month', location: 'Nashik' },
+    { name: 'Amit J.', result: '₹1.2L/month', location: 'Nagpur' },
   ]
 
   return (
@@ -36,11 +49,10 @@ export default function V3FinalConversionCTA() {
             </span>
           </h2>
           <p className="text-2xl text-blue-100 max-w-4xl mx-auto mb-8">
-            Don&apos;t let another day pass wondering &ldquo;what if.&rdquo; Join Maharashtra&apos;s most trusted 
-            stock market educator and start building the wealth you deserve.
+            Don&apos;t let another day pass wondering &ldquo;what if.&rdquo; Join Maharashtra&apos;s
+            most trusted stock market educator and start building the wealth you deserve.
           </p>
         </div>
-
 
         {/* Two-Column Layout */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
@@ -50,7 +62,7 @@ export default function V3FinalConversionCTA() {
               Why This Could Be The Most Important{' '}
               <span className="text-yellow-300 font-medium">Decision</span> You Ever Make
             </h3>
-            
+
             <div className="space-y-6 mb-10">
               <div className="flex items-start space-x-4">
                 <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -58,7 +70,9 @@ export default function V3FinalConversionCTA() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Learn from Proven Expert</h4>
-                  <p className="text-blue-100">23+ years finance experience, 5.0/5 Google rating from 2,452+ students</p>
+                  <p className="text-blue-100">
+                    23+ years finance experience, 5.0/5 Google rating from 2,452+ students
+                  </p>
                 </div>
               </div>
 
@@ -68,7 +82,9 @@ export default function V3FinalConversionCTA() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Risk-Free Start</h4>
-                  <p className="text-blue-100">Begin with FREE consultation - no payment, no commitment, just pure value</p>
+                  <p className="text-blue-100">
+                    Begin with FREE consultation - no payment, no commitment, just pure value
+                  </p>
                 </div>
               </div>
 
@@ -78,7 +94,9 @@ export default function V3FinalConversionCTA() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Lifetime Support</h4>
-                  <p className="text-blue-100">Not just a course - get ongoing mentorship for life</p>
+                  <p className="text-blue-100">
+                    Not just a course - get ongoing mentorship for life
+                  </p>
                 </div>
               </div>
 
@@ -88,7 +106,9 @@ export default function V3FinalConversionCTA() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Proven Results</h4>
-                  <p className="text-blue-100">87% success rate - join 25,000+ students who transformed their lives</p>
+                  <p className="text-blue-100">
+                    87% success rate - join 25,000+ students who transformed their lives
+                  </p>
                 </div>
               </div>
             </div>
@@ -110,8 +130,9 @@ export default function V3FinalConversionCTA() {
             <div className="bg-yellow-400/20 border-l-4 border-yellow-400 rounded-r-2xl p-6">
               <h4 className="text-yellow-300 font-semibold mb-2">The Cost of Waiting:</h4>
               <p className="text-blue-100 text-sm">
-                Every day you delay is potential income lost. While you&apos;re thinking, your peers are already 
-                learning and earning. The stock market doesn&apos;t wait - your financial future shouldn&apos;t either.
+                Every day you delay is potential income lost. While you&apos;re thinking, your peers
+                are already learning and earning. The stock market doesn&apos;t wait - your
+                financial future shouldn&apos;t either.
               </p>
             </div>
           </div>
@@ -135,27 +156,27 @@ export default function V3FinalConversionCTA() {
               <form className="space-y-6 mb-8">
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">Full Name *</label>
-                  <input 
-                    type="text" 
-                    placeholder="Enter your full name" 
+                  <input
+                    type="text"
+                    placeholder="Enter your full name"
                     className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-gray-800"
                   />
                 </div>
 
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">Email Address *</label>
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email address" 
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
                     className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-gray-800"
                   />
                 </div>
 
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">Phone Number *</label>
-                  <input 
-                    type="tel" 
-                    placeholder="Enter your phone number" 
+                  <input
+                    type="tel"
+                    placeholder="Enter your phone number"
                     className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-gray-800"
                   />
                 </div>
@@ -171,7 +192,7 @@ export default function V3FinalConversionCTA() {
                   </select>
                 </div>
 
-                <button 
+                <button
                   type="submit"
                   className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold text-xl py-6 px-6 rounded-xl transition-colors shadow-lg"
                 >
@@ -185,7 +206,7 @@ export default function V3FinalConversionCTA() {
                   <Phone className="w-5 h-5" />
                   <span>Quick Call Registration: +91-7066334499</span>
                 </button>
-                
+
                 <button className="w-full flex items-center justify-center space-x-3 border-2 border-gray-300 text-gray-700 hover:border-green-600 hover:text-green-600 font-semibold py-4 px-6 rounded-xl transition-colors">
                   <MessageCircle className="w-5 h-5" />
                   <span>WhatsApp Admission</span>
@@ -216,8 +237,9 @@ export default function V3FinalConversionCTA() {
             ))}
           </div>
           <blockquote className="text-xl text-blue-100 mb-6 italic">
-            &ldquo;This course will really transform your entire life. After doing the course now I am doing trading my own. 
-            Great speaker and teacher. Team Finanthropist support is exceptional.&rdquo;
+            &ldquo;This course will really transform your entire life. After doing the course now I
+            am doing trading my own. Great speaker and teacher. Team Finanthropist support is
+            exceptional.&rdquo;
           </blockquote>
           <div className="text-yellow-300 font-semibold">- Rahul P., Mumbai (Google Review)</div>
         </div>
@@ -228,7 +250,7 @@ export default function V3FinalConversionCTA() {
             The Choice Is Yours:{' '}
             <span className="text-yellow-300 font-medium">Transform or Stay the Same</span>
           </h3>
-          
+
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
             <div className="bg-red-600/20 border border-red-500/30 rounded-2xl p-6">
               <h4 className="text-xl font-semibold text-red-300 mb-4">If You Don&apos;t Act:</h4>
@@ -239,7 +261,7 @@ export default function V3FinalConversionCTA() {
                 <li>• Watch others succeed while you wait</li>
               </ul>
             </div>
-            
+
             <div className="bg-green-600/20 border border-green-500/30 rounded-2xl p-6">
               <h4 className="text-xl font-semibold text-green-300 mb-4">If You Act Today:</h4>
               <ul className="space-y-2 text-green-200 text-sm">

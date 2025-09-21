@@ -13,7 +13,7 @@ export default function V3FrequentlyAskedQuestions() {
         {
           question: 'Is our institute suitable for complete beginners?',
           answer:
-            'Absolutely! 60% of our 25,000+ students were complete beginners when they started. We begin from absolute basics and progress systematically. Our Google reviews confirm this - many students mention starting with zero knowledge. Our institute curriculum is designed in simple Marathi and English to ensure everyone understands.',
+            'Absolutely! 80% of our 25,000+ students were complete beginners when they started. We begin from absolute basics and progress systematically. Our Google reviews confirm this - many students mention starting with zero knowledge. Our institute curriculum is designed in simple Marathi and English to ensure everyone understands.',
         },
         {
           question: 'What support do I get after completing our program?',
@@ -33,17 +33,12 @@ export default function V3FrequentlyAskedQuestions() {
         {
           question: "What is Sammeer Sarang's background and experience?",
           answer:
-            "Sammeer Sarang has 23+ years in finance: 16 years at HDFC Bank, experience with HSBC, co-author of 'Billionaire Mindset' book, and has trained 25,000+ students since 2017. His corporate banking background gives him deep understanding of financial markets that pure trainers don't have.",
+            'Sammeer Sarang has a unique ability to simplify even the most complex concepts of the share market, making finance easily understandable for non-finance individuals also. With over 23 years of experience in the financial industry, he is the co-author of the book Billionaire Mindset and has successfully trained 10,000+ families since 2017. His strong corporate banking background gives him an exceptional depth of knowledge and practical insight into financial markets that sets him apart from other trainers.',
         },
         {
           question: 'Are the Google reviews genuine? Can I verify them?',
           answer:
             'Absolutely genuine! We have 2,452+ verified Google reviews with 5.0/5 rating. You can verify each review on our Google Business Profile. We encourage you to read them, contact reviewers if possible, and even speak to our current students before joining our institute.',
-        },
-        {
-          question: 'Why should I choose Finanthropist over other institutes?',
-          answer:
-            "Key differences: (1) Highest Google rating in Maharashtra (5.0/5 from 2,452+ reviews), (2) Instructor with real 23+ years finance experience, (3) Teaching in Marathi & English, (4) Lifetime support included, (5) 87% proven success rate, (6) Focus on Maharashtra investors' needs.",
         },
       ],
     },
@@ -58,12 +53,7 @@ export default function V3FrequentlyAskedQuestions() {
         {
           question: 'How much money do I need to start trading after the course?',
           answer:
-            'You can start with as little as ₹10,000-₹25,000. We teach you to grow gradually. Many students start small and build their capital over time. The focus is on learning proper risk management first, then scaling up as your confidence and skills grow.',
-        },
-        {
-          question: 'Do you provide specific stock recommendations?',
-          answer:
-            'Yes! Our institute program includes: daily stock tips, weekly market analysis, specific buy/sell recommendations with reasoning, live trading alerts, and market outlook updates. However, we also teach you to become independent and make your own analysis.',
+            'You can start with as little as ₹5,000. We teach you to grow gradually. Many students start small and build their capital over time. The focus is on learning proper risk management first, then scaling up as your confidence and skills grow.',
         },
       ],
     },
@@ -78,12 +68,7 @@ export default function V3FrequentlyAskedQuestions() {
         {
           question: 'How long does our institute program take to complete?',
           answer:
-            'Our core institute program is 7 weeks intensive training. However, learning continues with lifetime support. Most students start seeing results within 2-3 months of completing the program. The recorded sessions are available for lifetime access for revision.',
-        },
-        {
-          question: "What if I can't attend live sessions due to my job timing?",
-          answer:
-            'No problem! All sessions are recorded and available for lifetime access. Many working professionals learn this way. You also get direct access to instructors for doubts and can schedule one-on-one calls when needed.',
+            'Our core institute program is 2 weeks intensive training. However, learning continues with lifetime support. Most students start seeing results within 2-3 weeks of completing the program. The recorded sessions are available for lifetime access for revision.',
         },
       ],
     },
