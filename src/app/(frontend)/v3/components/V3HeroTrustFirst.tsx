@@ -32,16 +32,15 @@ export default function V3HeroTrustFirst() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
               Maharashtra&apos;s{' '}
               <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-medium">
-                #1 Rated
+                Highest Rated
               </span>{' '}
-              Trading Institute
+              Institute for Trading Education
             </h1>
 
             {/* Sub-headline with Credibility */}
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               Learn at <strong>Finanthropist Educare</strong> - Founded by Sammeer Sarang, 23+ Years
-              Finance Experience, Former HDFC & HSBC Team Member, Training 10,000+ Families Across
-              India Since 2017
+              Finance, Ex-HDFC & HSBC, Mentor to 10,000+ Families Across Maharashtra Since 2017
             </p>
 
             {/* Key Differentiators */}

@@ -48,31 +48,31 @@ export default function V3WebinarFocusedCTA() {
 
   const webinarTopics = [
     {
-      title: 'What is the Share Market',
+      title: 'What is the Share Market & how can you get benefited out of it? ',
       description: 'Complete basics explained in simple Marathi & English',
       duration: '15 minutes',
       icon: TrendingUp,
     },
     {
-      title: 'How to Get Started',
+      title: 'How to Get Started and How many income sources you can have?',
       description: 'Step-by-step process for safe market entry',
       duration: '20 minutes',
       icon: Zap,
     },
     {
-      title: 'What Stocks to Buy',
+      title: 'Importance of which Stocks to Buy, When to buy & How to manage risk? ',
       description: 'Stock selection criteria and analysis methods',
       duration: '20 minutes',
       icon: Target,
     },
     {
-      title: 'When to Buy, Hold, or Sell',
+      title: 'Technical Analysis – You will learn here without any background',
       description: 'Timing strategies for maximum profit',
       duration: '15 minutes',
       icon: Clock,
     },
     {
-      title: 'How to Avoid Losses',
+      title: 'How we can work together and what is to expect from this segment',
       description: 'Risk management that protects your money',
       duration: '20 minutes',
       icon: Shield,

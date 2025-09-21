@@ -7,15 +7,15 @@ import { Award, BookOpen, Users, Briefcase, MapPin, Clock } from 'lucide-react'
 export default function V3InstructorCredibility() {
   const credentials = [
     {
-      icon: Briefcase,
-      title: 'HDFC Experience',
-      description: 'Senior finance professional with deep banking experience',
+      icon: Award,
+      title: '23+ years ',
+      description: 'Finance experience',
       color: 'from-blue-500 to-blue-600',
     },
     {
       icon: Briefcase,
-      title: 'HSBC Experience',
-      description: 'International banking and finance expertise',
+      title: 'HDFC & HSBC',
+      description: 'Experience (senior profile)',
       color: 'from-red-500 to-red-600',
     },
     {
@@ -31,42 +31,32 @@ export default function V3InstructorCredibility() {
       color: 'from-green-500 to-green-600',
     },
     {
-      icon: Award,
-      title: '23+ Years Finance Experience',
+      icon: MapPin,
+      title: '5.0/5 Google rating ',
       description: 'Proven expertise in financial markets',
       color: 'from-orange-500 to-orange-600',
-    },
-    {
-      icon: MapPin,
-      title: 'Maharashtra Focus',
-      description: 'Understanding local investor mindset',
-      color: 'from-teal-500 to-teal-600',
     },
   ]
 
   const teachingPhilosophy = [
     {
       principle: 'Finance + Philanthropist Approach',
-      description:
-        'We work for your financial benefit first, then ours. Like a philanthropist, we put your success ahead of our own profit.',
+      description: 'We work for your financial benefit first, then ours.',
       icon: HandHeart,
     },
     {
       principle: 'Unlimited Income Mindset',
-      description:
-        'Break the middle-class thinking that expenses are high and income is low. Learn that expenses are limited but income potential is unlimited.',
+      description: 'Break middle-class thinking about limited income.',
       icon: DollarSign,
     },
     {
       principle: 'Practical Over Theory',
-      description:
-        'Everything we teach comes from real experience, not copied from books. We use these methods ourselves and have made good money with them.',
+      description: 'Everything taught from real experience with Live Market.',
       icon: TrendingUp,
     },
     {
       principle: 'Simple Language Teaching',
-      description:
-        'Complex stock market concepts explained in simple Marathi and English. Even complete beginners can understand and apply immediately.',
+      description: 'Complex concepts in simple Marathi and English.',
       icon: GraduationCap,
     },
   ]
