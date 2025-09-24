@@ -73,6 +73,7 @@ export default buildConfig({
           url: process.env.DATABASE_URL || path.resolve(dirname, 'dev.db'),
         },
       }),
+  console.log('DATABASE_URI (Vercel Postgres): ', process.env.DATABASE_URI)
   collections: [Pages, Posts, Media, Categories, Users, TwitterReviews],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, Home],
