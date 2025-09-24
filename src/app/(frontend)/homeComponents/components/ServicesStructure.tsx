@@ -104,7 +104,7 @@ export const ServicesStructure: React.FC = () => {
   // }
 
   const setupAnimation = (
-    cardsContainerRef: React.RefObject<HTMLDivElement>,
+    cardsContainerRef: React.RefObject<HTMLDivElement | null>,
     homeDataServices: any[], // Adjust type as needed
   ) => {
     console.log('🔍 Animation setup triggered')
@@ -279,9 +279,10 @@ export const ServicesStructure: React.FC = () => {
   }
 
   useEffect(() => {
+    let mmInstance: gsap.MatchMedia | undefined
     const timer = setTimeout(() => {
       console.log('🚀 Starting animation setup...')
-      const mmInstance = setupAnimation(cardsContainerRef, homeData.services)
+      mmInstance = setupAnimation(cardsContainerRef, homeData.services)
     }, 100)
 
     return () => {

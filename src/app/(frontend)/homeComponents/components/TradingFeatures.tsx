@@ -19,6 +19,8 @@ export const TradingFeatures: React.FC = () => {
   const tradingFeatures = homeData.tradingFeatures
   const features = tradingFeatures?.features || []
 
+  const orderValue = 12345678; // Placeholder for Average Portfolio Growth
+
   // Fixed ScrollTrigger animation setup
   useEffect(() => {
     if (!containerRef.current || !leftColumnRef.current || !rightColumnRef.current || !pinnableBoxRef.current || features.length === 0) return
