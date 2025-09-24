@@ -62,7 +62,7 @@ export default buildConfig({
   },
   // This config helps us configure global or default features that the other editors can inherit
   editor: defaultLexical,
-  db: process.env.POSTGRES_URL
+  db: process.env.DATABASE_URI?.startsWith('postgres://')
     ? vercelPostgresAdapter({
         pool: {
           connectionString: process.env.DATABASE_URI,
@@ -73,7 +73,6 @@ export default buildConfig({
           url: process.env.DATABASE_URL || path.resolve(dirname, 'dev.db'),
         },
       }),
-  console.log('DATABASE_URI (Vercel Postgres): ', process.env.DATABASE_URI)
   collections: [Pages, Posts, Media, Categories, Users, TwitterReviews],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, Home],
