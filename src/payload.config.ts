@@ -62,16 +62,16 @@ export default buildConfig({
   },
   // This config helps us configure global or default features that the other editors can inherit
   editor: defaultLexical,
-  db: process.env.POSTGRES_URL 
+  db: process.env.POSTGRES_URL
     ? vercelPostgresAdapter({
         pool: {
-          connectionString: process.env.POSTGRES_URL,
+          connectionString: process.env.DATABASE_URI,
         },
       })
     : sqliteAdapter({
         client: {
-          url: process.env.DATABASE_URL || './dev.db'
-        }
+          url: process.env.DATABASE_URL || path.resolve(dirname, 'dev.db'),
+        },
       }),
   collections: [Pages, Posts, Media, Categories, Users, TwitterReviews],
   cors: [getServerSideURL()].filter(Boolean),
