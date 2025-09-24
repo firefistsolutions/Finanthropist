@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { Heart, TrendingUp, Users, BookOpen, Star, Award } from 'lucide-react'
+import { Heart, TrendingUp, Users, BookOpen, Award } from 'lucide-react'
 
 // Animation utilities
 const useInView = (threshold = 0.1) => {

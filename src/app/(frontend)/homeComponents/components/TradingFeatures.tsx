@@ -3,7 +3,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useInView, getAnimationClasses } from '../utilities/animations'
 import { useHomeData } from '@/hooks/useHomeData'
-import { REFRESH_INTERVALS } from '@/constants/refreshIntervals'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -11,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger)
 export const TradingFeatures: React.FC = () => {
   const [sectionRef, sectionInView] = useInView(0.3)
   const [activeFeature, setActiveFeature] = useState(0)
-  const [orderValue, setOrderValue] = useState(125000)
   const containerRef = useRef<HTMLDivElement>(null)
   const leftColumnRef = useRef<HTMLDivElement>(null)
   const rightColumnRef = useRef<HTMLDivElement>(null)

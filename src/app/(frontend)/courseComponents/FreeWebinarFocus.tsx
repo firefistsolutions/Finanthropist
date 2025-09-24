@@ -104,27 +104,6 @@ export default function FreeWebinarFocus() {
     }
   ]
 
-  const freeBonuses = [
-    {
-      icon: '📈',
-      title: 'Technical Analysis Strategy',
-      value: '₹3,999',
-      description: 'Complete guide to reading charts and patterns'
-    },
-    {
-      icon: '💰',
-      title: 'Self-Investing Guidance',
-      value: '₹2,999',
-      description: 'Step-by-step investment planning workbook'
-    },
-    {
-      icon: '🏠',
-      title: 'Home Loan Calculator',
-      value: '₹3,001',
-      description: 'Advanced calculator for loan planning and EMI optimization'
-    }
-  ]
-
   const whyAttend = [
     'Learn from 23+ years of finance experience',
     'Taught in Marathi & English for better understanding',

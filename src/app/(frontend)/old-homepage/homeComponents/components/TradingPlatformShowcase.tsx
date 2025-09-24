@@ -27,7 +27,7 @@ const RollingNumber: React.FC<{ value: number; decimals?: number }> = ({ value, 
     }
     
     requestAnimationFrame(animate)
-  }, [value])
+  }, [value, displayValue])
   
   return (
     <span className="tabular-nums">

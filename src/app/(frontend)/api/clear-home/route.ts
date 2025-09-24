@@ -8,7 +8,7 @@ export async function POST(): Promise<Response> {
     console.log('🧹 Clearing existing Home global data...')
     
     // Clear the Home global by setting it to empty/default values
-    const result = await payload.updateGlobal({
+    await payload.updateGlobal({
       slug: 'home',
       data: {
         heroSection: {

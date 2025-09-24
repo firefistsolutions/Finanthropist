@@ -119,7 +119,7 @@ export const InteractiveChart: React.FC = () => {
     })
 
     setIsDrawn(true)
-  }, [chartInView, isDrawn])
+  }, [chartInView, isDrawn, chartData])
 
   return (
     <section ref={chartRef} className="py-20 bg-white">

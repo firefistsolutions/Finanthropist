@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { useInView, getAnimationClasses } from '../utilities/animations'
 import { useTwitterReviews } from '../../../../hooks/useTwitterReviews'
 import { REFRESH_INTERVALS } from '@/constants/refreshIntervals'
@@ -8,7 +9,7 @@ const TwitterTestimonials: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const { twitterReviews, isLoading, isStatic } = useTwitterReviews()
+  const { twitterReviews } = useTwitterReviews()
   
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 640)
@@ -18,7 +19,6 @@ const TwitterTestimonials: React.FC = () => {
   }, [])
 
   const totalSlides = twitterReviews.length
-  const slidesToShow = 3
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -106,10 +106,12 @@ const TwitterTestimonials: React.FC = () => {
                         {/* Header */}
                         <div className="flex justify-between items-center mb-4">
                           <div className="flex items-center space-x-3">
-                            <img 
+                            <Image 
                               src={tweet.avatar} 
                               alt={tweet.name}
                               className="rounded-full w-12 h-12 object-cover"
+                              width={48}
+                              height={48}
                             />
                             <div>
                               <p className="text-white font-semibold text-base">{tweet.name}</p>

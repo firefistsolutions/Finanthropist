@@ -88,9 +88,8 @@ export class CustomSplitText {
     
     let currentLine: HTMLElement | null = null
     let currentLineWords: string[] = []
-    let currentLineWidth = 0
     
-    words.forEach((word, index) => {
+    words.forEach((word) => {
       // Measure word width including space
       const testText = currentLineWords.length > 0 ? currentLineWords.join(' ') + ' ' + word : word
       tempElement.textContent = testText
@@ -114,7 +113,6 @@ export class CustomSplitText {
         this.original.appendChild(currentLine)
         this.lines.push(currentLine)
         currentLineWords = [word]
-        currentLineWidth = 0
       } else {
         currentLineWords.push(word)
       }
@@ -148,7 +146,7 @@ export class CustomSplitText {
   private splitByWords(text: string, wordsClass: string) {
     const words = text.split(/\s+/).filter(word => word.length > 0)
     
-    words.forEach((word, index) => {
+    words.forEach((word) => {
       const wordSpan = document.createElement('span')
       wordSpan.className = wordsClass
       wordSpan.textContent = word
@@ -158,7 +156,7 @@ export class CustomSplitText {
       this.words.push(wordSpan)
       
       // Add space after word (except last word)
-      if (index < words.length - 1) {
+      if (this.words.length < words.length) {
         this.original.appendChild(document.createTextNode(' '))
       }
     })
@@ -228,8 +226,8 @@ export function createSplitText(target: string | HTMLElement, options: SplitText
 // Static create method to match GSAP SplitText.create() API
 export const SplitText = {
   create: (target: string | HTMLElement, options: SplitTextOptions & { 
-    onSplit?: (result: SplitTextResult) => any 
-  } = {}): any => {
+    onSplit?: (result: SplitTextResult) => void 
+  } = {}): SplitTextResult | void => {
     const { onSplit, ...splitOptions } = options
     const result = createSplitText(target, splitOptions)
     

@@ -27,7 +27,7 @@ export const MarketDataVisualization: React.FC = () => {
     const candlesticks: CandlestickData[] = []
     const positions = [3, 20, 37, 54, 71, 88]
     
-    positions.forEach((x, index) => {
+    positions.forEach((x) => {
       // Bias candlestick type based on actual stock performance
       const isBullish = isPositive ? Math.random() > 0.3 : Math.random() > 0.7
       const bodyHeight = Math.random() * 30 + 20

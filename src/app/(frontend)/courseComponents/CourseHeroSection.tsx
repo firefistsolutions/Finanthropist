@@ -54,7 +54,6 @@ export default function CourseHeroSection() {
   const titleRef = useRef<HTMLHeadingElement>(null)
   const subtitleRef = useRef<HTMLParagraphElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
-  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     const initAnimation = async () => {
@@ -95,8 +94,6 @@ export default function CourseHeroSection() {
         stagger: 0.1,
         ease: 'power2.out'
       }, '-=0.3')
-      
-      setIsLoaded(true)
     }
 
     initAnimation()

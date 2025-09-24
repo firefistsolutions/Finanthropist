@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { createSplitText } from './SplitText'
 import { useHomeData } from '@/hooks/useHomeData'
@@ -15,7 +15,7 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({ className = '' }) => {
   const subtitleRef = useRef<HTMLParagraphElement>(null)
   const ctaRef = useRef<HTMLButtonElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
-  const [isLoaded, setIsLoaded] = useState(false)
+  // const [isLoaded, setIsLoaded] = useState(false)
   
   const { homeData } = useHomeData()
   const heroSection = homeData.heroSection
@@ -30,7 +30,7 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({ className = '' }) => {
       // Detect screen size for responsive animations
       const isMobile = window.matchMedia('(max-width: 768px)').matches
       const isTablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)').matches
-      const isDesktop = window.matchMedia('(min-width: 1025px)').matches
+      // const isDesktop = window.matchMedia('(min-width: 1025px)').matches
 
       // Set initial visibility
       gsap.set([titleRef.current, subtitleRef.current, ctaRef.current], { opacity: 1 })
@@ -140,7 +140,7 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({ className = '' }) => {
         ease: "expo.out"
       }, animationSettings.statsDelay)
 
-      setIsLoaded(true)
+      // setIsLoaded(true)
 
       // Cleanup function
       return () => {
@@ -153,109 +153,109 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({ className = '' }) => {
     initAnimation()
   }, [])
 
-  const replayAnimation = () => {
-    if (!titleRef.current || !subtitleRef.current || !ctaRef.current || !statsRef.current) return
+  // const replayAnimation = () => {
+  //   if (!titleRef.current || !subtitleRef.current || !ctaRef.current || !statsRef.current) return
 
-    // Detect screen size for responsive replay animations
-    const isMobile = window.matchMedia('(max-width: 768px)').matches
-    const isTablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)').matches
+  //   // Detect screen size for responsive replay animations
+  //   const isMobile = window.matchMedia('(max-width: 768px)').matches
+  //   const isTablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)').matches
 
-    // Re-split and animate
-    const titleSplit = createSplitText(titleRef.current, {
-      type: 'words,lines',
-      linesClass: 'split-line',
-      wordsClass: 'split-word'
-    })
+  //   // Re-split and animate
+  //   const titleSplit = createSplitText(titleRef.current, {
+  //     type: 'words,lines',
+  //     linesClass: 'split-line',
+  //     wordsClass: 'split-word'
+  //   })
 
-    const subtitleSplit = createSplitText(subtitleRef.current, {
-      type: 'words,lines',
-      linesClass: 'split-line-sub',
-      wordsClass: 'split-word-sub'
-    })
+  //   const subtitleSplit = createSplitText(subtitleRef.current, {
+  //     type: 'words,lines',
+  //     linesClass: 'split-line-sub',
+  //     wordsClass: 'split-word-sub'
+  //   })
 
-    // Set initial states
-    gsap.set(titleSplit.lines, { overflow: 'hidden' })
-    gsap.set(subtitleSplit.lines, { overflow: 'hidden' })
-    gsap.set(titleSplit.words, { yPercent: 100, opacity: 0 })
-    gsap.set(subtitleSplit.words, { yPercent: 100, opacity: 0 })
-    gsap.set(ctaRef.current, { scale: 0.8, opacity: 0 })
-    gsap.set(statsRef.current.children, { y: 50, opacity: 0 })
+  //   // Set initial states
+  //   gsap.set(titleSplit.lines, { overflow: 'hidden' })
+  //   gsap.set(subtitleSplit.lines, { overflow: 'hidden' })
+  //   gsap.set(titleSplit.words, { yPercent: 100, opacity: 0 })
+  //   gsap.set(subtitleSplit.words, { yPercent: 100, opacity: 0 })
+  //   gsap.set(ctaRef.current, { scale: 0.8, opacity: 0 })
+  //   gsap.set(statsRef.current.children, { y: 50, opacity: 0 })
 
-    // Responsive replay settings (slower than initial for better observation)
-    let replaySettings = {
-      titleDuration: 1.2,
-      titleStagger: 0.15,
-      subtitleDuration: 0.9,
-      subtitleStagger: 0.08,
-      ctaDuration: 0.9,
-      statsDuration: 1.0,
-      statsStagger: 0.2,
-      subtitleDelay: "-=0.6",
-      ctaDelay: "-=0.4",
-      statsDelay: "-=0.3"
-    }
+  //   // Responsive replay settings (slower than initial for better observation)
+  //   let replaySettings = {
+  //     titleDuration: 1.2,
+  //     titleStagger: 0.15,
+  //     subtitleDuration: 0.9,
+  //     subtitleStagger: 0.08,
+  //     ctaDuration: 0.9,
+  //     statsDuration: 1.0,
+  //     statsStagger: 0.2,
+  //     subtitleDelay: "-=0.6",
+  //     ctaDelay: "-=0.4",
+  //     statsDelay: "-=0.3"
+  //   }
 
-    if (isMobile) {
-      // Faster replay for mobile
-      replaySettings = {
-        titleDuration: 0.8,
-        titleStagger: 0.12,
-        subtitleDuration: 0.7,
-        subtitleStagger: 0.06,
-        ctaDuration: 0.7,
-        statsDuration: 0.8,
-        statsStagger: 0.15,
-        subtitleDelay: "-=0.4",
-        ctaDelay: "-=0.3",
-        statsDelay: "-=0.2"
-      }
-    } else if (isTablet) {
-      // Medium replay for tablet
-      replaySettings = {
-        titleDuration: 1.0,
-        titleStagger: 0.13,
-        subtitleDuration: 0.8,
-        subtitleStagger: 0.07,
-        ctaDuration: 0.8,
-        statsDuration: 0.9,
-        statsStagger: 0.18,
-        subtitleDelay: "-=0.5",
-        ctaDelay: "-=0.35",
-        statsDelay: "-=0.25"
-      }
-    }
+  //   if (isMobile) {
+  //     // Faster replay for mobile
+  //     replaySettings = {
+  //       titleDuration: 0.8,
+  //       titleStagger: 0.12,
+  //       subtitleDuration: 0.7,
+  //       subtitleStagger: 0.06,
+  //       ctaDuration: 0.7,
+  //       statsDuration: 0.8,
+  //       statsStagger: 0.15,
+  //       subtitleDelay: "-=0.4",
+  //       ctaDelay: "-=0.3",
+  //       statsDelay: "-=0.2"
+  //     }
+  //   } else if (isTablet) {
+  //     // Medium replay for tablet
+  //     replaySettings = {
+  //       titleDuration: 1.0,
+  //       titleStagger: 0.13,
+  //       subtitleDuration: 0.8,
+  //       subtitleStagger: 0.07,
+  //       ctaDuration: 0.8,
+  //       statsDuration: 0.9,
+  //       statsStagger: 0.18,
+  //       subtitleDelay: "-=0.5",
+  //       ctaDelay: "-=0.35",
+  //       statsDelay: "-=0.25"
+  //     }
+  //   }
 
-    // Replay timeline with responsive settings
-    const replayTl = gsap.timeline()
+  //   // Replay timeline with responsive settings
+  //   const replayTl = gsap.timeline()
 
-    replayTl.to(titleSplit.words, {
-      duration: replaySettings.titleDuration,
-      yPercent: 0,
-      opacity: 1,
-      stagger: replaySettings.titleStagger,
-      ease: "expo.out"
-    })
-    .to(subtitleSplit.words, {
-      duration: replaySettings.subtitleDuration,
-      yPercent: 0,
-      opacity: 1,
-      stagger: replaySettings.subtitleStagger,
-      ease: "expo.out"
-    }, replaySettings.subtitleDelay)
-    .to(ctaRef.current, {
-      duration: replaySettings.ctaDuration,
-      scale: 1,
-      opacity: 1,
-      ease: isMobile ? "power2.out" : "back.out(1.7)"
-    }, replaySettings.ctaDelay)
-    .to(statsRef.current.children, {
-      duration: replaySettings.statsDuration,
-      y: 0,
-      opacity: 1,
-      stagger: replaySettings.statsStagger,
-      ease: "expo.out"
-    }, replaySettings.statsDelay)
-  }
+  //   replayTl.to(titleSplit.words, {
+  //     duration: replaySettings.titleDuration,
+  //     yPercent: 0,
+  //     opacity: 1,
+  //     stagger: replaySettings.titleStagger,
+  //     ease: "expo.out"
+  //   })
+  //   .to(subtitleSplit.words, {
+  //     duration: replaySettings.subtitleDuration,
+  //     yPercent: 0,
+  //     opacity: 1,
+  //     stagger: replaySettings.subtitleStagger,
+  //     ease: "expo.out"
+  //   }, replaySettings.subtitleDelay)
+  //   .to(ctaRef.current, {
+  //     duration: replaySettings.ctaDuration,
+  //     scale: 1,
+  //     opacity: 1,
+  //     ease: isMobile ? "power2.out" : "back.out(1.7)"
+  //   }, replaySettings.ctaDelay)
+  //   .to(statsRef.current.children, {
+  //     duration: replaySettings.statsDuration,
+  //     y: 0,
+  //     opacity: 1,
+  //     stagger: replaySettings.statsStagger,
+  //     ease: "expo.out"
+  //   }, replaySettings.statsDelay)
+  // }
 
   return (
     <div ref={heroRef} className={`relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden pt-32 md:pt-28 ${className}`}>

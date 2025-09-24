@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useInView, getAnimationClasses, getStaggerDelay } from '../utilities/animations'
+import { useInView, getAnimationClasses } from '../utilities/animations'
 import { useHomeData } from '@/hooks/useHomeData'
 import { getGradient } from '../helpers/gradients'
 
@@ -112,7 +112,6 @@ export const StudentSuccessStories: React.FC = () => {
     // Desktop (1025px and above)
     mm.add("(min-width: 1025px)", () => {
       const totalCards = successStories.length
-      const cardsVisible = HEIGHT_DISTRIBUTION.desktop.cardsVisible
       const cardWidth = Math.max(
         HEIGHT_DISTRIBUTION.cardWidth * parseFloat(sectionHeight), 
         HEIGHT_DISTRIBUTION.desktop.minCardWidth
@@ -157,7 +156,6 @@ export const StudentSuccessStories: React.FC = () => {
     // Tablet (768px to 1024px)
     mm.add("(min-width: 768px) and (max-width: 1024px)", () => {
       const totalCards = successStories.length
-      const cardsVisible = HEIGHT_DISTRIBUTION.tablet.cardsVisible
       const cardWidth = Math.max(
         HEIGHT_DISTRIBUTION.cardWidth * parseFloat(sectionHeight), 
         HEIGHT_DISTRIBUTION.tablet.minCardWidth
@@ -211,7 +209,7 @@ export const StudentSuccessStories: React.FC = () => {
     }
   }, [successStories, animationKey, sectionHeight])
 
-  const resetAnimation = () => {
+  //   // const resetAnimation = () => {
     // First kill all existing ScrollTriggers to prevent conflicts
     ScrollTrigger.getAll().forEach(trigger => {
       if (trigger.trigger === sectionRef.current) {
@@ -226,7 +224,7 @@ export const StudentSuccessStories: React.FC = () => {
     
     // Trigger useEffect rerun
     setAnimationKey(prev => prev + 1)
-  }
+  // }
 
   return (
     <section 

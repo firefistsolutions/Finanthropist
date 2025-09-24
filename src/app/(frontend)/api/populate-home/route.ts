@@ -1,6 +1,7 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { homeGlobalCleanData } from '../../../../endpoints/seed/home-global-clean-data'
+import { Home } from '../../../../payload-types'
 
 export async function POST(): Promise<Response> {
   try {
@@ -8,9 +9,9 @@ export async function POST(): Promise<Response> {
     
     console.log('📊 Populating Home global with comprehensive mock data...')
     
-    const result = await payload.updateGlobal({
+    const _result = await payload.updateGlobal({
       slug: 'home',
-      data: homeGlobalCleanData as any,
+      data: homeGlobalCleanData as Partial<Home>,
     })
 
     const response = {

@@ -3,20 +3,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { Users, Award, BookOpen, TrendingUp, Building, Star } from 'lucide-react'
 
-interface Achievement {
-  icon: React.ComponentType<{ className?: string }>
-  number: string
-  label: string
-  description: string
-}
-
-interface Testimonial {
-  name: string
-  role: string
-  content: string
-  rating: number
-}
-
 // Animation utilities (replicated from old version)
 const useInView = (threshold = 0.1) => {
   const [isInView, setIsInView] = useState(false)
