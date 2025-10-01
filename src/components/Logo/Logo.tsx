@@ -20,7 +20,7 @@ export const Logo = (props: Props) => {
       loading={loading}
       fetchPriority={priority}
       decoding="async"
-      className={clsx('max-w-[8rem] w-full h-auto', className)}
+      className={clsx('max-w-[6rem] w-full h-auto', className)}
       src="/logo.jpg"
     />
   )

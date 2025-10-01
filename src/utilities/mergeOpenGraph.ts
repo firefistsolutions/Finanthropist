@@ -3,7 +3,7 @@ import { getServerSideURL } from './getURL'
 
 const defaultOpenGraph: Metadata['openGraph'] = {
   type: 'website',
-  description: 'An open-source financial education platform built with Payload and Next.js.',
+  description: 'Finanthropist - Empowering your financial journey.',
   images: [
     {
       url: `${getServerSideURL()}/website-template-OG.webp`,
