@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import LiveMarketTicker from '@/components/LiveMarketTicker'
+import { Logo } from '@/components/Logo/Logo'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -29,12 +30,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">F</span>
-              </div>
-              <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Finanthropist
-              </h1>
+              <Logo />
             </Link>
           </div>
 
