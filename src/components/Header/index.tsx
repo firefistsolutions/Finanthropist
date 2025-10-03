@@ -46,10 +46,10 @@ export default function Header() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
-              href="/#services"
+              href="/course"
               className="text-gray-700 hover:text-blue-600 transition-colors font-medium relative group"
             >
-              Services
+              Courses
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
