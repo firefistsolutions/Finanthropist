@@ -1,5 +1,6 @@
 import React from 'react'
 import { Phone, MessageCircle, CheckCircle, TrendingUp, Award, BookOpen, Star } from 'lucide-react'
+import Footer from '@/components/Footer'
 
 export default function CoursePage() {
   return (
@@ -368,6 +369,7 @@ export default function CoursePage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

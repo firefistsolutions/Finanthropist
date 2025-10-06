@@ -26,7 +26,7 @@ export default function V3InstructorCredibility() {
     },
     {
       icon: Users,
-      title: '25,000+ Students Trained',
+      title: '10,000+ Families Trained',
       description: 'Successful track record since 2017',
       color: 'from-green-500 to-green-600',
     },
@@ -109,19 +109,13 @@ export default function V3InstructorCredibility() {
             {/* Profile Image Placeholder */}
             <div className="relative mb-8 flex justify-center flex-col items-center">
               <div className="w-80 h-80 mx-auto lg:mx-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl border-4 border-white shadow-2xl flex items-end justify-center">
-                <img src="/media/meet2.png" alt="" className="" />
+                <img src="/Sammer-bottom.png" alt="" className="" />
                 {/* <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                     <span className="text-4xl font-bold text-white">SS</span>
                     </div> */}
               </div>
 
               {/* Floating Credentials */}
-              <div className="absolute -top-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-xl font-semibold text-sm shadow-lg">
-                23+ Years Experience
-              </div>
-              <div className="absolute -bottom-4 -left-3 bg-green-600 text-white px-4 py-2 rounded-xl font-semibold text-sm shadow-lg">
-                25,000+ Families
-              </div>
             </div>
             <div className="text-center">
               <div className="font-bold text-xl text-gray-800">Sammeer Sarang</div>
@@ -152,6 +146,7 @@ export default function V3InstructorCredibility() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-800">+91-7066334499</div>
+                    <div className="font-semibold text-gray-800">+91-7066337676</div>
                     <div className="text-gray-600 text-sm">Direct consultation available</div>
                   </div>
                 </div>

@@ -282,18 +282,18 @@ export default function V3WebinarFocusedCTA() {
               <span className="text-yellow-400">Life-Changing Opportunity</span>
             </h3>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join 25,000+ successful traders who learned at our institute. Batch seats filling up
+              Join 10,000+ successful Families who learned at our institute. Batch seats filling up
               fast!
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
-              <button className="bg-gradient-to-r from-yellow-400 to-orange-400 hover:from-yellow-300 hover:to-orange-300 text-blue-900 font-bold text-lg py-4 px-6 rounded-xl transition-colors flex items-center justify-center">
-                <Target className="w-5 h-5 mr-2" />
-                JOIN INSTITUTE NOW
-              </button>
               <button className="flex items-center justify-center space-x-2 border-2 border-white text-white hover:bg-white hover:text-blue-700 font-semibold py-4 px-6 rounded-xl transition-colors">
                 <Phone className="w-5 h-5" />
                 <span>Call: +91-7066334499</span>
+              </button>
+              <button className="flex items-center justify-center space-x-2 border-2 border-white text-white hover:bg-white hover:text-blue-700 font-semibold py-4 px-6 rounded-xl transition-colors">
+                <Phone className="w-5 h-5" />
+                <span>Call: +91-7066337676</span>
               </button>
             </div>
 

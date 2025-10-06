@@ -6,7 +6,7 @@ import { Star, Phone, Calendar, Clock } from 'lucide-react'
 
 export default function V3HeroTrustFirst() {
   return (
-    <section className="pt-28 pb-16 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
+    <section className="pt-32 pb-16 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Column - Trust-First Messaging */}
@@ -128,7 +128,7 @@ export default function V3HeroTrustFirst() {
             <div className="relative mb-8">
               <div className="relative w-48 h-48 sm:w-64 sm:h-64 mx-auto bg-gradient-to-br from-white/20 to-white/10 rounded-3xl border border-white/30 flex items-end justify-center overflow-visible">
                 <img
-                  src="/media/hero.png"
+                  src="/Sammer-top.png"
                   alt=""
                   className="h-[14rem] sm:h-[20rem] max-w-full absolute bottom-0"
                 />

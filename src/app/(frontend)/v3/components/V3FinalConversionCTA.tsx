@@ -26,7 +26,7 @@ export default function V3FinalConversionCTA() {
   const guarantees = [
     { icon: CheckCircle, text: '100% FREE consultation - no hidden costs' },
     { icon: Award, text: 'Learn from 5.0★ rated educator' },
-    { icon: Users, text: 'Join 25,000+ successful students' },
+    { icon: Users, text: 'Join 10,000+ successful Families' },
     { icon: Clock, text: 'Lifetime support included' },
   ]
 
@@ -55,9 +55,9 @@ export default function V3FinalConversionCTA() {
         </div>
 
         {/* Two-Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-1 gap-12 items-center mb-16">
           {/* Left Column - Final Push */}
-          <div>
+          {/* <div>
             <h3 className="text-3xl font-light mb-8">
               Why This Could Be The Most Important{' '}
               <span className="text-yellow-300 font-medium">Decision</span> You Ever Make
@@ -107,13 +107,13 @@ export default function V3FinalConversionCTA() {
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Proven Results</h4>
                   <p className="text-blue-100">
-                    87% success rate - join 25,000+ students who transformed their lives
+                    87% success rate - join 10,000+ Families who transformed their lives
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Social Proof Grid */}
+            {/* Social Proof Grid  }
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 mb-8">
               <h4 className="font-semibold mb-4">Recent Success Stories:</h4>
               <div className="grid grid-cols-2 gap-4">
@@ -135,7 +135,7 @@ export default function V3FinalConversionCTA() {
                 financial future shouldn&apos;t either.
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Right Column - Registration Form */}
           <div>
@@ -153,7 +153,7 @@ export default function V3FinalConversionCTA() {
                 </div>
               </div>
 
-              <form className="space-y-6 mb-8">
+              <form className="space-y-6 mb-8 flex flex-col ">
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2">Full Name *</label>
                   <input
@@ -194,27 +194,26 @@ export default function V3FinalConversionCTA() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold text-xl py-6 px-6 rounded-xl transition-colors shadow-lg"
+                  className="w-full md:w-auto self-center bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold text-xl py-6 px-8 rounded-xl transition-colors shadow-lg"
                 >
                   Join Our Institute Now
                 </button>
               </form>
 
               {/* Alternative Contact Methods */}
-              <div className="space-y-3 mb-6">
-                <button className="w-full flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors">
+              <div className="flex flex-col md:flex-row gap-3 mb-6 justify-center items-center">
+                <button className="flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors">
                   <Phone className="w-5 h-5" />
-                  <span>Quick Call Registration: +91-7066334499</span>
+                  <span>Quick Call Registration: +91-7066334499/+91-7066337676</span>
                 </button>
 
-                <button className="w-full flex items-center justify-center space-x-3 border-2 border-gray-300 text-gray-700 hover:border-green-600 hover:text-green-600 font-semibold py-4 px-6 rounded-xl transition-colors">
+                <button className="flex items-center justify-center space-x-3 border-2 border-gray-300 text-gray-700 hover:border-green-600 hover:text-green-600 font-semibold py-4 px-6 rounded-xl transition-colors">
                   <MessageCircle className="w-5 h-5" />
                   <span>WhatsApp Admission</span>
                 </button>
               </div>
-
               {/* Guarantees */}
-              <div className="space-y-3">
+              <div className="flex flex-col md:flex-row md:flex-wrap gap-3 md:justify-center">
                 {guarantees.map((guarantee, index) => {
                   const Icon = guarantee.icon
                   return (
@@ -228,8 +227,7 @@ export default function V3FinalConversionCTA() {
             </div>
           </div>
         </div>
-
-        {/* Final Testimonial */}
+        {/*{/* Final Testimonial }
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 text-center mb-12 border border-white/20">
           <div className="flex items-center justify-center space-x-2 mb-4">
             {[...Array(5)].map((_, i) => (
@@ -242,7 +240,7 @@ export default function V3FinalConversionCTA() {
             exceptional.&rdquo;
           </blockquote>
           <div className="text-yellow-300 font-semibold">- Rahul P., Mumbai (Google Review)</div>
-        </div>
+        </div>*/}
 
         {/* Bottom CTA */}
         <div className="text-center">
@@ -267,7 +265,7 @@ export default function V3FinalConversionCTA() {
               <ul className="space-y-2 text-green-200 text-sm">
                 <li>• Learn at Maharashtra&apos;s #1 rated institute</li>
                 <li>• Start building multiple income streams</li>
-                <li>• Join 25,000+ successful students</li>
+                <li>• Join 10,000+ successful Families</li>
                 <li>• Get lifetime support and mentorship</li>
               </ul>
             </div>
@@ -283,7 +281,7 @@ export default function V3FinalConversionCTA() {
           <div className="text-blue-200 space-y-2">
             <div className="flex items-center justify-center space-x-2">
               <Phone className="w-4 h-4" />
-              <span>Need help? Call +91-7066334499 (Available 24/7)</span>
+              <span>Need help? Call +91-7066334499/+91-7066337676</span>
             </div>
             <div className="flex items-center justify-center space-x-2">
               <Clock className="w-4 h-4" />

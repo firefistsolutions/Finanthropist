@@ -115,9 +115,8 @@ export default function V3CourseValueProposition() {
   ]
 
   const successMetrics = [
-    { label: 'Students Trained', value: '25,000+', description: 'Since 2017' },
+    { label: 'Families Trained', value: '10,000+', description: 'Since 2017' },
     { label: 'Success Rate', value: '87%', description: 'Become profitable' },
-    { label: 'Average Returns', value: '15-25%', description: 'Annual student returns' },
     { label: 'Institute Rating', value: '5.0/5', description: 'Google reviews' },
   ]
 
@@ -139,7 +138,7 @@ export default function V3CourseValueProposition() {
           </p>
 
           {/* Success Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {successMetrics.map((metric, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
                 <div className="text-3xl font-light text-blue-600 mb-2">{metric.value}</div>
@@ -266,7 +265,7 @@ export default function V3CourseValueProposition() {
             </h3>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
               Don&apos;t let another day pass wondering &ldquo;what if.&rdquo; Join the institute
-              that has already helped 25,000+ students achieve financial freedom through smart
+              that has already helped 10,000+ Families achieve financial freedom through smart
               trading.
             </p>
 
@@ -280,7 +279,9 @@ export default function V3CourseValueProposition() {
             </div>
 
             <div className="text-blue-200 text-sm space-y-1">
-              <div>📞 Need help choosing? Call +91-7066334499 for free consultation</div>
+              <div>
+                📞 Need help choosing? Call +91-7066334499/+91-7066337676 for free consultation
+              </div>
               <div className="flex items-center justify-center space-x-2">
                 <Target className="w-4 h-4" />
                 <span>Start your institute journey - flexible learning options</span>

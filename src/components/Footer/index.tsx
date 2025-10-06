@@ -97,15 +97,15 @@ export default function Footer() {
           <div className="mt-12 pt-8 border-t border-slate-800">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-2">25,000+</div>
-                <div className="text-slate-400 text-sm">Students Trained</div>
+                <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-2">10,000+</div>
+                <div className="text-slate-400 text-sm">Families Trained</div>
               </div>
               <div>
                 <div className="text-2xl md:text-3xl font-bold text-emerald-400 mb-2">23+</div>
                 <div className="text-slate-400 text-sm">Years Experience</div>
               </div>
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-purple-400 mb-2">90%+</div>
+                <div className="text-2xl md:text-3xl font-bold text-purple-400 mb-2">87%+</div>
                 <div className="text-slate-400 text-sm">Success Rate</div>
               </div>
               <div>

@@ -13,7 +13,7 @@ export default function V3FrequentlyAskedQuestions() {
         {
           question: 'Is our institute suitable for complete beginners?',
           answer:
-            'Absolutely! 80% of our 25,000+ students were complete beginners when they started. We begin from absolute basics and progress systematically. Our Google reviews confirm this - many students mention starting with zero knowledge. Our institute curriculum is designed in simple Marathi and English to ensure everyone understands.',
+            'Absolutely! 80% of our 10,000+ Families were complete beginners when they started. We begin from absolute basics and progress systematically. Our Google reviews confirm this - many students mention starting with zero knowledge. Our institute curriculum is designed in simple Marathi and English to ensure everyone understands.',
         },
         {
           question: 'What support do I get after completing our program?',
@@ -163,7 +163,7 @@ export default function V3FrequentlyAskedQuestions() {
                 </div>
                 <h4 className="font-semibold mb-2">Call Us Directly</h4>
                 <p className="text-blue-100 text-sm mb-3">Get instant answers to your questions</p>
-                <div className="text-yellow-300 font-semibold">+91-7066334499</div>
+                <div className="text-yellow-300 font-semibold">+91-7066334499/ +91-7066337676</div>
               </div>
 
               <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 border border-white/30">
@@ -212,7 +212,7 @@ export default function V3FrequentlyAskedQuestions() {
             <h4 className="text-xl font-semibold text-gray-800 mb-4">
               Why 2,452+ Students Trust Our Answers
             </h4>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               <div>
                 <div className="text-2xl font-light text-blue-600 mb-2">5.0★</div>
                 <div className="text-gray-600 text-sm">Google Rating</div>
@@ -222,12 +222,8 @@ export default function V3FrequentlyAskedQuestions() {
                 <div className="text-gray-600 text-sm">Years Experience</div>
               </div>
               <div>
-                <div className="text-2xl font-light text-blue-600 mb-2">25K+</div>
-                <div className="text-gray-600 text-sm">Students Guided</div>
-              </div>
-              <div>
-                <div className="text-2xl font-light text-blue-600 mb-2">24/7</div>
-                <div className="text-gray-600 text-sm">Support Available</div>
+                <div className="text-2xl font-light text-blue-600 mb-2">10K+</div>
+                <div className="text-gray-600 text-sm">Families Guided</div>
               </div>
             </div>
           </div>
