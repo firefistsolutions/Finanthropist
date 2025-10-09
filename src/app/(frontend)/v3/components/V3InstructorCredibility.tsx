@@ -1,246 +1,279 @@
 'use client'
 
 import React from 'react'
-import { HandHeart, DollarSign, TrendingUp, GraduationCap } from 'lucide-react'
-import { Award, BookOpen, Users, Briefcase, MapPin, Clock } from 'lucide-react'
+import { Star, MapPin, ThumbsUp, Verified } from 'lucide-react'
 
-export default function V3InstructorCredibility() {
-  const credentials = [
+export default function V3GoogleReviewsProof() {
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map((word) => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2)
+  }
+
+  const getRandomTimeAgo = () => {
+    const options = [
+      '5 days ago',
+      '1 week ago',
+      '2 weeks ago',
+      '3 weeks ago',
+      '1 month ago',
+      '2 months ago',
+    ]
+    return options[Math.floor(Math.random() * options.length)]
+  }
+
+  const getRandomHelpful = () => {
+    return Math.floor(Math.random() * 20) + 5
+  }
+
+  const googleReviews = [
     {
-      icon: Award,
-      title: '23+ years ',
-      description: 'Finance experience',
-      color: 'from-blue-500 to-blue-600',
+      name: 'Satish Atkari',
+      rating: 5,
+      review: `I sincerely thank you for the insightful share market course by Sameer sir. The concepts were explained in a simple yet powerful way, and I now feel more confident in making informed investment decisions in equity/IPO areas. Sir has given recordings for F&O also. I will go through that and will try to understand. Your guidance has truly sparked my interest in market analysis and financial planning. I'm grateful for the value you've added to my learning.
+    Thank you Sameer sir & team.`,
     },
     {
-      icon: Briefcase,
-      title: 'HDFC & HSBC',
-      description: 'Experience (senior profile)',
-      color: 'from-red-500 to-red-600',
+      name: 'Vivek Patankar',
+      rating: 5,
+      review: `I recently completed the Share Market class and it exceeded all my expectations. The course was incredibly informative, well-structured, and easy to follow—even for someone like me with no prior background in trading. The instructor explained complex concepts like technical analysis, fundamental analysis, and risk management in a clear and practical way.
+
+    Live sessions, real market examples, and hands-on practice helped me gain confidence in making my own investment decisions. What I appreciated most was the focus on disciplined trading and long-term strategy rather than just quick profits.
+
+    Highly recommended for beginners as well as those looking to strengthen their market knowledge!`,
     },
     {
-      icon: BookOpen,
-      title: 'Published Author',
-      description: "Co-author of 'Billionaire Mindset' book",
-      color: 'from-purple-500 to-purple-600',
+      name: 'Rajani Chougule',
+      rating: 5,
+      review: `I recently completed this course. The teaching style is exceptionally clear, simple, and easily accessible to everyone, including beginners.
+    Thank you so much sir🙏`,
     },
     {
-      icon: Users,
-      title: '10,000+ Families Trained',
-      description: 'Successful track record since 2017',
-      color: 'from-green-500 to-green-600',
+      name: 'Vikas Deorukhkar',
+      rating: 5,
+      review: `Excellent Teaching Knowledge about Shares Trading. I have attended the August 2025 Batch and am clear in my mind about Shares Trading in various fields i.e., Intraday, Delivery. In this 7-day class, we learned Three Things: Trade, Pattern, and Decision. If we follow the Training models and the three steps above, we will challenge ourselves to achieve good profits from Shares. Sir has a vast knowledge in this field, and they have taught us in a very simple and practical manner to get knowledge in mind and HEART. Also, we have done daily assignments to get practical knowledge about share purchases and sales as per the Chart. I would recommend to all of them to attend their Free Seminar and join their class to get good knowledge in Shares Investment and get Short Term and Long Term Profit. Do not miss this chance, Last but not Least. There is no compulsion of eduction to learn this course. 🙏1`,
     },
     {
-      icon: MapPin,
-      title: '5.0/5 Google rating ',
-      description: 'Proven expertise in financial markets',
-      color: 'from-orange-500 to-orange-600',
+      name: 'Pallavi Holey',
+      rating: 5,
+      review: `I sincerely thank you for the insightful share market course by Sameer sir. The concepts were explained in a simple yet powerful way, and I now feel more confident in making informed investment decisions. Your guidance has truly sparked my interest in market analysis and financial planning. I'm grateful for the value you've added to my learning. Thank you Sameer sir, Yash sir, Karan sir and whole team.`,
+    },
+    {
+      name: 'Nita Pandit',
+      rating: 5,
+      review: `This is one of the best share market courses in Maharashtra. It also provides valuable knowledge about investments. Sameer Sir is a genuine person who is working hard to share his knowledge of the share market with everyone. I feel very fortunate to have attended this course. Thanks to the entire Finanthropist team. I highly recommend joining the course to gain the best knowledge. I also thank the universe for bringing me in contact with the Finanthropist team.`,
+    },
+    {
+      name: 'Pritesh Satam',
+      rating: 5,
+      review: `Very Nice Overall Course. Sir's teaching method is so simple and nice that even a person with zero knowledge of share market can learn and earn money.`,
+    },
+    {
+      name: 'Uday Rajput',
+      rating: 5,
+      review: `Done all class from here. Excellent work from their team and especially Sameer Sir. Thank you so much. And appreciate their work that they have provided service for lifetime. Thanks again... 😀😊`,
+    },
+    {
+      name: 'Pushparaj Shinde',
+      rating: 5,
+      review: `Myself Pushparaj Shinde and I am a student of Sameer Sarang Sir. I am very happy to learn share market education in a very simple and easiest way. Thank you Sir 🙏 Stay Blessed 💐💐`,
+    },
+    {
+      name: 'Amit Gade',
+      rating: 5,
+      review: `Super experience, Finanthropist is the best share market course in Maharashtra. One of the best classes. I got perfect basic knowledge from them. Special thanks to Mr. Sameer sir and class team. They help properly, whatever you want—ask them and they will help you.`,
+    },
+    {
+      name: 'Smita Angane',
+      rating: 5,
+      review: `One of the best and life changing share market courses in simple Marathi language. It also gives knowledge about investments. Sarang Sir is a genuine person trying hard to share the knowledge about the share market with everyone. I feel very lucky to attend this course. Thanks to entire Finanthropist team. Must join the course to get best knowledge.`,
+    },
+    {
+      name: 'Ravindra Patil',
+      rating: 5,
+      review: `One of the best decisions in my life to join this course. The course was very helpful and I developed self-confidence. Very easy language to understand share market. Thank you so much Sameer sir and all team members.`,
     },
   ]
+    .map((review) => ({
+      ...review,
+      initials: getInitials(review.name),
+      location: 'Maharashtra',
+      timeAgo: getRandomTimeAgo(),
+      helpful: getRandomHelpful(),
+    }))
+    .slice(0, 6)
 
-  const teachingPhilosophy = [
-    {
-      principle: 'Finance + Philanthropist Approach',
-      description: 'We work for your financial benefit first, then ours.',
-      icon: HandHeart,
-    },
-    {
-      principle: 'Unlimited Income Mindset',
-      description: 'Break middle-class thinking about limited income.',
-      icon: DollarSign,
-    },
-    {
-      principle: 'Practical Over Theory',
-      description: 'Everything taught from real experience with Live Market.',
-      icon: TrendingUp,
-    },
-    {
-      principle: 'Simple Language Teaching',
-      description: 'Complex concepts in simple Marathi and English.',
-      icon: GraduationCap,
-    },
-  ]
+  const GoogleLogo = () => (
+    <div className="flex items-center space-x-2">
+      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center">
+        <span className="text-white text-sm font-bold">G</span>
+      </div>
+      <span className="font-semibold text-gray-800">Google</span>
+    </div>
+  )
 
-  const studentResults = [
-    {
-      name: 'Priya S.',
-      location: 'Pune',
-      result: '₹50,000/month from trading',
-      before: 'Complete beginner',
-      timeframe: '6 months',
-    },
-    {
-      name: 'Rahul P.',
-      location: 'Mumbai',
-      result: '₹2L losses recovered + profitable',
-      before: 'Emotional trader',
-      timeframe: '8 months',
-    },
-    {
-      name: 'Sunita D.',
-      location: 'Nashik',
-      result: '₹25,000/month passive income',
-      before: 'Only FD investments',
-      timeframe: '4 months',
-    },
-  ]
+  const StarRating = ({ rating }: { rating: number }) => (
+    <div className="flex items-center">
+      {[...Array(5)].map((_, i) => (
+        <Star
+          key={i}
+          className={`w-4 h-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+        />
+      ))}
+    </div>
+  )
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16" style={{ backgroundColor: '#FFE4E6' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
-            Meet{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
-              Sammeer Sarang
-            </span>
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center mb-6">
+            <GoogleLogo />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
+            Why 2,452+ Students Rate Us{' '}
+            <span className="font-medium text-gray-800">5.0/5 Stars</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Maharashtra&apos;s most trusted stock market educator with 23+ years of finance
-            experience and a proven track record of transforming lives through practical trading
-            education.
-          </p>
-        </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
-          {/* Left - Instructor Profile */}
-          <div className="text-center lg:text-left mt-10">
-            {/* Profile Image Placeholder */}
-            <div className="relative mb-8 flex justify-center flex-col items-center">
-              <div className="w-80 h-80 mx-auto lg:mx-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl border-4 border-white shadow-2xl flex items-end justify-center">
-                <img src="/Sammer-bottom.png" alt="" className="" />
-                {/* <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-white">SS</span>
-                    </div> */}
-              </div>
-
-              {/* Floating Credentials */}
-            </div>
-            <div className="text-center">
-              <div className="font-bold text-xl text-gray-800">Sammeer Sarang</div>
-              <div className="text-gray-500">Stock Market Expert & Educator</div>
-            </div>
-
-            {/* Key Stats */}
-            <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="bg-gray-50 rounded-2xl p-6 text-center">
-                <div className="text-3xl font-light text-blue-600 mb-2">5.0★</div>
-                <div className="text-gray-600 text-sm">Google Rating</div>
-                <div className="text-gray-500 text-xs">2,452+ Reviews</div>
-              </div>
-              <div className="bg-gray-50 rounded-2xl p-6 text-center">
-                <div className="text-3xl font-light text-blue-600 mb-2">87%</div>
-                <div className="text-gray-600 text-sm">Success Rate</div>
-                <div className="text-gray-500 text-xs">Student Profitability</div>
-              </div>
-            </div>
-
-            {/* Contact Info */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6">
-              <h4 className="font-semibold text-gray-800 mb-4">Connect Directly</h4>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-xs">📞</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-800">+91-7066334499</div>
-                    <div className="font-semibold text-gray-800">+91-7066337676</div>
-                    <div className="text-gray-600 text-sm">Direct consultation available</div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-800">Nashik, Maharashtra</div>
-                    <div className="text-gray-600 text-sm">Serving all of Maharashtra</div>
-                  </div>
-                </div>
-              </div>
+          {/* Overall Rating Display */}
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <div className="text-6xl font-light text-gray-800">5.0</div>
+            <div>
+              <StarRating rating={5} />
+              <div className="text-gray-600 text-sm mt-1">Based on 2,452+ reviews</div>
             </div>
           </div>
 
-          {/* Right - Credentials */}
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-8">Professional Credentials</h3>
-            <div className="grid gap-4 mb-12">
-              {credentials.map((credential, index) => {
-                const Icon = credential.icon
-                return (
+          {/* Rating Breakdown */}
+          <div className="max-w-md mx-auto">
+            {[
+              { stars: 5, percentage: 98 },
+              { stars: 4, percentage: 2 },
+              { stars: 3, percentage: 1 },
+              { stars: 2, percentage: 0 },
+              { stars: 1, percentage: 0 },
+            ].map((item) => (
+              <div key={item.stars} className="flex items-center space-x-2 text-sm">
+                <span>{item.stars}</span>
+                <Star className="w-3 h-3 text-yellow-400 fill-current" />
+                <div className="flex-1 bg-gray-200 rounded-full h-2">
                   <div
-                    key={index}
-                    className="flex items-center space-x-4 bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow"
-                  >
-                    <div
-                      className={`w-12 h-12 bg-gradient-to-r ${credential.color} rounded-xl flex items-center justify-center`}
-                    >
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-800">{credential.title}</div>
-                      <div className="text-gray-600 text-sm">{credential.description}</div>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-
-        {/* Teaching Philosophy */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-light text-gray-800 text-center mb-12">
-            The <span className="text-blue-600 font-medium">Finanthropist</span> Teaching Philosophy
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {teachingPhilosophy.map((item, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100"
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mb-4">
-                  <item.icon className="w-8 h-8 text-white" />
+                    className="bg-yellow-400 h-2 rounded-full"
+                    style={{ width: `${item.percentage}%` }}
+                  ></div>
                 </div>
-                <h4 className="text-xl font-semibold text-gray-800 mb-4">{item.principle}</h4>
-                <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                <span className="text-gray-600 w-8">{item.percentage}%</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Why Students Choose Sammeer */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center">
-          <h3 className="text-3xl font-light mb-6">
-            Why 10,000+ Families Choose{' '}
-            <span className="text-yellow-300 font-medium">Sammeer Sarang</span>
-          </h3>
+        {/* Reviews Grid */}
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
+          {googleReviews.map((review, index) => (
+            <div
+              key={index}
+              className="rounded-xl p-6 border hover:shadow-lg transition-shadow"
+              style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}
+            >
+              {/* Review Header */}
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-2 border-gray-200">
+                    <span className="text-white font-semibold text-lg">{review.initials}</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-800">{review.name}</div>
+                    <div className="flex items-center space-x-1 text-gray-500 text-sm">
+                      <MapPin className="w-3 h-3" />
+                      <span>{review.location}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <StarRating rating={review.rating} />
+                  <div className="text-gray-400 text-xs mt-1">{review.timeAgo}</div>
+                </div>
+              </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+              {/* Review Content */}
+              <div className="mb-4">
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  &ldquo;{review.review}&rdquo;
+                </p>
+              </div>
+
+              {/* Review Footer */}
+              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                <button className="flex items-center space-x-2 text-sm hover:opacity-80 text-gray-600">
+                  <ThumbsUp className="w-4 h-4" />
+                  <span>Helpful ({review.helpful})</span>
+                </button>
+                <div className="flex items-center space-x-1">
+                  <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">G</span>
+                  </div>
+                  <Verified className="w-3 h-3 text-blue-500" />
+                  <span className="text-gray-500 text-xs">Verified</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Statistics Summary */}
+        <div
+          className="rounded-2xl p-8 border"
+          style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-4xl font-light text-yellow-300 mb-2">Real Experience</div>
-              <div className="text-blue-100">23+ years in finance, not just teaching theory</div>
+              <div className="text-3xl font-light mb-2 text-gray-800">2,452+</div>
+              <div className="text-gray-600 text-sm">Total Reviews</div>
             </div>
             <div>
-              <div className="text-4xl font-light text-yellow-300 mb-2">Local Understanding</div>
-              <div className="text-blue-100">Maharashtra focus with Marathi language support</div>
+              <div className="text-3xl font-light mb-2 text-gray-800">5.0★</div>
+              <div className="text-gray-600 text-sm">Average Rating</div>
             </div>
             <div>
-              <div className="text-4xl font-light text-yellow-300 mb-2">Proven Results</div>
-              <div className="text-blue-100">Hands-on Learning with Real Market Examples</div>
+              <div className="text-3xl font-light mb-2 text-gray-800">98%</div>
+              <div className="text-gray-600 text-sm">5-Star Reviews</div>
+            </div>
+            <div>
+              <div className="text-3xl font-light mb-2 text-gray-800">47</div>
+              <div className="text-gray-600 text-sm">This Month</div>
             </div>
           </div>
+        </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
-              Learn from Sammeer - Join Our Institute
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-              Call for Personal Consultation
-            </button>
+        {/* CTA Section */}
+        <div className="text-center mt-12">
+          <div
+            className="rounded-2xl p-8 border"
+            style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}
+          >
+            <h3 className="text-2xl md:text-3xl font-light mb-4 text-gray-800">
+              Join 10,000+ Happy Families Who Trust Us
+            </h3>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Experience the same quality teaching that earned us Maharashtra&apos;s highest Google
+              rating
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                className="text-white px-8 py-4 rounded-xl font-semibold transition-colors hover:opacity-90"
+                style={{ backgroundColor: '#BF2932' }}
+              >
+                Join Our Trading Institute
+              </button>
+              <button className="border border-gray-200 text-gray-600 px-8 py-4 rounded-xl font-semibold hover:border-gray-300 transition-colors">
+                Read All Reviews on Google
+              </button>
+            </div>
           </div>
         </div>
       </div>

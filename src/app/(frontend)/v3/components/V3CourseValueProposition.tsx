@@ -121,13 +121,13 @@ export default function V3CourseValueProposition() {
   ]
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
             Complete{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
+            <span className="font-medium" style={{ color: '#BF2932' }}>
               Stock Market Mastery
             </span>
           </h2>
@@ -140,8 +140,8 @@ export default function V3CourseValueProposition() {
           {/* Success Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {successMetrics.map((metric, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-                <div className="text-3xl font-light text-blue-600 mb-2">{metric.value}</div>
+              <div key={index} className="rounded-xl p-6 shadow-lg border" style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}>
+                <div className="text-3xl font-light mb-2" style={{ color: '#BF2932' }}>{metric.value}</div>
                 <div className="font-semibold text-gray-800 text-sm mb-1">{metric.label}</div>
                 <div className="text-gray-500 text-xs">{metric.description}</div>
               </div>
@@ -152,7 +152,7 @@ export default function V3CourseValueProposition() {
         {/* Course Modules */}
         <div className="mb-16">
           <h3 className="text-3xl font-light text-gray-800 text-center mb-12">
-            What You&apos;ll <span className="text-blue-600 font-medium">Master</span>
+            What You&apos;ll <span className="font-medium" style={{ color: '#BF2932' }}>Master</span>
           </h3>
 
           <div className="grid lg:grid-cols-2 gap-8">
@@ -161,7 +161,8 @@ export default function V3CourseValueProposition() {
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+                  className="rounded-2xl p-8 shadow-lg border hover:shadow-xl transition-shadow"
+                  style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}
                 >
                   <div className="flex items-start space-x-4 mb-6">
                     <div
@@ -172,7 +173,7 @@ export default function V3CourseValueProposition() {
                     <div>
                       <h4 className="text-xl font-semibold text-gray-800 mb-2">{module.title}</h4>
                       <p className="text-gray-600 text-sm mb-2">{module.description}</p>
-                      <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                      <div className="px-3 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#FFF3CD', color: '#BF2932' }}>
                         {module.duration}
                       </div>
                     </div>
@@ -195,7 +196,7 @@ export default function V3CourseValueProposition() {
         {/* Unique Features */}
         <div className="mb-16">
           <h3 className="text-3xl font-light text-gray-800 text-center mb-12">
-            Why Our Institute is <span className="text-blue-600 font-medium">Different</span>
+            Why Our Institute is <span className="font-medium" style={{ color: '#BF2932' }}>Different</span>
           </h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -204,14 +205,15 @@ export default function V3CourseValueProposition() {
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-6 text-center shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+                  className="rounded-2xl p-6 text-center shadow-lg border hover:shadow-xl transition-shadow"
+                  style={{ backgroundColor: '#FFFFFF', borderColor: '#FFCDD2' }}
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white" style={{ backgroundColor: '#BF2932' }}>
+                    <Icon className="w-8 h-8" />
                   </div>
                   <h4 className="text-lg font-semibold text-gray-800 mb-3">{feature.title}</h4>
                   <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
-                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 px-4 py-2 rounded-lg font-semibold text-sm">
+                  <div className="px-4 py-2 rounded-lg font-semibold text-sm" style={{ backgroundColor: '#FFF3CD', color: '#BF2932' }}>
                     {feature.value}
                   </div>
                 </div>
@@ -222,10 +224,10 @@ export default function V3CourseValueProposition() {
 
         {/* Learning Outcomes */}
         <div className="mb-16">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100">
+          <div className="rounded-3xl p-8 md:p-12 shadow-2xl border" style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}>
             <h3 className="text-3xl font-light text-gray-800 text-center mb-12">
               By the End of Our Program, You Will{' '}
-              <span className="text-blue-600 font-medium">Achieve</span>
+              <span className="font-medium" style={{ color: '#BF2932' }}>Achieve</span>
             </h3>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -258,27 +260,27 @@ export default function V3CourseValueProposition() {
 
         {/* Course Investment */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white">
+          <div className="rounded-3xl p-8 md:p-12 text-white" style={{ background: 'linear-gradient(to right, #BF2932, #8B1F26)' }}>
             <h3 className="text-3xl md:text-4xl font-light mb-6">
               Transform Your Financial Future{' '}
-              <span className="text-yellow-300 font-medium">Today</span>
+              <span className="font-medium" style={{ color: '#F8C200' }}>Today</span>
             </h3>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-100 mb-8 max-w-2xl mx-auto text-lg">
               Don&apos;t let another day pass wondering &ldquo;what if.&rdquo; Join the institute
               that has already helped 10,000+ Families achieve financial freedom through smart
               trading.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto mb-8">
-              <button className="bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold text-lg py-4 px-6 rounded-xl transition-colors">
+              <button className="font-bold text-lg py-4 px-6 rounded-xl transition-colors text-gray-900 hover:opacity-90" style={{ backgroundColor: '#F8C200' }}>
                 Join Our Institute Today
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-4 px-6 rounded-xl transition-colors">
+              <button className="border-2 border-white text-white hover:bg-white font-semibold py-4 px-6 rounded-xl transition-colors hover:text-gray-900">
                 Call for Institute Details
               </button>
             </div>
 
-            <div className="text-blue-200 text-sm space-y-1">
+            <div className="text-gray-200 text-sm space-y-1">
               <div>
                 📞 Need help choosing? Call +91-7066334499/+91-7066337676 for free consultation
               </div>

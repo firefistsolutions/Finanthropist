@@ -87,7 +87,7 @@ export default function V3FrequentlyAskedQuestions() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
             Frequently Asked{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-medium">
+            <span className="font-medium" style={{ color: '#BF2932' }}>
               Questions
             </span>
           </h2>
@@ -104,7 +104,7 @@ export default function V3FrequentlyAskedQuestions() {
               {/* Category Header */}
               <div className="mb-8">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-2">{category.category}</h3>
-                <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+                <div className="w-20 h-1 rounded-full" style={{ backgroundColor: '#BF2932' }}></div>
               </div>
 
               {/* Questions in Category */}
@@ -114,7 +114,8 @@ export default function V3FrequentlyAskedQuestions() {
                   return (
                     <div
                       key={currentIndex}
-                      className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                      className="rounded-2xl shadow-lg border overflow-hidden"
+                      style={{ backgroundColor: '#FFFFFF', borderColor: '#F8C200' }}
                     >
                       <button
                         onClick={() => toggleFAQ(currentIndex)}
@@ -123,7 +124,7 @@ export default function V3FrequentlyAskedQuestions() {
                         <h4 className="text-lg font-semibold text-gray-800 pr-4">{faq.question}</h4>
                         <div className="flex-shrink-0">
                           {openFAQ === currentIndex ? (
-                            <ChevronUp className="w-6 h-6 text-blue-600" />
+                            <ChevronUp className="w-6 h-6" style={{ color: '#BF2932' }} />
                           ) : (
                             <ChevronDown className="w-6 h-6 text-gray-400" />
                           )}
@@ -147,11 +148,11 @@ export default function V3FrequentlyAskedQuestions() {
 
         {/* Still Have Questions Section */}
         <div className="mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center">
+          <div className="rounded-3xl p-8 md:p-12 text-white text-center" style={{ background: 'linear-gradient(to right, #BF2932, #8B1F26)' }}>
             <h3 className="text-3xl font-light mb-6">
-              Still Have <span className="text-yellow-300 font-medium">Questions?</span>
+              Still Have <span className="font-medium" style={{ color: '#F8C200' }}>Questions?</span>
             </h3>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-100 mb-8 max-w-2xl mx-auto text-lg">
               Can&apos;t find what you&apos;re looking for? Our team is here to help. Get
               personalized answers to all your questions about our institute and trading.
             </p>
@@ -162,8 +163,8 @@ export default function V3FrequentlyAskedQuestions() {
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="font-semibold mb-2">Call Us Directly</h4>
-                <p className="text-blue-100 text-sm mb-3">Get instant answers to your questions</p>
-                <div className="text-yellow-300 font-semibold">+91-7066334499/ +91-7066337676</div>
+                <p className="text-gray-100 text-sm mb-3">Get instant answers to your questions</p>
+                <div className="font-semibold" style={{ color: '#F8C200' }}>+91-7066334499/ +91-7066337676</div>
               </div>
 
               <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 border border-white/30">
@@ -171,32 +172,32 @@ export default function V3FrequentlyAskedQuestions() {
                   <MessageCircle className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="font-semibold mb-2">WhatsApp Chat</h4>
-                <p className="text-blue-100 text-sm mb-3">Quick responses to your queries</p>
-                <div className="text-yellow-300 font-semibold">Chat Now</div>
+                <p className="text-gray-100 text-sm mb-3">Quick responses to your queries</p>
+                <div className="font-semibold" style={{ color: '#F8C200' }}>Chat Now</div>
               </div>
 
               <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 border border-white/30">
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-3">
-                  <Target className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 text-white" style={{ backgroundColor: '#BF2932' }}>
+                  <Target className="w-6 h-6" />
                 </div>
                 <h4 className="font-semibold mb-2">Institute Tour</h4>
-                <p className="text-blue-100 text-sm mb-3">Visit our institute and meet faculty</p>
-                <div className="text-yellow-300 font-semibold">Aug 26, 8 PM</div>
+                <p className="text-gray-100 text-sm mb-3">Visit our institute and meet faculty</p>
+                <div className="font-semibold" style={{ color: '#F8C200' }}>Aug 26, 8 PM</div>
               </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors" style={{ color: '#BF2932' }}>
                 Schedule Free Consultation
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+              <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white transition-colors hover:text-gray-900">
                 Visit Our Institute
               </button>
             </div>
 
-            <div className="mt-6 text-blue-200 text-sm">
+            <div className="mt-6 text-gray-200 text-sm">
               <div className="flex items-center justify-center space-x-2">
-                <Lightbulb className="w-5 h-5 text-yellow-400" />
+                <Lightbulb className="w-5 h-5" style={{ color: '#F8C200' }} />
                 <span>
                   Pro tip: Visit our institute first - you&apos;ll get answers to most questions and
                   meet our faculty!
@@ -208,21 +209,21 @@ export default function V3FrequentlyAskedQuestions() {
 
         {/* Trust Reinforcement */}
         <div className="mt-12">
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center">
+          <div className="rounded-2xl p-8 shadow-lg border text-center" style={{ backgroundColor: '#FFFFFF', borderColor: '#F8C200' }}>
             <h4 className="text-xl font-semibold text-gray-800 mb-4">
               Why 2,452+ Students Trust Our Answers
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               <div>
-                <div className="text-2xl font-light text-blue-600 mb-2">5.0★</div>
+                <div className="text-2xl font-light mb-2" style={{ color: '#BF2932' }}>5.0★</div>
                 <div className="text-gray-600 text-sm">Google Rating</div>
               </div>
               <div>
-                <div className="text-2xl font-light text-blue-600 mb-2">23+</div>
+                <div className="text-2xl font-light mb-2" style={{ color: '#BF2932' }}>23+</div>
                 <div className="text-gray-600 text-sm">Years Experience</div>
               </div>
               <div>
-                <div className="text-2xl font-light text-blue-600 mb-2">10K+</div>
+                <div className="text-2xl font-light mb-2" style={{ color: '#BF2932' }}>10K+</div>
                 <div className="text-gray-600 text-sm">Families Guided</div>
               </div>
             </div>

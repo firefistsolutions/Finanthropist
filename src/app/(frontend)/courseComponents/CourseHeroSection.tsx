@@ -20,17 +20,17 @@ const useInView = (threshold = 0.1) => {
     const isMobile = window.innerWidth < 768
     const adjustedThreshold = isMobile ? Math.min(threshold, 0.1) : Math.min(threshold, 0.2)
     const rootMargin = isMobile ? '20px 0px -5% 0px' : '50px 0px -10% 0px'
-    
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setTimeout(() => setIsInView(entry.isIntersecting), 50)
       },
-      { 
+      {
         threshold: adjustedThreshold,
-        rootMargin: rootMargin
-      }
+        rootMargin: rootMargin,
+      },
     )
-    
+
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
   }, [threshold])
@@ -38,14 +38,14 @@ const useInView = (threshold = 0.1) => {
   return [ref, isInView] as const
 }
 
-const getAnimationClasses = (inView: boolean, baseClasses = 'opacity-0 translate-y-2') => 
+const getAnimationClasses = (inView: boolean, baseClasses = 'opacity-0 translate-y-2') =>
   inView ? 'opacity-100 translate-y-0' : baseClasses
 
 const getStaggerDelay = (index: number, baseDelay = 200) => {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
   const adjustedDelay = isMobile ? Math.min(baseDelay, 150) : baseDelay
   return {
-    transitionDelay: `${index * adjustedDelay}ms`
+    transitionDelay: `${index * adjustedDelay}ms`,
   }
 }
 
@@ -62,72 +62,88 @@ export default function CourseHeroSection() {
       await document.fonts.ready
 
       const isMobile = window.matchMedia('(max-width: 768px)').matches
-      
+
       // Set initial visibility
       gsap.set([titleRef.current, subtitleRef.current], { opacity: 1 })
-      
+
       // Create entrance animation
       const tl = gsap.timeline({ delay: 0.5 })
-      
+
       // Animate title words
       tl.from(titleRef.current.querySelectorAll('.title-word'), {
         y: 100,
         opacity: 0,
         duration: isMobile ? 0.8 : 1.2,
         stagger: isMobile ? 0.1 : 0.15,
-        ease: 'power3.out'
+        ease: 'power3.out',
       })
-      
+
       // Animate subtitle
-      tl.from(subtitleRef.current, {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power2.out'
-      }, '-=0.5')
-      
+      tl.from(
+        subtitleRef.current,
+        {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: 'power2.out',
+        },
+        '-=0.5',
+      )
+
       // Animate stats
-      tl.from(statsRef.current.children, {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: 'power2.out'
-      }, '-=0.3')
+      tl.from(
+        statsRef.current.children,
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power2.out',
+        },
+        '-=0.3',
+      )
     }
 
     initAnimation()
   }, [])
 
   return (
-    <section ref={heroRef} className="relative min-h-screen pt-16 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex items-center justify-center overflow-hidden">
+    <section
+      ref={heroRef}
+      className="relative min-h-screen pt-16 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex items-center justify-center overflow-hidden"
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 right-20 w-64 h-64 bg-yellow-400 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-20 w-48 h-48 bg-blue-400 rounded-full blur-3xl"></div>
       </div>
-      
+
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-1000 ${getAnimationClasses(heroInView)}`}>
+        <div
+          className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-1000 ${getAnimationClasses(heroInView)}`}
+        >
           {/* Left Content */}
           <div className="text-white space-y-8">
             <div className="space-y-4">
-              <h1 
+              <h1
                 ref={titleRef}
                 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight opacity-0"
               >
                 <span className="title-word inline-block">Master</span>{' '}
-                <span className="title-word inline-block bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent font-medium">Share Market</span>{' '}
+                <span className="title-word inline-block bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent font-medium">
+                  Share Market
+                </span>{' '}
                 <span className="title-word inline-block">Trading</span>
               </h1>
-              <p 
+              <p
                 ref={subtitleRef}
                 className="text-xl text-blue-100 leading-relaxed max-w-2xl opacity-0"
               >
-                Learn from Maharashtra&apos;s most trusted stock market educator with 23+ years experience. Transform your financial future with practical trading education.
+                Learn from Maharashtra&apos;s most trusted stock market educator with 23+ years
+                experience. Transform your financial future with practical trading education.
               </p>
-              
+
               {/* Google Reviews Trust Badge */}
               <div className="mt-6 flex items-center justify-center space-x-4">
                 <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
@@ -137,16 +153,18 @@ export default function CourseHeroSection() {
                     </div>
                     <div className="flex space-x-1">
                       {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                        <svg
+                          key={i}
+                          className="w-4 h-4 text-yellow-400 fill-current"
+                          viewBox="0 0 20 20"
+                        >
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                       ))}
                     </div>
                     <span className="text-white font-semibold">4.9</span>
                   </div>
-                  <div className="text-white text-sm">
-                    2,452+ Google Reviews
-                  </div>
+                  <div className="text-white text-sm">2.5k+ Google Reviews</div>
                 </div>
                 <div className="text-green-300 text-sm font-medium">
                   Maharashtra&apos;s #1 Rated Educator
@@ -156,20 +174,44 @@ export default function CourseHeroSection() {
 
             {/* Key Stats - Old UI Style */}
             <div ref={statsRef} className="grid grid-cols-2 gap-8">
-              {([
-                { icon: Users, number: "10,000+", label: "Students Trained", color: "from-blue-500 to-purple-500" },
-                { icon: Award, number: "23+ Years", label: "Finance Experience", color: "from-emerald-500 to-teal-500" },
-                { icon: TrendingUp, number: "HDFC & HSBC", label: "Corporate Background", color: "from-purple-500 to-pink-500" },
-                { icon: Clock, number: "Lifetime", label: "Mentorship", color: "from-orange-500 to-red-500" }
-              ] as StatItem[]).map((stat, index) => {
+              {(
+                [
+                  {
+                    icon: Users,
+                    number: '10,000+',
+                    label: 'Students Trained',
+                    color: 'from-blue-500 to-purple-500',
+                  },
+                  {
+                    icon: Award,
+                    number: '23+ Years',
+                    label: 'Finance Experience',
+                    color: 'from-emerald-500 to-teal-500',
+                  },
+                  {
+                    icon: TrendingUp,
+                    number: 'HDFC & HSBC',
+                    label: 'Corporate Background',
+                    color: 'from-purple-500 to-pink-500',
+                  },
+                  {
+                    icon: Clock,
+                    number: 'Lifetime',
+                    label: 'Mentorship',
+                    color: 'from-orange-500 to-red-500',
+                  },
+                ] as StatItem[]
+              ).map((stat, index) => {
                 const Icon = stat.icon
                 return (
-                  <div 
-                    key={`stat-${index}`} 
+                  <div
+                    key={`stat-${index}`}
                     className="text-center p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-500 group"
                     style={getStaggerDelay(index, 100)}
                   >
-                    <div className={`w-12 h-12 bg-gradient-to-r ${stat.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div
+                      className={`w-12 h-12 bg-gradient-to-r ${stat.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    >
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-xl font-light text-white mb-1 group-hover:scale-110 transition-transform duration-300">
@@ -197,9 +239,7 @@ export default function CourseHeroSection() {
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span>Learn in Marathi & English</span>
               </div>
-              <div className="text-sm text-blue-200">
-                ✅ Based in Nashik, Maharashtra
-              </div>
+              <div className="text-sm text-blue-200">✅ Based in Nashik, Maharashtra</div>
             </div>
           </div>
 
@@ -212,18 +252,23 @@ export default function CourseHeroSection() {
                     <TrendingUp className="w-10 h-10 text-white" />
                   </div>
                   <h3 className="text-2xl font-light text-white mb-2">Complete Trading Course</h3>
-                  <p className="text-blue-200">Master share market trading with comprehensive education</p>
+                  <p className="text-blue-200">
+                    Master share market trading with comprehensive education
+                  </p>
                 </div>
 
                 <div className="space-y-4">
                   {[
-                    "Technical Analysis Mastery",
-                    "Risk Management Strategies", 
-                    "Portfolio Building Techniques",
-                    "Options & Derivatives Trading",
-                    "Market Psychology & Timing"
+                    'Technical Analysis Mastery',
+                    'Risk Management Strategies',
+                    'Portfolio Building Techniques',
+                    'Options & Derivatives Trading',
+                    'Market Psychology & Timing',
                   ].map((topic, index) => (
-                    <div key={`topic-${index}`} className="flex items-center space-x-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10">
+                    <div
+                      key={`topic-${index}`}
+                      className="flex items-center space-x-3 p-3 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10"
+                    >
                       <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                         <span className="text-white font-semibold text-sm">{index + 1}</span>
                       </div>
@@ -252,7 +297,7 @@ export default function CourseHeroSection() {
                 </div>
               </div>
             </div>
-            
+
             {/* Background decoration - Old Style */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl transform rotate-3"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-3xl transform -rotate-3"></div>

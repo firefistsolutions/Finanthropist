@@ -38,17 +38,17 @@ export default function V3FinalConversionCTA() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
+    <section className="py-20" style={{ backgroundColor: '#FFE4E6' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Headline */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6 text-gray-800">
             Your Financial Transformation{' '}
-            <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent font-medium">
+            <span className="font-medium" style={{ color: '#BF2932' }}>
               Starts Now
             </span>
           </h2>
-          <p className="text-2xl text-blue-100 max-w-4xl mx-auto mb-8">
+          <p className="text-2xl text-gray-700 max-w-4xl mx-auto mb-8">
             Don&apos;t let another day pass wondering &ldquo;what if.&rdquo; Join Maharashtra&apos;s
             most trusted stock market educator and start building the wealth you deserve.
           </p>
@@ -139,10 +139,10 @@ export default function V3FinalConversionCTA() {
 
           {/* Right Column - Registration Form */}
           <div>
-            <div className="bg-white rounded-3xl p-8 shadow-2xl">
+            <div className="rounded-3xl p-8 shadow-2xl border" style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}>
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Calendar className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white" style={{ background: 'linear-gradient(to right, #BF2932, #8B1F26)' }}>
+                  <Calendar className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">
                   Join Our Trading Institute Today
@@ -194,7 +194,8 @@ export default function V3FinalConversionCTA() {
 
                 <button
                   type="submit"
-                  className="w-full md:w-auto self-center bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold text-xl py-6 px-8 rounded-xl transition-colors shadow-lg"
+                  className="w-full md:w-auto self-center text-white font-bold text-xl py-6 px-8 rounded-xl transition-colors shadow-lg hover:opacity-90"
+                  style={{ backgroundColor: '#BF2932' }}
                 >
                   Join Our Institute Now
                 </button>
@@ -207,7 +208,7 @@ export default function V3FinalConversionCTA() {
                   <span>Quick Call Registration: +91-7066334499/+91-7066337676</span>
                 </button>
 
-                <button className="flex items-center justify-center space-x-3 border-2 border-gray-300 text-gray-700 hover:border-green-600 hover:text-green-600 font-semibold py-4 px-6 rounded-xl transition-colors">
+                <button className="flex items-center justify-center space-x-3 border-2 border-gray-300 text-gray-700 font-semibold py-4 px-6 rounded-xl transition-colors hover:border-gray-500">
                   <MessageCircle className="w-5 h-5" />
                   <span>WhatsApp Admission</span>
                 </button>
@@ -244,15 +245,15 @@ export default function V3FinalConversionCTA() {
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <h3 className="text-3xl font-light mb-6">
+          <h3 className="text-3xl font-light mb-6 text-gray-800">
             The Choice Is Yours:{' '}
-            <span className="text-yellow-300 font-medium">Transform or Stay the Same</span>
+            <span className="font-medium" style={{ color: '#BF2932' }}>Transform or Stay the Same</span>
           </h3>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-            <div className="bg-red-600/20 border border-red-500/30 rounded-2xl p-6">
-              <h4 className="text-xl font-semibold text-red-300 mb-4">If You Don&apos;t Act:</h4>
-              <ul className="space-y-2 text-red-200 text-sm">
+            <div className="bg-red-50 border-2 border-red-300 rounded-2xl p-6">
+              <h4 className="text-xl font-semibold text-red-700 mb-4">If You Don&apos;t Act:</h4>
+              <ul className="space-y-2 text-red-600 text-sm">
                 <li>• Continue struggling with money problems</li>
                 <li>• Miss out on stock market opportunities</li>
                 <li>• Keep relying on single income source</li>
@@ -260,9 +261,9 @@ export default function V3FinalConversionCTA() {
               </ul>
             </div>
 
-            <div className="bg-green-600/20 border border-green-500/30 rounded-2xl p-6">
-              <h4 className="text-xl font-semibold text-green-300 mb-4">If You Act Today:</h4>
-              <ul className="space-y-2 text-green-200 text-sm">
+            <div className="bg-green-50 border-2 border-green-300 rounded-2xl p-6">
+              <h4 className="text-xl font-semibold text-green-700 mb-4">If You Act Today:</h4>
+              <ul className="space-y-2 text-green-600 text-sm">
                 <li>• Learn at Maharashtra&apos;s #1 rated institute</li>
                 <li>• Start building multiple income streams</li>
                 <li>• Join 10,000+ successful Families</li>
@@ -271,14 +272,14 @@ export default function V3FinalConversionCTA() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-yellow-400 to-orange-400 rounded-2xl p-2 mb-8 max-w-2xl mx-auto">
-            <button className="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold text-2xl py-6 px-8 rounded-xl transition-colors flex items-center justify-center">
+          <div className="rounded-2xl p-2 mb-8 max-w-2xl mx-auto" style={{ backgroundColor: '#F8C200' }}>
+            <button className="w-full text-white font-bold text-2xl py-6 px-8 rounded-xl transition-colors flex items-center justify-center hover:opacity-90" style={{ backgroundColor: '#BF2932' }}>
               <Target className="w-6 h-6 mr-3" />
               YES! JOIN OUR INSTITUTE NOW
             </button>
           </div>
 
-          <div className="text-blue-200 space-y-2">
+          <div className="text-gray-700 space-y-2">
             <div className="flex items-center justify-center space-x-2">
               <Phone className="w-4 h-4" />
               <span>Need help? Call +91-7066334499/+91-7066337676</span>

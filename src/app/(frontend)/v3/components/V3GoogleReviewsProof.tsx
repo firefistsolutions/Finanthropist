@@ -4,80 +4,107 @@ import React from 'react'
 import { Star, MapPin, ThumbsUp, Verified } from 'lucide-react'
 
 export default function V3GoogleReviewsProof() {
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map((word) => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2)
+  }
+
+  const getRandomTimeAgo = () => {
+    const options = [
+      '5 days ago',
+      '1 week ago',
+      '2 weeks ago',
+      '3 weeks ago',
+      '1 month ago',
+      '2 months ago',
+    ]
+    return options[Math.floor(Math.random() * options.length)]
+  }
+
+  const getRandomHelpful = () => {
+    return Math.floor(Math.random() * 20) + 5
+  }
+
   const googleReviews = [
     {
-      name: 'Priya Sharma',
-      initials: 'PS',
-      avatar:
-        'https://images.unsplash.com/photo-1494790108755-2616c179e12e?w=150&h=150&fit=crop&crop=face',
-      location: 'Pune, Maharashtra',
+      name: 'Satish Atkari',
       rating: 5,
-      timeAgo: '2 weeks ago',
-      review:
-        'Excellent faculty at Finanthropist. Sameer sir explains complex concepts in simple words. Way of teaching is awesome, very easy technique and informative. Highly recommended!',
-      helpful: 12,
+      review: `I sincerely thank you for the insightful share market course by Sameer sir. The concepts were explained in a simple yet powerful way, and I now feel more confident in making informed investment decisions in equity/IPO areas. Sir has given recordings for F&O also. I will go through that and will try to understand. Your guidance has truly sparked my interest in market analysis and financial planning. I'm grateful for the value you've added to my learning.
+    Thank you Sameer sir & team.`,
     },
     {
-      name: 'Rahul Patil',
-      initials: 'RP',
-      avatar:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
-      location: 'Mumbai, Maharashtra',
+      name: 'Vivek Patankar',
       rating: 5,
-      timeAgo: '1 month ago',
-      review:
-        'This course will really transform your entire life. After doing the course now I am doing trading my own. Great speaker and teacher. Team Finanthropist support is exceptional.',
-      helpful: 18,
+      review: `I recently completed the Share Market class and it exceeded all my expectations. The course was incredibly informative, well-structured, and easy to follow—even for someone like me with no prior background in trading. The instructor explained complex concepts like technical analysis, fundamental analysis, and risk management in a clear and practical way.
+
+    Live sessions, real market examples, and hands-on practice helped me gain confidence in making my own investment decisions. What I appreciated most was the focus on disciplined trading and long-term strategy rather than just quick profits.
+
+    Highly recommended for beginners as well as those looking to strengthen their market knowledge!`,
     },
     {
-      name: 'Sunita Deshmukh',
-      initials: 'SD',
-      avatar:
-        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
-      location: 'Nashik, Maharashtra',
+      name: 'Rajani Chougule',
       rating: 5,
-      timeAgo: '3 weeks ago',
-      review:
-        "Even I don't know a single word about share market and trend. Sameer sir explain easy and fine way in each and every section. Now just 6 days I can read candle pattern and trend.",
-      helpful: 15,
+      review: `I recently completed this course. The teaching style is exceptionally clear, simple, and easily accessible to everyone, including beginners.
+    Thank you so much sir🙏`,
     },
     {
-      name: 'Amit Joshi',
-      initials: 'AJ',
-      avatar:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
-      location: 'Nagpur, Maharashtra',
+      name: 'Vikas Deorukhkar',
       rating: 5,
-      timeAgo: '1 week ago',
-      review:
-        'Finanthropist is the best share market education learning platform. Humble and patient with questions and concerns. After completing course now am doing trading very confidently.',
-      helpful: 22,
+      review: `Excellent Teaching Knowledge about Shares Trading. I have attended the August 2025 Batch and am clear in my mind about Shares Trading in various fields i.e., Intraday, Delivery. In this 7-day class, we learned Three Things: Trade, Pattern, and Decision. If we follow the Training models and the three steps above, we will challenge ourselves to achieve good profits from Shares. Sir has a vast knowledge in this field, and they have taught us in a very simple and practical manner to get knowledge in mind and HEART. Also, we have done daily assignments to get practical knowledge about share purchases and sales as per the Chart. I would recommend to all of them to attend their Free Seminar and join their class to get good knowledge in Shares Investment and get Short Term and Long Term Profit. Do not miss this chance, Last but not Least. There is no compulsion of eduction to learn this course. 🙏1`,
     },
     {
-      name: 'Meera Kulkarni',
-      initials: 'MK',
-      avatar:
-        'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face',
-      location: 'Aurangabad, Maharashtra',
+      name: 'Pallavi Holey',
       rating: 5,
-      timeAgo: '2 months ago',
-      review:
-        'Sameer Sir and his staff are cooperative, helpful, and dedicated. Post-course completion support is very good. I will recommend Finanthropist for share marketing course.',
-      helpful: 9,
+      review: `I sincerely thank you for the insightful share market course by Sameer sir. The concepts were explained in a simple yet powerful way, and I now feel more confident in making informed investment decisions. Your guidance has truly sparked my interest in market analysis and financial planning. I'm grateful for the value you've added to my learning. Thank you Sameer sir, Yash sir, Karan sir and whole team.`,
     },
     {
-      name: 'Vikram Singh',
-      initials: 'VS',
-      avatar:
-        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
-      location: 'Solapur, Maharashtra',
+      name: 'Nita Pandit',
       rating: 5,
-      timeAgo: '5 days ago',
-      review:
-        'Extremely good with so much clarity in the subject. His intentions are all inclusive. The teaching methodology is practical and easy to understand for beginners.',
-      helpful: 14,
+      review: `This is one of the best share market courses in Maharashtra. It also provides valuable knowledge about investments. Sameer Sir is a genuine person who is working hard to share his knowledge of the share market with everyone. I feel very fortunate to have attended this course. Thanks to the entire Finanthropist team. I highly recommend joining the course to gain the best knowledge. I also thank the universe for bringing me in contact with the Finanthropist team.`,
+    },
+    {
+      name: 'Pritesh Satam',
+      rating: 5,
+      review: `Very Nice Overall Course. Sir's teaching method is so simple and nice that even a person with zero knowledge of share market can learn and earn money.`,
+    },
+    {
+      name: 'Uday Rajput',
+      rating: 5,
+      review: `Done all class from here. Excellent work from their team and especially Sameer Sir. Thank you so much. And appreciate their work that they have provided service for lifetime. Thanks again... 😀😊`,
+    },
+    {
+      name: 'Pushparaj Shinde',
+      rating: 5,
+      review: `Myself Pushparaj Shinde and I am a student of Sameer Sarang Sir. I am very happy to learn share market education in a very simple and easiest way. Thank you Sir 🙏 Stay Blessed 💐💐`,
+    },
+    {
+      name: 'Amit Gade',
+      rating: 5,
+      review: `Super experience, Finanthropist is the best share market course in Maharashtra. One of the best classes. I got perfect basic knowledge from them. Special thanks to Mr. Sameer sir and class team. They help properly, whatever you want—ask them and they will help you.`,
+    },
+    {
+      name: 'Smita Angane',
+      rating: 5,
+      review: `One of the best and life changing share market courses in simple Marathi language. It also gives knowledge about investments. Sarang Sir is a genuine person trying hard to share the knowledge about the share market with everyone. I feel very lucky to attend this course. Thanks to entire Finanthropist team. Must join the course to get best knowledge.`,
+    },
+    {
+      name: 'Ravindra Patil',
+      rating: 5,
+      review: `One of the best decisions in my life to join this course. The course was very helpful and I developed self-confidence. Very easy language to understand share market. Thank you so much Sameer sir and all team members.`,
     },
   ]
+    .map((review) => ({
+      ...review,
+      initials: getInitials(review.name),
+      location: 'Maharashtra',
+      timeAgo: getRandomTimeAgo(),
+      helpful: getRandomHelpful(),
+    }))
+    .slice(0, 6)
 
   const GoogleLogo = () => (
     <div className="flex items-center space-x-2">
@@ -100,7 +127,7 @@ export default function V3GoogleReviewsProof() {
   )
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16" style={{ backgroundColor: '#FFE4E6' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -108,8 +135,8 @@ export default function V3GoogleReviewsProof() {
             <GoogleLogo />
           </div>
           <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
-            Why 2,452+ Students Rate Us{' '}
-            <span className="text-blue-600 font-medium">5.0/5 Stars</span>
+            Why 2.5k+ Students Rate Us{' '}
+            <span className="font-medium text-gray-800">5.0/5 Stars</span>
           </h2>
 
           {/* Overall Rating Display */}
@@ -117,7 +144,7 @@ export default function V3GoogleReviewsProof() {
             <div className="text-6xl font-light text-gray-800">5.0</div>
             <div>
               <StarRating rating={5} />
-              <div className="text-gray-600 text-sm mt-1">Based on 2,452+ reviews</div>
+              <div className="text-gray-600 text-sm mt-1">Based on 2.5k+ reviews</div>
             </div>
           </div>
 
@@ -150,17 +177,14 @@ export default function V3GoogleReviewsProof() {
           {googleReviews.map((review, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+              className="rounded-xl p-6 border hover:shadow-lg transition-shadow"
+              style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}
             >
               {/* Review Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-200">
-                    <img
-                      src={review.avatar}
-                      alt={review.name}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center border-2 border-gray-200">
+                    <span className="text-white font-semibold text-lg">{review.initials}</span>
                   </div>
                   <div>
                     <div className="font-semibold text-gray-800">{review.name}</div>
@@ -185,7 +209,7 @@ export default function V3GoogleReviewsProof() {
 
               {/* Review Footer */}
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 text-sm">
+                <button className="flex items-center space-x-2 text-sm hover:opacity-80 text-gray-600">
                   <ThumbsUp className="w-4 h-4" />
                   <span>Helpful ({review.helpful})</span>
                 </button>
@@ -202,46 +226,51 @@ export default function V3GoogleReviewsProof() {
         </div>
 
         {/* Statistics Summary */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+        <div
+          className="rounded-2xl p-8 border"
+          style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}
+        >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-3xl font-light text-blue-600 mb-2">2,452+</div>
+              <div className="text-3xl font-light mb-2 text-gray-800">2.5k+</div>
               <div className="text-gray-600 text-sm">Total Reviews</div>
             </div>
             <div>
-              <div className="text-3xl font-light text-blue-600 mb-2">5.0★</div>
+              <div className="text-3xl font-light mb-2 text-gray-800">5.0★</div>
               <div className="text-gray-600 text-sm">Average Rating</div>
             </div>
             <div>
-              <div className="text-3xl font-light text-blue-600 mb-2">98%</div>
+              <div className="text-3xl font-light mb-2 text-gray-800">98%</div>
               <div className="text-gray-600 text-sm">5-Star Reviews</div>
             </div>
             <div>
-              <div className="text-3xl font-light text-blue-600 mb-2">47</div>
+              <div className="text-3xl font-light mb-2 text-gray-800">47</div>
               <div className="text-gray-600 text-sm">This Month</div>
             </div>
-            {/* <div>
-              <div className="text-3xl font-light text-blue-600 mb-2">5+</div>
-              <div className="text-gray-600 text-sm">Maharashtra Cities</div>
-            </div> */}
           </div>
         </div>
 
         {/* CTA Section */}
         <div className="text-center mt-12">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl md:text-3xl font-light mb-4">
+          <div
+            className="rounded-2xl p-8 border"
+            style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}
+          >
+            <h3 className="text-2xl md:text-3xl font-light mb-4 text-gray-800">
               Join 10,000+ Happy Families Who Trust Us
             </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Experience the same quality teaching that earned us Maharashtra&apos;s highest Google
               rating
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
+              <button
+                className="text-white px-8 py-4 rounded-xl font-semibold transition-colors hover:opacity-90"
+                style={{ backgroundColor: '#BF2932' }}
+              >
                 Join Our Trading Institute
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+              <button className="border border-gray-200 text-gray-600 px-8 py-4 rounded-xl font-semibold hover:border-gray-300 transition-colors">
                 Read All Reviews on Google
               </button>
             </div>

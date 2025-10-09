@@ -9,7 +9,7 @@ Mentor to 10,000+ Families Across Maharashtra Since 2017
 
 ---
 
-## Student Testimonials (2,452+ Five-Star Reviews)
+## Student Testimonials (2.5k+ Five-Star Reviews)
 
 > "Excellent faculty at Finanthropist. Sameer sir explains complex concepts in simple words. Way of teaching is awesome, very easy technique and informative. **<span style="color: #fcc203">Highly recommended!</span>**"
 
@@ -72,7 +72,7 @@ Maharashtra's most trusted stock market educator with 23+ years of finance exper
 - 23+ Years in Finance Industry
 - Ex-HDFC & HSBC Professional
 - Mentor to 10,000+ Families Since 2017
-- 5.0/5 Google Rating from 2,452+ Students
+- 5.0/5 Google Rating from 2.5k+ Students
 
 ---
 
@@ -185,7 +185,7 @@ Can't find what you're looking for? Our team is here to help. Get personalized a
 - **WhatsApp Chat** - Quick responses to your queries
 - **Institute Tour** - Visit our institute and meet faculty
 
-**Why 2,452+ Students Trust Our Answers**
+**Why 2.5k+ Students Trust Our Answers**
 
 ---
 
@@ -196,7 +196,7 @@ Don't let another day pass wondering "what if." Join Maharashtra's most trusted 
 ### Why This Could Be The Most Important Decision You Ever Make
 
 #### **Learn from Proven Expert**
-23+ years finance experience, 5.0/5 Google rating from 2,452+ students
+23+ years finance experience, 5.0/5 Google rating from 2.5k+ students
 
 #### **Risk-Free Start**
 Begin with FREE consultation - no payment, no commitment, just pure value
@@ -241,7 +241,7 @@ Every day you delay is potential income lost. While you're thinking, your peers 
 
 ## Summary Statistics
 
-- **2,452+** Five-Star Google Reviews
+- **2.5k+** Five-Star Google Reviews
 - **10,000+** Families Mentored
 - **25,000+** Successful Students
 - **23+ Years** Finance Experience
