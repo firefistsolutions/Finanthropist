@@ -148,9 +148,15 @@ export default function V3FrequentlyAskedQuestions() {
 
         {/* Still Have Questions Section */}
         <div className="mt-16">
-          <div className="rounded-3xl p-8 md:p-12 text-white text-center" style={{ background: 'linear-gradient(to right, #BF2932, #8B1F26)' }}>
+          <div
+            className="rounded-3xl p-8 md:p-12 text-white text-center"
+            style={{ background: 'linear-gradient(to right, #BF2932, #8B1F26)' }}
+          >
             <h3 className="text-3xl font-light mb-6">
-              Still Have <span className="font-medium" style={{ color: '#F8C200' }}>Questions?</span>
+              Still Have{' '}
+              <span className="font-medium" style={{ color: '#F8C200' }}>
+                Questions?
+              </span>
             </h3>
             <p className="text-gray-100 mb-8 max-w-2xl mx-auto text-lg">
               Can&apos;t find what you&apos;re looking for? Our team is here to help. Get
@@ -164,7 +170,9 @@ export default function V3FrequentlyAskedQuestions() {
                 </div>
                 <h4 className="font-semibold mb-2">Call Us Directly</h4>
                 <p className="text-gray-100 text-sm mb-3">Get instant answers to your questions</p>
-                <div className="font-semibold" style={{ color: '#F8C200' }}>+91-7066334499/ +91-7066337676</div>
+                <div className="font-semibold" style={{ color: '#F8C200' }}>
+                  +91-7066334499/ +91-7066337676
+                </div>
               </div>
 
               <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 border border-white/30">
@@ -173,26 +181,40 @@ export default function V3FrequentlyAskedQuestions() {
                 </div>
                 <h4 className="font-semibold mb-2">WhatsApp Chat</h4>
                 <p className="text-gray-100 text-sm mb-3">Quick responses to your queries</p>
-                <div className="font-semibold" style={{ color: '#F8C200' }}>Chat Now</div>
+                <div className="font-semibold" style={{ color: '#F8C200' }}>
+                  Chat Now
+                </div>
               </div>
 
               <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 border border-white/30">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 text-white" style={{ backgroundColor: '#BF2932' }}>
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 text-white"
+                  style={{ backgroundColor: '#BF2932' }}
+                >
                   <Target className="w-6 h-6" />
                 </div>
                 <h4 className="font-semibold mb-2">Institute Tour</h4>
                 <p className="text-gray-100 text-sm mb-3">Visit our institute and meet faculty</p>
-                <div className="font-semibold" style={{ color: '#F8C200' }}>Aug 26, 8 PM</div>
+                <div className="font-semibold" style={{ color: '#F8C200' }}>
+                  Aug 26, 8 PM
+                </div>
               </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
-              <button className="bg-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors" style={{ color: '#BF2932' }}>
+              <a
+                href="#consultation"
+                className="bg-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors text-center"
+                style={{ color: '#BF2932' }}
+              >
                 Schedule Free Consultation
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white transition-colors hover:text-gray-900">
+              </a>
+              <a
+                href="#visit"
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white transition-colors hover:text-gray-900 text-center"
+              >
                 Visit Our Institute
-              </button>
+              </a>
             </div>
 
             <div className="mt-6 text-gray-200 text-sm">
@@ -209,21 +231,30 @@ export default function V3FrequentlyAskedQuestions() {
 
         {/* Trust Reinforcement */}
         <div className="mt-12">
-          <div className="rounded-2xl p-8 shadow-lg border text-center" style={{ backgroundColor: '#FFFFFF', borderColor: '#F8C200' }}>
+          <div
+            className="rounded-2xl p-8 shadow-lg border text-center"
+            style={{ backgroundColor: '#FFFFFF', borderColor: '#F8C200' }}
+          >
             <h4 className="text-xl font-semibold text-gray-800 mb-4">
               Why 2,452+ Students Trust Our Answers
             </h4>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               <div>
-                <div className="text-2xl font-light mb-2" style={{ color: '#BF2932' }}>5.0★</div>
+                <div className="text-2xl font-light mb-2" style={{ color: '#BF2932' }}>
+                  5.0★
+                </div>
                 <div className="text-gray-600 text-sm">Google Rating</div>
               </div>
               <div>
-                <div className="text-2xl font-light mb-2" style={{ color: '#BF2932' }}>23+</div>
+                <div className="text-2xl font-light mb-2" style={{ color: '#BF2932' }}>
+                  23+
+                </div>
                 <div className="text-gray-600 text-sm">Years Experience</div>
               </div>
               <div>
-                <div className="text-2xl font-light mb-2" style={{ color: '#BF2932' }}>10K+</div>
+                <div className="text-2xl font-light mb-2" style={{ color: '#BF2932' }}>
+                  10K+
+                </div>
                 <div className="text-gray-600 text-sm">Families Guided</div>
               </div>
             </div>

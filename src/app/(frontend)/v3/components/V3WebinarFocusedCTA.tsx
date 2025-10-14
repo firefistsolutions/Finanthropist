@@ -25,24 +25,32 @@ export default function V3WebinarFocusedCTA() {
     minutes: 0,
     seconds: 0,
   })
+  const [isUpcoming, setIsUpcoming] = useState<boolean>(false)
 
   useEffect(() => {
-    const targetDate = new Date('2025-08-26T20:00:00').getTime()
-
-    const timer = setInterval(() => {
-      const now = new Date().getTime()
-      const distance = targetDate - now
-
+    const envDate = process.env.NEXT_PUBLIC_WEBINAR_DATETIME
+    const targetMs = envDate ? Date.parse(envDate) : NaN
+    if (Number.isNaN(targetMs)) {
+      setIsUpcoming(false)
+      return
+    }
+    const update = () => {
+      const now = Date.now()
+      const distance = targetMs - now
       if (distance > 0) {
+        setIsUpcoming(true)
         setTimeLeft({
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
           hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
           minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((distance % (1000 * 60)) / 1000),
         })
+      } else {
+        setIsUpcoming(false)
       }
-    }, 1000)
-
+    }
+    update()
+    const timer = setInterval(update, 1000)
     return () => clearInterval(timer)
   }, [])
 
@@ -102,7 +110,10 @@ export default function V3WebinarFocusedCTA() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center px-6 py-3 rounded-full font-semibold text-sm mb-6 border" style={{ backgroundColor: 'white', color: '#8B4513', borderColor: '#F8C200' }}>
+          <div
+            className="inline-flex items-center px-6 py-3 rounded-full font-semibold text-sm mb-6 border"
+            style={{ backgroundColor: 'white', color: '#8B4513', borderColor: '#F8C200' }}
+          >
             <Gift className="w-5 h-5 mr-2" />
             Join Our Institute – Learn, Trade, Grow
           </div>
@@ -121,23 +132,36 @@ export default function V3WebinarFocusedCTA() {
         </div>
 
         {/* Webinar Details Card */}
-        <div className="rounded-3xl p-8 md:p-12 border mb-12" style={{ backgroundColor: 'white', borderColor: '#F8C200' }}>
+        <div
+          className="rounded-3xl p-8 md:p-12 border mb-12"
+          style={{ backgroundColor: 'white', borderColor: '#F8C200' }}
+        >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Webinar Info */}
             <div>
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#FFF0E0' }}>
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: '#FFF0E0' }}
+                  >
                     <Calendar className="w-6 h-6 text-gray-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-800">August 26, 2025</div>
-                    <div className="text-gray-600 text-sm">Tuesday</div>
+                    <div className="font-semibold text-gray-800">
+                      {process.env.NEXT_PUBLIC_WEBINAR_DATE_LABEL || 'Upcoming Batch'}
+                    </div>
+                    <div className="text-gray-600 text-sm">
+                      {process.env.NEXT_PUBLIC_WEBINAR_DAY_LABEL || ''}
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#FFF0E0' }}>
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: '#FFF0E0' }}
+                  >
                     <Clock className="w-6 h-6 text-gray-600" />
                   </div>
                   <div>
@@ -147,7 +171,10 @@ export default function V3WebinarFocusedCTA() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#FFF0E0' }}>
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: '#FFF0E0' }}
+                  >
                     <Video className="w-6 h-6 text-gray-600" />
                   </div>
                   <div>
@@ -157,7 +184,10 @@ export default function V3WebinarFocusedCTA() {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: '#FFF0E0' }}>
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: '#FFF0E0' }}
+                  >
                     <Users className="w-6 h-6 text-gray-600" />
                   </div>
                   <div>
@@ -168,28 +198,51 @@ export default function V3WebinarFocusedCTA() {
               </div>
 
               {/* Countdown Timer */}
-              <div className="rounded-2xl p-6 text-center border" style={{ backgroundColor: 'white', borderColor: '#F8C200' }}>
-                <div className="text-gray-600 font-semibold mb-4">Webinar Starts In:</div>
-                <div className="grid grid-cols-4 gap-4">
-                  {Object.entries(timeLeft).map(([unit, value]) => (
-                    <div key={unit} className="text-gray-700 rounded-lg p-4 border" style={{ backgroundColor: '#FFF9E6', borderColor: '#F8C200' }}>
-                      <div className="text-2xl font-bold">{value.toString().padStart(2, '0')}</div>
-                      <div className="text-xs uppercase tracking-wide">{unit}</div>
+              {isUpcoming ? (
+                <div
+                  className="rounded-2xl p-6 text-center border"
+                  style={{ backgroundColor: 'white', borderColor: '#F8C200' }}
+                >
+                  <div className="text-gray-600 font-semibold mb-4">Webinar Starts In:</div>
+                  <div className="grid grid-cols-4 gap-4">
+                    {Object.entries(timeLeft).map(([unit, value]) => (
+                      <div
+                        key={unit}
+                        className="text-gray-700 rounded-lg p-4 border"
+                        style={{ backgroundColor: '#FFF9E6', borderColor: '#F8C200' }}
+                      >
+                        <div className="text-2xl font-bold">
+                          {value.toString().padStart(2, '0')}
+                        </div>
+                        <div className="text-xs uppercase tracking-wide">{unit}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-red-600 font-semibold text-sm mt-4">
+                    <div className="flex items-center justify-center space-x-2">
+                      <AlertTriangle className="w-4 h-4 text-red-600" />
+                      <span>Limited Batch Seats Available!</span>
                     </div>
-                  ))}
-                </div>
-                <div className="text-red-600 font-semibold text-sm mt-4">
-                  <div className="flex items-center justify-center space-x-2">
-                    <AlertTriangle className="w-4 h-4 text-red-600" />
-                    <span>Limited Batch Seats Available!</span>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div
+                  className="rounded-2xl p-6 text-center border"
+                  style={{ backgroundColor: 'white', borderColor: '#F8C200' }}
+                >
+                  <div className="text-gray-600 font-semibold">
+                    Admissions open for next batch. Register your interest.
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Right - Registration Form */}
             <div>
-              <div className="rounded-2xl p-8 border" style={{ backgroundColor: 'white', borderColor: '#F8C200' }}>
+              <div
+                className="rounded-2xl p-8 border"
+                style={{ backgroundColor: 'white', borderColor: '#F8C200' }}
+              >
                 <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
                   Join Our Institute Today!
                 </h3>
@@ -228,13 +281,23 @@ export default function V3WebinarFocusedCTA() {
                 </form>
 
                 <div className="grid grid-cols-2 gap-3 mb-6">
-                  <button className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg text-sm transition-colors">
+                  <a
+                    href="tel:+917066334499"
+                    className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg text-sm transition-colors"
+                    aria-label="Call to register"
+                  >
                     <Phone className="w-4 h-4" />
                     <span>Call Register</span>
-                  </button>
-                  <button className="border border-gray-200 text-gray-600 font-semibold py-3 px-4 rounded-lg text-sm transition-colors hover:border-gray-300">
+                  </a>
+                  <a
+                    href="https://wa.me/917066334499"
+                    target="_blank"
+                    rel="noopener"
+                    className="border border-gray-200 text-gray-600 font-semibold py-3 px-4 rounded-lg text-sm transition-colors hover:border-gray-300 text-center"
+                    aria-label="Join on WhatsApp"
+                  >
                     WhatsApp Join
-                  </button>
+                  </a>
                 </div>
 
                 <div className="text-center text-xs text-gray-500 space-y-1">
@@ -260,13 +323,19 @@ export default function V3WebinarFocusedCTA() {
                 className="rounded-2xl p-6 border"
                 style={{ backgroundColor: 'white', borderColor: '#F8C200' }}
               >
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#FFF0E0' }}>
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                  style={{ backgroundColor: '#FFF0E0' }}
+                >
                   <topic.icon className="w-6 h-6 text-gray-600" />
                 </div>
                 <h4 className="text-xl font-semibold mb-3 text-gray-800">{topic.title}</h4>
                 <p className="text-gray-600 text-sm mb-4">{topic.description}</p>
                 <div className="flex justify-between items-center">
-                  <span className="px-3 py-1 rounded-full text-xs" style={{ backgroundColor: '#FFF0E0', color: '#8B4513' }}>
+                  <span
+                    className="px-3 py-1 rounded-full text-xs"
+                    style={{ backgroundColor: '#FFF0E0', color: '#8B4513' }}
+                  >
                     {topic.duration}
                   </span>
                   <CheckCircle className="w-5 h-5 text-green-400" />
@@ -278,10 +347,12 @@ export default function V3WebinarFocusedCTA() {
 
         {/* Final CTA */}
         <div className="text-center">
-          <div className="rounded-3xl p-8 border" style={{ backgroundColor: 'white', borderColor: '#F8C200' }}>
+          <div
+            className="rounded-3xl p-8 border"
+            style={{ backgroundColor: 'white', borderColor: '#F8C200' }}
+          >
             <h3 className="text-3xl font-light text-gray-800 mb-6">
-              Don&apos;t Miss This{' '}
-              <span className="text-gray-800">Life-Changing Opportunity</span>
+              Don&apos;t Miss This <span className="text-gray-800">Life-Changing Opportunity</span>
             </h3>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
               Join 10,000+ successful Families who learned at our institute. Batch seats filling up
@@ -289,14 +360,20 @@ export default function V3WebinarFocusedCTA() {
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
-              <button className="flex items-center justify-center space-x-2 border border-gray-200 text-gray-600 hover:border-gray-300 font-semibold py-4 px-6 rounded-xl transition-colors">
+              <a
+                href="tel:+917066334499"
+                className="flex items-center justify-center space-x-2 border border-gray-200 text-gray-600 hover:border-gray-300 font-semibold py-4 px-6 rounded-xl transition-colors"
+              >
                 <Phone className="w-5 h-5" />
                 <span>Call: +91-7066334499</span>
-              </button>
-              <button className="flex items-center justify-center space-x-2 border border-gray-200 text-gray-600 hover:border-gray-300 font-semibold py-4 px-6 rounded-xl transition-colors">
+              </a>
+              <a
+                href="tel:+917066337676"
+                className="flex items-center justify-center space-x-2 border border-gray-200 text-gray-600 hover:border-gray-300 font-semibold py-4 px-6 rounded-xl transition-colors"
+              >
                 <Phone className="w-5 h-5" />
                 <span>Call: +91-7066337676</span>
-              </button>
+              </a>
             </div>
 
             <div className="text-gray-500 text-sm mt-6">

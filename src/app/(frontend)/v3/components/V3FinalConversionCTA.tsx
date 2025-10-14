@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { TRUST_CONSTANTS } from '@/constants/trust'
 import {
   Phone,
   Calendar,
@@ -38,7 +39,7 @@ export default function V3FinalConversionCTA() {
   ]
 
   return (
-    <section className="py-20" style={{ backgroundColor: '#FFE4E6' }}>
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Headline */}
         <div className="text-center mb-16">
@@ -139,9 +140,15 @@ export default function V3FinalConversionCTA() {
 
           {/* Right Column - Registration Form */}
           <div>
-            <div className="rounded-3xl p-8 shadow-2xl border" style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}>
+            <div
+              className="rounded-3xl p-8 shadow-2xl border"
+              style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}
+            >
               <div className="text-center mb-8">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white" style={{ background: 'linear-gradient(to right, #BF2932, #8B1F26)' }}>
+                <div
+                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white"
+                  style={{ background: 'linear-gradient(to right, #BF2932, #8B1F26)' }}
+                >
                   <Calendar className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -203,15 +210,22 @@ export default function V3FinalConversionCTA() {
 
               {/* Alternative Contact Methods */}
               <div className="flex flex-col md:flex-row gap-3 mb-6 justify-center items-center">
-                <button className="flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors">
+                <a
+                  href="tel:+917066334499"
+                  className="flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-xl transition-colors"
+                >
                   <Phone className="w-5 h-5" />
-                  <span>Quick Call Registration: +91-7066334499/+91-7066337676</span>
-                </button>
-
-                <button className="flex items-center justify-center space-x-3 border-2 border-gray-300 text-gray-700 font-semibold py-4 px-6 rounded-xl transition-colors hover:border-gray-500">
+                  <span>Quick Call: +91-7066334499</span>
+                </a>
+                <a
+                  href="https://wa.me/917066334499"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex items-center justify-center space-x-3 border-2 border-gray-300 text-gray-700 font-semibold py-4 px-6 rounded-xl transition-colors hover:border-gray-500"
+                >
                   <MessageCircle className="w-5 h-5" />
                   <span>WhatsApp Admission</span>
-                </button>
+                </a>
               </div>
               {/* Guarantees */}
               <div className="flex flex-col md:flex-row md:flex-wrap gap-3 md:justify-center">
@@ -247,7 +261,9 @@ export default function V3FinalConversionCTA() {
         <div className="text-center">
           <h3 className="text-3xl font-light mb-6 text-gray-800">
             The Choice Is Yours:{' '}
-            <span className="font-medium" style={{ color: '#BF2932' }}>Transform or Stay the Same</span>
+            <span className="font-medium" style={{ color: '#BF2932' }}>
+              Transform or Stay the Same
+            </span>
           </h3>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
@@ -272,17 +288,22 @@ export default function V3FinalConversionCTA() {
             </div>
           </div>
 
-          <div className="rounded-2xl p-2 mb-8 max-w-2xl mx-auto" style={{ backgroundColor: '#F8C200' }}>
-            <button className="w-full text-white font-bold text-2xl py-6 px-8 rounded-xl transition-colors flex items-center justify-center hover:opacity-90" style={{ backgroundColor: '#BF2932' }}>
+          <div className="rounded-2xl p-2 mb-8 max-w-2xl mx-auto bg-brand-accent">
+            <a
+              href="#contact"
+              className="w-full text-white font-bold text-2xl py-6 px-8 rounded-xl transition-colors flex items-center justify-center hover:opacity-90 bg-brand-primary"
+            >
               <Target className="w-6 h-6 mr-3" />
               YES! JOIN OUR INSTITUTE NOW
-            </button>
+            </a>
           </div>
 
           <div className="text-gray-700 space-y-2">
             <div className="flex items-center justify-center space-x-2">
               <Phone className="w-4 h-4" />
-              <span>Need help? Call +91-7066334499/+91-7066337676</span>
+              <a href="tel:+917066334499" className="underline">
+                Need help? Call +91-7066334499
+              </a>
             </div>
             <div className="flex items-center justify-center space-x-2">
               <Clock className="w-4 h-4" />

@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { TRUST_CONSTANTS } from '@/constants/trust'
 import {
   CheckCircle,
   TrendingUp,
@@ -115,9 +116,21 @@ export default function V3CourseValueProposition() {
   ]
 
   const successMetrics = [
-    { label: 'Families Trained', value: '10,000+', description: 'Since 2017' },
-    { label: 'Success Rate', value: '87%', description: 'Become profitable' },
-    { label: 'Institute Rating', value: '5.0/5', description: 'Google reviews' },
+    {
+      label: 'Families Trained',
+      value: TRUST_CONSTANTS.totalFamiliesTrained,
+      description: 'Since 2017',
+    },
+    {
+      label: 'Success Rate',
+      value: `${TRUST_CONSTANTS.successRatePercent}%`,
+      description: 'Become profitable',
+    },
+    {
+      label: 'Institute Rating',
+      value: `${TRUST_CONSTANTS.averageRating.toFixed(1)}/5`,
+      description: 'Google reviews',
+    },
   ]
 
   return (
@@ -140,8 +153,12 @@ export default function V3CourseValueProposition() {
           {/* Success Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {successMetrics.map((metric, index) => (
-              <div key={index} className="rounded-xl p-6 shadow-lg border" style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}>
-                <div className="text-3xl font-light mb-2" style={{ color: '#BF2932' }}>{metric.value}</div>
+              <div
+                key={index}
+                className="rounded-xl p-6 shadow-lg border"
+                style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}
+              >
+                <div className="text-3xl font-light mb-2 text-brand-primary">{metric.value}</div>
                 <div className="font-semibold text-gray-800 text-sm mb-1">{metric.label}</div>
                 <div className="text-gray-500 text-xs">{metric.description}</div>
               </div>
@@ -152,7 +169,10 @@ export default function V3CourseValueProposition() {
         {/* Course Modules */}
         <div className="mb-16">
           <h3 className="text-3xl font-light text-gray-800 text-center mb-12">
-            What You&apos;ll <span className="font-medium" style={{ color: '#BF2932' }}>Master</span>
+            What You&apos;ll{' '}
+            <span className="font-medium" style={{ color: '#BF2932' }}>
+              Master
+            </span>
           </h3>
 
           <div className="grid lg:grid-cols-2 gap-8">
@@ -173,7 +193,10 @@ export default function V3CourseValueProposition() {
                     <div>
                       <h4 className="text-xl font-semibold text-gray-800 mb-2">{module.title}</h4>
                       <p className="text-gray-600 text-sm mb-2">{module.description}</p>
-                      <div className="px-3 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#FFF3CD', color: '#BF2932' }}>
+                      <div
+                        className="px-3 py-1 rounded-full text-xs font-semibold"
+                        style={{ backgroundColor: '#FFF3CD', color: '#BF2932' }}
+                      >
                         {module.duration}
                       </div>
                     </div>
@@ -196,7 +219,10 @@ export default function V3CourseValueProposition() {
         {/* Unique Features */}
         <div className="mb-16">
           <h3 className="text-3xl font-light text-gray-800 text-center mb-12">
-            Why Our Institute is <span className="font-medium" style={{ color: '#BF2932' }}>Different</span>
+            Why Our Institute is{' '}
+            <span className="font-medium" style={{ color: '#BF2932' }}>
+              Different
+            </span>
           </h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -208,12 +234,18 @@ export default function V3CourseValueProposition() {
                   className="rounded-2xl p-6 text-center shadow-lg border hover:shadow-xl transition-shadow"
                   style={{ backgroundColor: '#FFFFFF', borderColor: '#FFCDD2' }}
                 >
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white" style={{ backgroundColor: '#BF2932' }}>
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white"
+                    style={{ backgroundColor: '#BF2932' }}
+                  >
                     <Icon className="w-8 h-8" />
                   </div>
                   <h4 className="text-lg font-semibold text-gray-800 mb-3">{feature.title}</h4>
                   <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
-                  <div className="px-4 py-2 rounded-lg font-semibold text-sm" style={{ backgroundColor: '#FFF3CD', color: '#BF2932' }}>
+                  <div
+                    className="px-4 py-2 rounded-lg font-semibold text-sm"
+                    style={{ backgroundColor: '#FFF3CD', color: '#BF2932' }}
+                  >
                     {feature.value}
                   </div>
                 </div>
@@ -224,10 +256,15 @@ export default function V3CourseValueProposition() {
 
         {/* Learning Outcomes */}
         <div className="mb-16">
-          <div className="rounded-3xl p-8 md:p-12 shadow-2xl border" style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}>
+          <div
+            className="rounded-3xl p-8 md:p-12 shadow-2xl border"
+            style={{ backgroundColor: '#FFFFFF', borderColor: '#BF2932' }}
+          >
             <h3 className="text-3xl font-light text-gray-800 text-center mb-12">
               By the End of Our Program, You Will{' '}
-              <span className="font-medium" style={{ color: '#BF2932' }}>Achieve</span>
+              <span className="font-medium" style={{ color: '#BF2932' }}>
+                Achieve
+              </span>
             </h3>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -254,16 +291,24 @@ export default function V3CourseValueProposition() {
                   ✅ Lifetime Support ✅ Proven Methods ✅ Real Results
                 </div>
               </div>
+              <p className="text-xs text-gray-500 mt-3">
+                Results vary by individual. Percentages based on internal student self-reports.
+              </p>
             </div>
           </div>
         </div>
 
         {/* Course Investment */}
         <div className="text-center">
-          <div className="rounded-3xl p-8 md:p-12 text-white" style={{ background: 'linear-gradient(to right, #BF2932, #8B1F26)' }}>
+          <div
+            className="rounded-3xl p-8 md:p-12 text-white"
+            style={{ background: 'linear-gradient(to right, #BF2932, #8B1F26)' }}
+          >
             <h3 className="text-3xl md:text-4xl font-light mb-6">
               Transform Your Financial Future{' '}
-              <span className="font-medium" style={{ color: '#F8C200' }}>Today</span>
+              <span className="font-medium" style={{ color: '#F8C200' }}>
+                Today
+              </span>
             </h3>
             <p className="text-gray-100 mb-8 max-w-2xl mx-auto text-lg">
               Don&apos;t let another day pass wondering &ldquo;what if.&rdquo; Join the institute
@@ -272,7 +317,10 @@ export default function V3CourseValueProposition() {
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto mb-8">
-              <button className="font-bold text-lg py-4 px-6 rounded-xl transition-colors text-gray-900 hover:opacity-90" style={{ backgroundColor: '#F8C200' }}>
+              <button
+                className="font-bold text-lg py-4 px-6 rounded-xl transition-colors text-gray-900 hover:opacity-90"
+                style={{ backgroundColor: '#F8C200' }}
+              >
                 Join Our Institute Today
               </button>
               <button className="border-2 border-white text-white hover:bg-white font-semibold py-4 px-6 rounded-xl transition-colors hover:text-gray-900">
