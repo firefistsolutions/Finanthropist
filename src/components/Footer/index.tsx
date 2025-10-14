@@ -21,51 +21,55 @@ export default function Footer() {
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Company Info */}
-            <div className="lg:col-span-2">
-              <div className="flex items-center mb-6">
-                <img src="/logo.png" alt="Finanthropist Logo" className="w-24 h-24 rounded-lg" />
+            <div className="md:col-span-1">
+              <div className="mb-2">
+                <img src="/logo.png" alt="Finanthropist Logo" className="w-32 h-32 rounded-lg" />
               </div>
 
-              <p className="text-gray-400 mb-6 leading-relaxed max-w-md">
+              <p className="text-gray-400 mb-6 leading-relaxed text-sm">
                 Maharashtra&apos;s most trusted stock market education company since 2001.
                 Empowering 10,000+ Families with practical investment skills and financial
                 independence.
               </p>
+            </div>
 
+            {/* Contact Info */}
+            <div className="md:col-span-1">
+              <h4 className="text-lg font-semibold mb-6 text-white">Contact Us</h4>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 bg-brand-accent rounded flex items-center justify-center">
+                  <div className="w-5 h-5 bg-brand-accent rounded flex items-center justify-center flex-shrink-0">
                     <span className="text-black text-xs">📍</span>
                   </div>
-                  <span className="text-gray-400">Maharashtra, India</span>
+                  <span className="text-gray-400 text-sm">Maharashtra, India</span>
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 bg-brand-accent rounded flex items-center justify-center">
+                  <div className="w-5 h-5 bg-brand-accent rounded flex items-center justify-center flex-shrink-0">
                     <span className="text-black text-xs">📞</span>
                   </div>
-                  <span className="text-gray-400">Call for Free Consultation</span>
+                  <span className="text-gray-400 text-sm">Call for Free Consultation</span>
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <div className="w-5 h-5 bg-brand-accent rounded flex items-center justify-center">
+                  <div className="w-5 h-5 bg-brand-accent rounded flex items-center justify-center flex-shrink-0">
                     <span className="text-black text-xs">✉️</span>
                   </div>
-                  <span className="text-gray-400">info@finanthropist.com</span>
+                  <span className="text-gray-400 text-sm">info@finanthropist.com</span>
                 </div>
               </div>
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div className="md:col-span-1">
               <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
               <ul className="space-y-3">
                 <li>
                   <Link
                     href="/#about"
-                    className="text-gray-400 hover:text-brand-accent transition-colors hover:translate-x-1 transform duration-200 inline-block"
+                    className="text-gray-400 text-sm hover:text-brand-accent transition-colors hover:translate-x-1 transform duration-200 inline-block"
                   >
                     About Sammeer Sarang
                   </Link>
@@ -73,7 +77,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/#success"
-                    className="text-gray-400 hover:text-brand-accent transition-colors hover:translate-x-1 transform duration-200 inline-block"
+                    className="text-gray-400 text-sm hover:text-brand-accent transition-colors hover:translate-x-1 transform duration-200 inline-block"
                   >
                     Success Stories
                   </Link>
@@ -81,7 +85,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/#contact"
-                    className="text-gray-400 hover:text-brand-accent transition-colors hover:translate-x-1 transform duration-200 inline-block"
+                    className="text-gray-400 text-sm hover:text-brand-accent transition-colors hover:translate-x-1 transform duration-200 inline-block"
                   >
                     Contact Us
                   </Link>
