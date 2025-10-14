@@ -1,6 +1,7 @@
 import React from 'react'
 import { Phone, MessageCircle, CheckCircle, TrendingUp, Award, BookOpen, Star } from 'lucide-react'
 import Footer from '@/components/Footer'
+import { TRUST_CONSTANTS } from '@/constants/trust'
 
 export default function CoursePage() {
   return (
@@ -9,20 +10,21 @@ export default function CoursePage() {
       <div className="bg-[#FFF4CC] text-gray-900 py-24 px-4 pt-32">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-6">
-            <Star className="w-6 h-6 fill-current" style={{ color: '#D4AF37' }} />
-            <Star className="w-6 h-6 fill-current" style={{ color: '#D4AF37' }} />
-            <Star className="w-6 h-6 fill-current" style={{ color: '#D4AF37' }} />
-            <Star className="w-6 h-6 fill-current" style={{ color: '#D4AF37' }} />
-            <Star className="w-6 h-6 fill-current" style={{ color: '#D4AF37' }} />
-            <span className="ml-2 text-lg font-semibold text-gray-700">
-              Rated 5.0/5 by 2,452+ Students
+            <Star className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />
+            <Star className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />
+            <Star className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />
+            <Star className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />
+            <Star className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />
+            <span className="ml-2 text-base font-semibold text-gray-700">
+              {TRUST_CONSTANTS.averageRating.toFixed(1)}/5 · {TRUST_CONSTANTS.totalReviewsFormatted}{' '}
+              Reviews
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight mb-4">
             Professional <span className="font-medium text-brand-primary">Share Market Course</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-2">For Maharashtra&apos;s Growth</p>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg md:text-xl text-gray-600 mb-2">For Maharashtra&apos;s Growth</p>
+          <p className="text-base text-gray-600">
             Learn from Sammeer Sarang - 23+ Years Finance Experience
           </p>
         </div>
@@ -37,28 +39,28 @@ export default function CoursePage() {
             style={{ borderColor: '#F8C200' }}
           >
             {/* Share Market Education Header */}
-            <div className="mb-8">
-              <h2 className="text-3xl font-light mb-2 text-gray-800">
+            <div className="mb-6">
+              <h2 className="text-2xl font-light mb-2 text-gray-800">
                 SHARE MARKET <span className="font-medium text-brand-primary">EDUCATION</span>
               </h2>
-              <p className="text-xl text-gray-600">For Maharashtra&apos;s Growth</p>
+              <p className="text-base text-gray-600">For Maharashtra&apos;s Growth</p>
             </div>
 
             <div className="h-1 rounded mb-8" style={{ backgroundColor: '#F8C200' }}></div>
 
             {/* Topics Covered */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-semibold mb-3 text-gray-800">TOPICS COVERED</h3>
-              <p className="text-gray-600 italic text-lg mb-6">
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold mb-2 text-gray-800">TOPICS COVERED</h3>
+              <p className="text-gray-600 italic text-sm mb-4">
                 &quot;Basics to Advance Trading & Investing in Market&quot;
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 <li className="flex items-start">
                   <CheckCircle
-                    className="w-5 h-5 mr-3 mt-1 flex-shrink-0"
+                    className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"
                     style={{ color: '#BF2932' }}
                   />
-                  <span className="text-gray-700">
+                  <span className="text-sm text-gray-700">
                     Equity, Futures & Derivatives, Index & Stock Options, Commodity & Currency
                     (Forex).
                   </span>
@@ -137,11 +139,11 @@ export default function CoursePage() {
             <div className="h-1 rounded mb-8" style={{ backgroundColor: '#F8C200' }}></div>
 
             {/* How It Will Help */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-semibold mb-3 text-gray-800">
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold mb-2 text-gray-800">
                 HOW IT WILL HELP ME TO EARN
               </h3>
-              <p className="text-gray-600 italic text-lg mb-6">
+              <p className="text-gray-600 italic text-sm mb-4">
                 Success is Depend on Your Willingness to Become Successful
               </p>
               <ul className="space-y-3">
@@ -209,23 +211,23 @@ export default function CoursePage() {
 
             {/* Discount Badge */}
             <div
-              className="bg-gradient-to-r text-white rounded-2xl p-8 text-center mb-8 shadow-xl transform hover:scale-105 transition-transform"
+              className="bg-gradient-to-r text-white rounded-xl p-6 text-center mb-6 shadow-lg"
               style={{ backgroundImage: 'linear-gradient(to right, #BF2932, #8B1F26)' }}
             >
-              <p className="text-6xl font-black">65% OFF</p>
-              <p className="text-xl font-semibold mt-2">Limited Time Offer</p>
+              <p className="text-4xl font-bold">65% OFF</p>
+              <p className="text-sm font-medium mt-1">Limited Time Offer</p>
             </div>
 
             {/* Contact Info */}
-            <div className="bg-white border-2 rounded-2xl p-6" style={{ borderColor: '#F8C200' }}>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">CONTACT US</h3>
-              <div className="space-y-3">
+            <div className="bg-white border-2 rounded-xl p-4" style={{ borderColor: '#F8C200' }}>
+              <h3 className="text-lg font-semibold mb-3 text-gray-800">CONTACT US</h3>
+              <div className="space-y-2">
                 <a
                   href="tel:7066334499"
-                  className="flex items-center text-lg transition-colors text-gray-700 hover:text-brand-primary"
+                  className="flex items-center text-base transition-colors text-gray-700 hover:text-brand-primary"
                 >
-                  <Phone className="w-5 h-5 mr-3" />
-                  <span className="font-semibold">7066 33 4499</span>
+                  <Phone className="w-4 h-4 mr-2" />
+                  <span className="font-medium">7066 33 4499</span>
                 </a>
                 <a
                   href="tel:7066337676"
@@ -258,13 +260,13 @@ export default function CoursePage() {
               className="bg-white rounded-3xl shadow-xl p-8 border-2"
               style={{ borderColor: '#F8C200' }}
             >
-              <h1 className="text-4xl font-light mb-3 text-gray-800">
+              <h1 className="text-2xl font-light mb-2 text-gray-800">
                 <span className="font-medium text-brand-primary">Finanthropist</span>
               </h1>
-              <p className="text-gray-600 italic text-xl mb-2 font-semibold">
+              <p className="text-gray-600 italic text-base mb-1 font-medium">
                 The Alchemist of Your Finance
               </p>
-              <p className="text-gray-700 font-bold text-lg">
+              <p className="text-gray-700 font-semibold text-sm">
                 Best Stock Market Education in Marathi
               </p>
               <div className="mt-4 pt-4 border-t" style={{ borderColor: '#F8C200' }}>
@@ -283,19 +285,18 @@ export default function CoursePage() {
               className="bg-white rounded-3xl shadow-xl p-8 border-2"
               style={{ borderColor: '#F8C200' }}
             >
-              <h2 className="text-3xl font-light text-gray-800 mb-6">
-                WHAT WILL YOU <span className="font-medium text-brand-primary">LEARN</span> IN THE
-                COURSE?
+              <h2 className="text-xl font-light text-gray-800 mb-4">
+                WHAT WILL YOU <span className="font-medium text-brand-primary">LEARN</span>?
               </h2>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 <li
-                  className="flex items-start bg-[#FFF9E6] p-4 rounded-xl border"
+                  className="flex items-start bg-[#FFF9E6] p-3 rounded-lg border"
                   style={{ borderColor: '#F8C200' }}
                 >
-                  <BookOpen className="w-6 h-6 mr-3 mt-1 flex-shrink-0 text-brand-primary" />
+                  <BookOpen className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0 text-brand-primary" />
                   <div>
-                    <p className="font-bold text-gray-900">Investing</p>
-                    <p className="text-gray-700">
+                    <p className="font-semibold text-sm text-gray-900">Investing</p>
+                    <p className="text-xs text-gray-700">
                       Share Market, Mutual Fund & All other investments.
                     </p>
                   </div>
@@ -342,13 +343,13 @@ export default function CoursePage() {
               className="bg-white rounded-3xl shadow-xl p-8 border-2"
               style={{ borderColor: '#F8C200' }}
             >
-              <h2 className="text-3xl font-light text-gray-800 mb-6">
+              <h2 className="text-xl font-light text-gray-800 mb-4">
                 FREE SUPPORT FOR <span className="font-medium text-brand-primary">LIFETIME</span>
               </h2>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 <li className="flex items-start">
-                  <Award className="w-5 h-5 mr-3 mt-1 flex-shrink-0 text-brand-primary" />
-                  <span className="text-gray-700">
+                  <Award className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-brand-primary" />
+                  <span className="text-sm text-gray-700">
                     Daily <strong className="text-gray-900">Live Market Analysis Sessions</strong>.
                   </span>
                 </li>
@@ -403,22 +404,20 @@ export default function CoursePage() {
 
             {/* Pricing Card */}
             <div
-              className="rounded-3xl shadow-2xl p-10 text-white text-center transform hover:scale-105 transition-transform"
+              className="rounded-2xl shadow-xl p-8 text-white text-center"
               style={{ background: 'linear-gradient(to right, #BF2932, #8B1F26)' }}
             >
-              <h3 className="text-2xl font-semibold mb-6 uppercase">
-                For Entire Family For Lifetime
-              </h3>
-              <div className="mb-8">
-                <p className="text-7xl font-black mb-3">₹9,912</p>
-                <p className="text-4xl line-through opacity-80">₹28,320/-</p>
-                <p className="text-lg mt-3">Save ₹18,408 Today!</p>
+              <h3 className="text-lg font-semibold mb-4">For Entire Family · Lifetime Access</h3>
+              <div className="mb-6">
+                <p className="text-5xl font-bold mb-2">₹9,912</p>
+                <p className="text-2xl line-through opacity-70">₹28,320</p>
+                <p className="text-sm mt-2 opacity-90">Save ₹18,408 Today!</p>
               </div>
-              <button className="w-full bg-white hover:bg-gray-100 text-brand-primary font-black py-5 px-8 rounded-2xl text-2xl transition-all transform hover:scale-105 shadow-2xl">
+              <button className="w-full bg-white hover:bg-gray-100 text-brand-primary font-bold py-3 px-6 rounded-xl text-lg transition-colors">
                 ENROLL NOW
               </button>
-              <p className="text-sm mt-4 opacity-80">
-                Limited seats available. Join 10,000+ families today!
+              <p className="text-xs mt-3 opacity-80">
+                Limited seats · Join {TRUST_CONSTANTS.totalFamiliesTrained} families
               </p>
             </div>
           </div>
@@ -426,14 +425,14 @@ export default function CoursePage() {
       </div>
 
       {/* Bottom CTA Section */}
-      <div className="bg-[#FFF4CC] text-gray-900 py-20 px-4 mt-12">
+      <div className="bg-[#FFF4CC] text-gray-900 py-16 px-4 mt-12">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-light mb-6">
+          <h2 className="text-3xl md:text-4xl font-light mb-4">
             Ready to{' '}
             <span className="font-medium text-brand-primary">Transform Your Financial Future?</span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-700 mb-10">
-            Join thousands of successful traders and investors who have learned with{' '}
+          <p className="text-lg md:text-xl text-gray-700 mb-8">
+            Join {TRUST_CONSTANTS.totalFamiliesTrained} successful families who learned with{' '}
             <strong className="text-brand-primary">Finanthropist</strong>
           </p>
           <div className="flex flex-wrap justify-center gap-6">
@@ -454,13 +453,14 @@ export default function CoursePage() {
             </a>
           </div>
           <div className="mt-10 flex items-center justify-center gap-2">
-            <Star className="w-6 h-6 fill-current" style={{ color: '#D4AF37' }} />
-            <Star className="w-6 h-6 fill-current" style={{ color: '#D4AF37' }} />
-            <Star className="w-6 h-6 fill-current" style={{ color: '#D4AF37' }} />
-            <Star className="w-6 h-6 fill-current" style={{ color: '#D4AF37' }} />
-            <Star className="w-6 h-6 fill-current" style={{ color: '#D4AF37' }} />
-            <span className="ml-2 text-lg text-gray-700">
-              Trusted by 2,452+ Students with 5.0/5 Rating
+            <Star className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />
+            <Star className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />
+            <Star className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />
+            <Star className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />
+            <Star className="w-5 h-5 fill-current" style={{ color: '#D4AF37' }} />
+            <span className="ml-2 text-base text-gray-700">
+              {TRUST_CONSTANTS.averageRating.toFixed(1)}/5 · {TRUST_CONSTANTS.totalReviewsFormatted}{' '}
+              Reviews
             </span>
           </div>
         </div>
