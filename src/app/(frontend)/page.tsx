@@ -1,7 +1,7 @@
-import HomePage from './home'
+import V3Page from './v3/page'
 
 export default function Page() {
-  return <HomePage />
+  return <V3Page />
 }
 
 export async function generateMetadata() {

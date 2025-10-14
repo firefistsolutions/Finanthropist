@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 // V3 Components - Conversion Perfect Landing Page
@@ -18,8 +17,6 @@ import V3FinalConversionCTA from './components/V3FinalConversionCTA'
 export default function V3HomePage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-
       <main>
         {/* 1. Hero Section - Trust-First with Google Reviews */}
         <V3HeroTrustFirst />

@@ -12,6 +12,12 @@ public/media/
 public/robots.txt
 public/sitemap*.xml
 
+# Local database files
+dev.db
+*.db
+*.db-shm
+*.db-wal
+
 
 # Playwright
 node_modules/
