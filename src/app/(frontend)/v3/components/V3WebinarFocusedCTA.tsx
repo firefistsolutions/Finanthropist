@@ -362,17 +362,17 @@ export default function V3WebinarFocusedCTA() {
             <div className="grid sm:grid-cols-2 gap-6 max-w-lg mx-auto">
               <a
                 href="tel:+917066334499"
-                className="flex items-center justify-center space-x-2 border border-gray-200 text-gray-600 hover:border-gray-300 font-semibold py-4 px-6 rounded-xl transition-colors"
+                className="flex items-center bg-green-800 justify-center space-x-2 border border-gray-200 text-gray-200 hover:border-gray-300 font-semibold py-4 px-6 rounded-xl transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                <span>Call: +91-7066334499</span>
+                <span>+91-7066334499</span>
               </a>
               <a
                 href="tel:+917066337676"
-                className="flex items-center justify-center space-x-2 border border-gray-200 text-gray-600 hover:border-gray-300 font-semibold py-4 px-6 rounded-xl transition-colors"
+                className="flex items-center bg-green-800 justify-center space-x-2 border border-gray-200 text-gray-200 hover:border-gray-300 font-semibold py-4 px-6 rounded-xl transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                <span>Call: +91-7066337676</span>
+                <span>+91-7066337676</span>
               </a>
             </div>
 

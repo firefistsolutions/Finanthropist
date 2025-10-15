@@ -156,7 +156,7 @@ export default function Header() {
       </div>
 
       {/* Live Market Ticker */}
-      <LiveMarketTicker className=" mx-auto px-4 sm:px-6 lg:px-8" />
+      {/* <LiveMarketTicker className=" mx-auto px-4 sm:px-6 lg:px-8" /> */}
     </header>
   )
 }
